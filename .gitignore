@@ -1,0 +1,8 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+/.quarto/
+# 设置默认渲染命令
+options(quarto.render.command = "quarto render")
