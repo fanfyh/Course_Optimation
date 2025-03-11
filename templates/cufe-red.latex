@@ -1,0 +1,65 @@
+% templates/cufe-template.latex
+\documentclass{beamer}
+\usepackage{ctex}
+\usepackage{cufe}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{bookmark}
+\tcbuselibrary{skins, breakable}  % 添加必要库
+
+% 修复enhanced jigsaw为enhancedjigsaw
+\tcbset{
+    mycallout/.style={
+        enhancedjigsaw,  % 正确键名（无空格）
+        breakable,
+        colback=blue!5,
+        colframe=blue!50!black
+    }
+}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\title{$title$}
+\subtitle{$subtitle$}
+\author{$author$}
+\institute{$institute$}
+\date{$date$}
+% ==== 加载自定义设置 ====
+% \input{templates/cufe-settings.sty}  % 可选，用于集中存放样式
+% defs
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+\begin{document}
+
+% ==== 自动插入标题页 ==== 
+\kaishu  % 楷书样式
+\begin{frame}
+  \titlepage
+  \begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.2\linewidth]{pic/cufe_logo_blue.eps}
+  \end{figure}
+\end{frame}
+
+
+
+% ==== Quarto生成的内容 ====
+$body$
+
+\end{document}

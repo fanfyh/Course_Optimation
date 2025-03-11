@@ -1,37 +1,569 @@
 [
   {
-    "objectID": "part_1_prep.html",
-    "href": "part_1_prep.html",
-    "title": "Preparation",
+    "objectID": "lecture3_shadow_price.html",
+    "href": "lecture3_shadow_price.html",
+    "title": "经济学中的优化方法",
     "section": "",
-    "text": "Page without code\n\n\n\nThis page contains an example for some structured preparation information for a workshop. No code is executed here.\nHere are some preparation information for the participants."
+    "text": "经济模型中包括两类变量，分别是\n\n内生变量：模型的均衡结果变量，如商品的需求量；\n外生变量（参数）：在模型设定中给定的变量，如价格、收入、偏好权重。\n\n静态分析：在给定模型参数设定下，分析模型的均衡结果。\n比较静态分析\n\n改变模型外生变量，分析这种变化对模型均衡结果的影响。或者说，比较最优解如何随着参数的变动而变动。\n例如，保持价格不变，分析收入变化对消费者需求的影响。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
   },
   {
-    "objectID": "part_1_prep.html#software",
-    "href": "part_1_prep.html#software",
-    "title": "Preparation",
-    "section": "Software",
-    "text": "Software\nIn this workshop we will be using R. You can either\n\nhave R and Rstudio installed on your laptop\nor, use Posit cloud (formerly Rstudio Cloud).\n\nPosit cloud is free of charge for personal users, yet you need to sign up for a new user account and have internet connection.\nThe R package we are using is glmnet."
+    "objectID": "lecture3_shadow_price.html#比较静态分析",
+    "href": "lecture3_shadow_price.html#比较静态分析",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "经济模型中包括两类变量，分别是\n\n内生变量：模型的均衡结果变量，如商品的需求量；\n外生变量（参数）：在模型设定中给定的变量，如价格、收入、偏好权重。\n\n静态分析：在给定模型参数设定下，分析模型的均衡结果。\n比较静态分析\n\n改变模型外生变量，分析这种变化对模型均衡结果的影响。或者说，比较最优解如何随着参数的变动而变动。\n例如，保持价格不变，分析收入变化对消费者需求的影响。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
   },
   {
-    "objectID": "part_1_prep.html#data",
-    "href": "part_1_prep.html#data",
-    "title": "Preparation",
-    "section": "Data",
-    "text": "Data\nThe datasets we use can be found here (insert link)."
+    "objectID": "lecture3_shadow_price.html#等式约束-i",
+    "href": "lecture3_shadow_price.html#等式约束-i",
+    "title": "经济学中的优化方法",
+    "section": "等式约束 I",
+    "text": "等式约束 I\n假设一个简单的最优化问题，包括两个选择变量\\((x_1, x_2)\\)，一个目标函数\\(F(x)\\)和一个约束等式\\(G(x) = c\\)；\n- 令\\(\\bar{x}\\)代表最优选择，\\(v = F(\\bar{x})\\)表示最高所达到的值；\n- 假定\\(c\\)增加一个无穷小量\\(dc\\)，令\\(\\bar{x} + d\\bar{x}\\)为新的最优选择， \\(v + dv\\)为新的最优值。\n思考：\n\n\\(d\\bar{x}\\)与上一讲的x的微小变动\\(dx\\)是一回事么？\n\\(dv\\)和\\(dc\\)之间有什么关系？",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
   },
   {
-    "objectID": "part_1_prep.html#code",
-    "href": "part_1_prep.html#code",
-    "title": "Preparation",
-    "section": "Code",
-    "text": "Code\nThe R scripts used in part 1 and part 2 can be found here (insert link)."
+    "objectID": "lecture3_shadow_price.html#等式约束-ii",
+    "href": "lecture3_shadow_price.html#等式约束-ii",
+    "title": "经济学中的优化方法",
+    "section": "等式约束 II",
+    "text": "等式约束 II\n将目标函数F和约束函数G的值的变化进行一阶泰勒近似，我们有：\n\\[  \n\\begin{aligned}\ndv\n& = F(\\bar{x} + d\\bar{x}) - F(\\bar{x}) \\\\\n& = F_1(\\bar{x})d\\bar{x}_1 + F_2(\\bar{x})d\\bar{x}_2 \\\\\n& = \\lambda[G_1(\\bar{x})d\\bar{x}_1 + G_2(\\bar{x})d\\bar{x}_2] \\\\\n& = \\lambda[G(\\bar{x} + d\\bar{x}) - G(\\bar{x})] \\\\\n& = \\lambda[(c + dc) - c] = \\lambda dc\n\\end{aligned}\n\\]\n因此，一阶条件中的乘子\\(\\lambda = dv/dc\\)就是目标函数所能达到的最大值的变动，与约束等式右边参数的变动的比例。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
   },
   {
-    "objectID": "part_1_prep.html#resources",
-    "href": "part_1_prep.html#resources",
-    "title": "Preparation",
-    "section": "Resources",
-    "text": "Resources\nLecture notes (insert link)\nLab notes (insert link)"
+    "objectID": "lecture3_shadow_price.html#拉格朗日乘子的解释",
+    "href": "lecture3_shadow_price.html#拉格朗日乘子的解释",
+    "title": "经济学中的优化方法",
+    "section": "拉格朗日乘子的解释",
+    "text": "拉格朗日乘子的解释\n如果v为\\(F(x)\\)在向量约束\\(G(x) = c\\)下的最大值，\\(\\lambda\\)为对应约束的乘子组成的列向量，那么由无穷小量变动\\(dc\\)引起的变动\\(dv\\)由下式给出：\n\\[  \ndv = \\lambda dc = \\sum_{i} \\lambda_i dc_i.  \n\\]",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#影子价格-i",
+    "href": "lecture3_shadow_price.html#影子价格-i",
+    "title": "经济学中的优化方法",
+    "section": "影子价格 I",
+    "text": "影子价格 I\n考虑一个计划经济，通过选择一个生产计划\\(\\bar{x}\\)以最大化社会福利函数\\(F(x)\\)。这个计划需要资源向量\\(G(x)\\)，这些资源的现有数量为向量\\(c\\)。假定这个问题已经被求解出来，则拉格朗日乘子向量\\(\\lambda\\)为已知。\n现在假定经济以外的某个力量，对第一种资源（比如说劳动）投入一个小的增量\\(dc_1\\)。那么，最大化问题就可以在新的劳动约束下求解，以确定一种新的生产方式。\n我们知道，劳动的微小增量所导致的社会福利的增加值是\\(\\lambda_1 dc_1\\)，因此，我们认为乘子\\(\\lambda_1\\)就是这个经济中以社会福利单位来衡量的劳动的边际产出。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#影子价格-ii",
+    "href": "lecture3_shadow_price.html#影子价格-ii",
+    "title": "经济学中的优化方法",
+    "section": "影子价格 II",
+    "text": "影子价格 II\n考虑存在两种资源的情况，资源1是劳动，资源2是土地。假设提供给这个经济额外的劳动\\(dc_1\\)，但是要求\\(dc_2\\)单位的土地作为回报。\n在这一交易中，社会福利净收益为\\(d\\lambda_1 dc_1 - \\lambda_2 dc_2\\)，因而社会计划者最多愿意放弃的土地为\\((\\lambda_1/\\lambda_2)dc_1\\)。\n因此，我们可以把比例\\((\\lambda_1/\\lambda_2)\\)称为以土地单位来衡量的每单位劳动的需求价格，也就是土地和劳动的相对价格。\n为了引出同价格的联系，同时又为了和市场价格在概念上有所区别，拉格朗日乘子常被称作影子价格。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配-i",
+    "href": "lecture3_shadow_price.html#看不见的手分配-i",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配 I",
+    "text": "看不见的手——分配 I\n考虑一个计划经济体制，中央计划者将在消费者间分配商品，各种商品的产量是已知的。假设有C个消费者，\\(c = 1, 2, \\cdots, C\\)，和G种商品，\\(g = 1, 2, \\cdots, G\\)。记商品g的总数量为\\(X_g\\)，其分配给消费者c的数量为\\(x_{cg}\\)。\n\n每个消费者的效用都取决于分配到的各种商品的数量： \\[  \nu_c = U^{c}(x_{c1}, x_{c2}, \\cdots, x_{cG}).\n\\]\n社会福利函数是关于所有消费者效用的函数:\n\\[  \nw = W(u_1, u_2, \\cdots, u_C)\n\\]\n中央计划者面临的约束为:\n\\[  \nx_{1g} + x_{2g} + \\cdots + x_{cg} = X_g, g = 1, 2, \\cdots, G\n\\]",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配-ii",
+    "href": "lecture3_shadow_price.html#看不见的手分配-ii",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配 II",
+    "text": "看不见的手——分配 II\n构造拉格朗日函数\n\\[  \n\\begin{aligned}\n\\mathcal{L} =\n& W(U^{1}(x_{11}, x_{12}, \\cdots, x_{1G}), \\cdots, U^{C}(x_{C1}, x_{C2}, \\cdots, x_{CG})) + \\\\\n&\\sum_{g} \\pi_g[X_g - \\sum_c x_{cg}]\n\\end{aligned}\n\\]\n其中，\\(\\pi_g\\)表示对应于商品g的约束条件的拉格朗日乘子。\n此时，拉格朗日函数的一阶条件为\n\\[  \n\\frac{\\partial \\mathcal{L}}{\\partial x_{cg}}\n= \\frac{\\partial W}{\\partial u_c} \\frac{\\partial U^{c}}{\\partial x_{cg}} - \\pi_g = 0.\n\\]",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配-iii",
+    "href": "lecture3_shadow_price.html#看不见的手分配-iii",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配 III",
+    "text": "看不见的手——分配 III\n现在考虑市场经济体制，假定每种商品的价格为\\(\\pi_g\\)，并给予每一个消费者c一定的货币收入\\(I_c\\)，允许其在预算约束下最大化自己的效用。因此，市场经济下每个消费者面临着效用最大化问题：\n\\[  \n\\begin{aligned}\n\\mathop{\\max_{x_{c1}, \\cdots, x_{cn}}} & U(x_{c1}, x_{c2}, \\cdots, x_{cn}) \\\\\ns.t.\\quad & \\pi_1x_{c1} + \\pi_2x_{c2} + \\cdots \\pi_{G}x_{cG} \\leq I_c\n\\end{aligned}\n\\]\n此时，最优化问题的一阶条件为\n\\[  \n\\partial U^c/\\partial x_{cg} = \\lambda_c \\pi_{g}\n\\]",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配-iv",
+    "href": "lecture3_shadow_price.html#看不见的手分配-iv",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配 IV",
+    "text": "看不见的手——分配 IV\n比较两种经济体制下的一阶条件FOC1和FOC2\n\\[  \n\\begin{aligned}\n(\\partial W/\\partial u_c) (\\partial U^c/\\partial x_{cg}) & =  \\pi_g  \\\\\n\\partial U^c/\\partial x_{cg} & = \\lambda_c \\pi_{g}\n\\end{aligned}\n\\]\n我们发现，如果对于所有的消费者c，令\n\\[  \n\\partial W/\\partial u_c = 1/\\lambda_c\n\\]\n那么这两个式子是完全一样的。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配-v",
+    "href": "lecture3_shadow_price.html#看不见的手分配-v",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配 V",
+    "text": "看不见的手——分配 V\n回忆一下，对于效用最大化问题而言，拉格朗日乘子\\(\\lambda\\)代表什么？\n\\[  \n\\frac{\\partial W}{\\partial u_c} \\lambda = 1\n\\]\n意味着，每个消费者一单位收入对社会福利的边际影响是相等的。换句话说，收入的分配应该被这样安排，以使得在边际上，每一个消费者收入的社会价值都是相等的。只要做到这一点，他们就可以自由地选择自己的消费束。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#非负的拉格朗日乘子",
+    "href": "lecture3_shadow_price.html#非负的拉格朗日乘子",
+    "title": "经济学中的优化方法",
+    "section": "非负的拉格朗日乘子",
+    "text": "非负的拉格朗日乘子\n\n拉格朗日乘子衡量了稀缺资源禀赋的增加带来的社会福利的增加。\n直觉上，放松某个约束应该是一件有利的事情，因为计划着至少可以取得和原来一样高的福利水平。\n困难在于，在具有等式约束的一般形式问题中，约束等式右边的数值增加并不必然意味着约束的放松。\n因此，如果想要得到非负的影子价格，必须保证约束条件式子右边数值的增加的确放松了对这个选择变量的限制。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#拉格朗日乘子的互补松弛条件",
+    "href": "lecture3_shadow_price.html#拉格朗日乘子的互补松弛条件",
+    "title": "经济学中的优化方法",
+    "section": "拉格朗日乘子的互补松弛条件",
+    "text": "拉格朗日乘子的互补松弛条件\n拉格朗日乘子的互补松弛条件：\n\\[  \n\\lambda \\geq 0,L_{\\lambda}(\\bar{x}) \\geq 0  \n\\]\n或者说\n\\[  \nG^{i}(x) \\leq c_i, \\lambda \\geq 0  \n\\]\n中至少有一个不等式是以等式形式成立的。拉格朗日乘子$_i = 0 \\(意味着资源\\)i$ 未被充分利用，出现闲置的情况：\n\n如果某种资源已经被部分闲置，那么新增这种资源仍然会被闲置。此时目标函数的最大值不变，影子价格将为零。\n正的影子价格意味着现有资源的一单位边际增加能够得到很好的使用，也就是说，原来的生产计划中这种资源没有被闲置。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#即将过剩的位置-i",
+    "href": "lecture3_shadow_price.html#即将过剩的位置-i",
+    "title": "经济学中的优化方法",
+    "section": "即将过剩的位置 I",
+    "text": "即将过剩的位置 I\n\n假定\\(c_i\\) 刚好处在某个点上，在这一点资源\\(i\\)正好处在即将过剩的边际上，即已有的资源恰好被充分利用，但该资源任何的增量都不会再被使用。\n互补松弛条件不能告诉我们，在这一点处，拉格朗日乘子为正还是为零。这取决于最大值\\(v\\) 在\\(c_i\\) 的斜率，在边界点处是平滑地变为零还是突然变为零。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#即将过剩的位置-ii",
+    "href": "lecture3_shadow_price.html#即将过剩的位置-ii",
+    "title": "经济学中的优化方法",
+    "section": "即将过剩的位置 II",
+    "text": "即将过剩的位置 II\n\n\n\nFigure 4.1\n\n\n\n情况1（图a）：斜率平滑地下降，在该点处的拉格朗日乘子为零；\n情况2（图b）：斜率突然下降，即任何介于左边曲线斜率和右边直线斜率为零之间的\\(\\lambda_i\\) 都有可能代表影子价格恰好从正转变为零。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买-i",
+    "href": "lecture3_shadow_price.html#免税的购买-i",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买 I",
+    "text": "免税的购买 I\n一个四处旅行的富翁，可以在家乡商店里购买不同牌子的酒，也可以在世界各地的机场免税商店购买。免税商店中的价格便宜一些，但是他所能购买的总量受到海关的限制：\n\n假设有n种牌子的酒，在富翁家乡商店的价格为\\(p\\)，在免税店的价格为\\(q\\)；\n对于所有的品牌而言，免税店里的价格都较低，即\\(q \\ll p\\)；\n令x代表他在家乡购买的各种酒的数量，y代表他在免税店里购买的各种酒的数量；\n富翁决定每年花在酒上的支出为I；\n海关规定每年富翁可以进口K瓶免税酒；\n富翁的效用取决于总的消费数量\\(U = U(c), c = x+y\\)。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买-ii",
+    "href": "lecture3_shadow_price.html#免税的购买-ii",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买 II",
+    "text": "免税的购买 II\n拉格朗日函数为：\n\\[  \nL = U(c) + \\lambda[I - px - qy] + \\mu[K- ey]  \n\\]\n对于每一种酒j，我们都有\n\\[  \n\\partial L/\\partial x_j = \\partial U/\\partial c_j - \\lambda p_j \\leq 0, x_j \\geq 0  \n\\]\n满足互补松弛条件，同时，\n\\[  \n\\partial L/\\partial y_j = \\partial U/\\partial c_j - \\lambda q_j - \\mu \\leq 0, y_j \\geq 0  \n\\]\n也满足互补松弛条件。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买-iii",
+    "href": "lecture3_shadow_price.html#免税的购买-iii",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买 III",
+    "text": "免税的购买 III\n如果富翁同时在家乡商店和机场免税店购买了正数量的酒j，那么\n\\[  \n\\partial U/\\partial c_j - \\lambda p_j = 0 = \\partial U/\\partial c_j -\\lambda q_j - \\mu\n\\]\n或\n\\[  \n\\lambda p_j = \\partial U/\\partial c_j = \\lambda q_j + \\mu  \n\\]\n最多有一个j使得上式成立，否则，假定存在两种酒i和j，我们会有\n\\[  \n\\lambda(p_i - q_i) = \\mu = \\lambda(p_j - q_j)  \n\\]\n由于我们假定该消费者没有满足，\\(\\lambda\\)是正的，所以\n\\[  \np_i - q_i = p_j - q_j  \n\\]",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买-iv",
+    "href": "lecture3_shadow_price.html#免税的购买-iv",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买 IV",
+    "text": "免税的购买 IV\n现在假定酒j仅能在家乡商店里被购买，由于\\(x_j &gt; 0, y_j = 0\\)，因此有：\n\\[  \n\\partial U/\\partial c_j = \\lambda p_j \\tag{FOC1}  \n\\]\n和\n\\[  \n\\partial U/\\partial c_j \\leq \\lambda q_j + \\mu \\tag{FOC2}  \n\\]\n\n对于FOC1，等式左边是酒j的边际效用，等式右边是在家乡商店购买酒j的边际机会成本；\n对于FOC2，式子右边是在免税商店购买酒\\(j\\)的边际机会成本(怎么理解\\(\\mu\\)?)。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买-v",
+    "href": "lecture3_shadow_price.html#免税的购买-v",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买 V",
+    "text": "免税的购买 V\n消费者的购买原理是：在有较低的机会成本的商店里购买每一种牌子的酒。注意到\n\\[  \n\\lambda q_j + \\mu &lt; \\lambda p_i,\\text{当且仅当} p_i - q_i &gt; \\mu/\\lambda  \n\\]\n因此，富翁会把各个牌子的酒按照他们在两种商店的绝对价格差进行排序，绝对价格差最大的酒在免税商店购买，价格差最小的在家乡商品购买。两者的交汇点恰好在用在免税限额的那一点。因此，最多只有一种牌子的酒会同时在两种商店里被购买。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About page\n\n\n\nThis page contains some elaborated background information about your workshop, or the instructors.\n\n\nFor example: A central problem in machine learning is how to make an algorithm perform well not just on the training data, but also on new inputs. Many strategies in machine learning are explicitly designed to reduce this test error, possibly at the expense of increased training error. These strategies are collectively known as regularisation and they are instrumental for good performance of any kind of prediction or classification model, especially in the context of small data (many features, few samples).\nIn the hands-on tutorial we will use R to perform an integrated analysis of multi-omics data with penalised regression.\n\nContact\nInstructor A: contact\nInstructor B: contact\nInstructor C: contact"
+  },
+  {
+    "objectID": "lecture_froniter1.html",
+    "href": "lecture_froniter1.html",
+    "title": "财政分权与中国实践",
+    "section": "",
+    "text": "\\[\\begin{equation}\n\\mathop{\\mathbb{E}}_{i\\in N} \\left[ \\frac{\\partial U_i}{\\partial g} \\right] = MC(g)\n\\end{equation}\\] 核心机制：\n\n\n\n\n分权有效性条件： \\[\\begin{align*}\n\\frac{\\partial W}{\\partial d} &= \\beta(V^d - V^c) + (1-\\beta)\\Delta C \\\\\n\\text{其中}\\quad \\beta &= 0.68 \\quad (\\text{基于2019省级面板数据})\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "lecture_froniter1.html#基本理论框架",
+    "href": "lecture_froniter1.html#基本理论框架",
+    "title": "财政分权与中国实践",
+    "section": "",
+    "text": "\\[\\begin{equation}\n\\mathop{\\mathbb{E}}_{i\\in N} \\left[ \\frac{\\partial U_i}{\\partial g} \\right] = MC(g)\n\\end{equation}\\] 核心机制：\n\n\n\n\n分权有效性条件： \\[\\begin{align*}\n\\frac{\\partial W}{\\partial d} &= \\beta(V^d - V^c) + (1-\\beta)\\Delta C \\\\\n\\text{其中}\\quad \\beta &= 0.68 \\quad (\\text{基于2019省级面板数据})\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "lecture2_lagrange.html",
+    "href": "lecture2_lagrange.html",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假定选择变量为\\(x_1\\)和\\(x_2\\)， 其向量形式为： \\[\nx =  \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n             x_1 \\\\\n            x_2\n        \\end{array}\n        \\right)\n\\]\n目标函数为\\(F(x)\\)，约束函数是一般的非线性函数\\(G(x) = c\\)。\n\n\n\n假设从某个特定的点\\(\\bar{x} = (\\bar{x}_1, \\bar{x}_2)\\)开始，考虑一个无穷小的变动：\n\\[\ndx = \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n          dx_1  \\\\\n          dx_2\n    \\end{array}\\right)\n\\]\n我们要求\\(\\bar{x} + dx\\)仍然满足约束条件，并看它是否能产生一个更高的目标函数值。\n将目标函数\\(F(x)\\)对于\\(x_1\\)和\\(x_2\\)的偏导数分别记作\\(F_1(x)\\)和\\(F_2(x)\\)。当我们在点\\(\\bar{x}\\)处计算这两个值时，它们的值分别写作\\(F_1(\\bar{x})\\)和\\(F_2(\\bar{x})\\)。\n\n\n\n从任意一点\\(x\\)到\\(x + dx\\)的微小变动所引起的\\(F(x)\\)的变动的一阶泰勒展开为： \\[\n    \\begin{aligned}\ndF(x) & = F(x + dx) - F(x) \\\\\n& = F_1(x)dx_1 + F_2(x) dx_2\n\\end{aligned}\n\\]\n对\\(G(x)\\)的变动也有一个类似的表达式：\n\\[\n    dG(x) = G_1(x) dx_1 + G_2(x) dx_2\n\\]\n如果\\(\\bar{x}\\)和\\(\\bar{x} + dx\\)同时满足约束条件，那么必然有\\(dG(\\bar{x}) = 0\\)，即：\n\\[\n    G_1(\\bar{x}) dx_1 = - G_2(\\bar{x}) dx_2 = dc\n\\]\n\n\n\n首先假定\\(G_1(\\bar{x})\\)和\\(G_2(\\bar{x})\\)都是非零的，那么：\n\\[\n    dx_1 = dc / G_1(\\bar{x}), \\quad dx_2 = - dc / G_2(\\bar{x})\n\\]\n因此目标函数值的变动为：\n\\[\ndF(\\bar{x}) = [F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x})]dc\n\\] 当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)都不碰到某个自然边界（如零）时，变动量\\(dc\\)就可以是任意符号的。如果\\(\\bar{x}\\)是最优的，那么对于任意变动\\(dc\\)而言，\\(F(\\bar{x})\\)都不会增加，即：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x}) \\Longrightarrow\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n\n\n\n当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)位于某个自然边界时:\n\n当\\(x_1 \\geq 0\\)且位于下界时，我们会得到什么条件？\n当\\(x_1 \\leq 100\\)且位于上界时，我们会得到什么条件？\n\n\n\n\n如果\\(G(x) = c\\)的约束下在\\(\\bar{x}\\)点可以使得\\(F(x)\\)取得最大值，那么必然有：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n换言之，上述条件是\\(\\bar{x}\\)为最优解的一阶必要条件。\n一阶必要条件的价值在于，在寻找最优解时有助于缩小搜寻的范围：\n\n如果仅有唯一的\\(\\bar{x}\\)同时满足约束条件和一阶必要条件，那么它一定是我们所要寻找的最优解\n如果存在多个满足一阶条件的解，那么还必须采用其他办法来进行判断\n对于最大化问题和最小化问题而言，一阶必要条件是相同的！\n\n\n\n\n对于目标函数为\\(F(x)\\)、约束条件为\\(G(x) = c\\)的最优化问题，定义拉格朗日函数： \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n其中\\(\\lambda\\)被称为待定的拉格朗日乘子。记\\(L\\)的偏导数分别为：\n\\[\n    L_j = \\partial L/\\partial x_j; \\quad L_\\lambda = \\partial L/\\partial \\lambda\n\\]\n\n\n\n拉格朗日定理: 假定\\(x\\)为一个二维向量，\\(c\\)为标量，函数\\(F\\)和\\(G\\)取标量值。定义拉格朗日函数\\(L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\\)。如果没有其他约束（如非负约束条件），\\(\\bar{x}\\)使\\(F(x)\\)取得最大值且满足\\(G(x) = c\\)，并且如果对于至少一个\\(j, G_j(\\bar{x}) \\neq 0\\)成立，那么存在一个\\(\\lambda\\)值，使得 \\[\n    L_j(\\bar{x}, \\lambda) = 0, \\quad j = 1, 2; \\quad L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]\n\n\n\n考虑一个消费者在价格分别为\\(p, q\\)的两种商品\\(x,y\\)之间进行选择，其预算约束为\\(px + qy = I\\)，效用函数为\n\\[\n    U(x, y) = \\alpha \\ln(x) + \\beta \\ln(y)\n\\] 求消费者在两种商品上的最优支出，及其在总收入中所占的份额。\n\n\n\n假设消费者面对两种商品\\(x, y\\)，每种商品分别存在一个维持生存的最低消费数量\\(x_0, y_0\\)。消费者的效用函数形式为：\n\\[\n    \\begin{aligned}\nU(x, y) & = \\alpha \\ln(x - x_0) + \\beta \\ln(y - y_0) \\\\\n& \\alpha + \\beta = 1\n\\end{aligned}\n\\]\n两种商品的价格分别为\\(p, q\\)，消费者的总收入为\\(I\\)，求消费者在两种商品上的最优支出。\n\n\n\n考虑一个生产者，他以每年\\(r\\)的价格租赁机器\\(K\\)，以每年\\(w\\)的工资雇佣劳动\\(L\\)，以生产产出\\(Q\\)，其中\n\\[\n    Q = \\sqrt{K} + \\sqrt{L}\n\\]\n假定他想以最小的成本来生产固定数量的\\(Q\\)。找出他的要素需求函数。证明拉格朗日乘子为下式：\n\\[\n    \\lambda = 2wrQ/(w + r)\n\\] 并为\\(\\lambda\\)给出一个经济学解释。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#问题的陈述",
+    "href": "lecture2_lagrange.html#问题的陈述",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假定选择变量为\\(x_1\\)和\\(x_2\\)， 其向量形式为： \\[\nx =  \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n             x_1 \\\\\n            x_2\n        \\end{array}\n        \\right)\n\\]\n目标函数为\\(F(x)\\)，约束函数是一般的非线性函数\\(G(x) = c\\)。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-i",
+    "href": "lecture2_lagrange.html#套利方法-i",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假设从某个特定的点\\(\\bar{x} = (\\bar{x}_1, \\bar{x}_2)\\)开始，考虑一个无穷小的变动：\n\\[\ndx = \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n          dx_1  \\\\\n          dx_2\n    \\end{array}\\right)\n\\]\n我们要求\\(\\bar{x} + dx\\)仍然满足约束条件，并看它是否能产生一个更高的目标函数值。\n将目标函数\\(F(x)\\)对于\\(x_1\\)和\\(x_2\\)的偏导数分别记作\\(F_1(x)\\)和\\(F_2(x)\\)。当我们在点\\(\\bar{x}\\)处计算这两个值时，它们的值分别写作\\(F_1(\\bar{x})\\)和\\(F_2(\\bar{x})\\)。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-ii",
+    "href": "lecture2_lagrange.html#套利方法-ii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "从任意一点\\(x\\)到\\(x + dx\\)的微小变动所引起的\\(F(x)\\)的变动的一阶泰勒展开为： \\[\n    \\begin{aligned}\ndF(x) & = F(x + dx) - F(x) \\\\\n& = F_1(x)dx_1 + F_2(x) dx_2\n\\end{aligned}\n\\]\n对\\(G(x)\\)的变动也有一个类似的表达式：\n\\[\n    dG(x) = G_1(x) dx_1 + G_2(x) dx_2\n\\]\n如果\\(\\bar{x}\\)和\\(\\bar{x} + dx\\)同时满足约束条件，那么必然有\\(dG(\\bar{x}) = 0\\)，即：\n\\[\n    G_1(\\bar{x}) dx_1 = - G_2(\\bar{x}) dx_2 = dc\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-iii",
+    "href": "lecture2_lagrange.html#套利方法-iii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "首先假定\\(G_1(\\bar{x})\\)和\\(G_2(\\bar{x})\\)都是非零的，那么：\n\\[\n    dx_1 = dc / G_1(\\bar{x}), \\quad dx_2 = - dc / G_2(\\bar{x})\n\\]\n因此目标函数值的变动为：\n\\[\ndF(\\bar{x}) = [F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x})]dc\n\\] 当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)都不碰到某个自然边界（如零）时，变动量\\(dc\\)就可以是任意符号的。如果\\(\\bar{x}\\)是最优的，那么对于任意变动\\(dc\\)而言，\\(F(\\bar{x})\\)都不会增加，即：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x}) \\Longrightarrow\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-iv",
+    "href": "lecture2_lagrange.html#套利方法-iv",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)位于某个自然边界时:\n\n当\\(x_1 \\geq 0\\)且位于下界时，我们会得到什么条件？\n当\\(x_1 \\leq 100\\)且位于上界时，我们会得到什么条件？",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#必要条件和充分条件",
+    "href": "lecture2_lagrange.html#必要条件和充分条件",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "如果\\(G(x) = c\\)的约束下在\\(\\bar{x}\\)点可以使得\\(F(x)\\)取得最大值，那么必然有：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n换言之，上述条件是\\(\\bar{x}\\)为最优解的一阶必要条件。\n一阶必要条件的价值在于，在寻找最优解时有助于缩小搜寻的范围：\n\n如果仅有唯一的\\(\\bar{x}\\)同时满足约束条件和一阶必要条件，那么它一定是我们所要寻找的最优解\n如果存在多个满足一阶条件的解，那么还必须采用其他办法来进行判断\n对于最大化问题和最小化问题而言，一阶必要条件是相同的！",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日方法-i",
+    "href": "lecture2_lagrange.html#拉格朗日方法-i",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "对于目标函数为\\(F(x)\\)、约束条件为\\(G(x) = c\\)的最优化问题，定义拉格朗日函数： \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n其中\\(\\lambda\\)被称为待定的拉格朗日乘子。记\\(L\\)的偏导数分别为：\n\\[\n    L_j = \\partial L/\\partial x_j; \\quad L_\\lambda = \\partial L/\\partial \\lambda\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日方法-ii",
+    "href": "lecture2_lagrange.html#拉格朗日方法-ii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "拉格朗日定理: 假定\\(x\\)为一个二维向量，\\(c\\)为标量，函数\\(F\\)和\\(G\\)取标量值。定义拉格朗日函数\\(L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\\)。如果没有其他约束（如非负约束条件），\\(\\bar{x}\\)使\\(F(x)\\)取得最大值且满足\\(G(x) = c\\)，并且如果对于至少一个\\(j, G_j(\\bar{x}) \\neq 0\\)成立，那么存在一个\\(\\lambda\\)值，使得 \\[\n    L_j(\\bar{x}, \\lambda) = 0, \\quad j = 1, 2; \\quad L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子隐含不变预算份额的偏好",
+    "href": "lecture2_lagrange.html#例子隐含不变预算份额的偏好",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "考虑一个消费者在价格分别为\\(p, q\\)的两种商品\\(x,y\\)之间进行选择，其预算约束为\\(px + qy = I\\)，效用函数为\n\\[\n    U(x, y) = \\alpha \\ln(x) + \\beta \\ln(y)\n\\] 求消费者在两种商品上的最优支出，及其在总收入中所占的份额。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子线性支出系统",
+    "href": "lecture2_lagrange.html#例子线性支出系统",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假设消费者面对两种商品\\(x, y\\)，每种商品分别存在一个维持生存的最低消费数量\\(x_0, y_0\\)。消费者的效用函数形式为：\n\\[\n    \\begin{aligned}\nU(x, y) & = \\alpha \\ln(x - x_0) + \\beta \\ln(y - y_0) \\\\\n& \\alpha + \\beta = 1\n\\end{aligned}\n\\]\n两种商品的价格分别为\\(p, q\\)，消费者的总收入为\\(I\\)，求消费者在两种商品上的最优支出。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子生产和成本最小化",
+    "href": "lecture2_lagrange.html#例子生产和成本最小化",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "考虑一个生产者，他以每年\\(r\\)的价格租赁机器\\(K\\)，以每年\\(w\\)的工资雇佣劳动\\(L\\)，以生产产出\\(Q\\)，其中\n\\[\n    Q = \\sqrt{K} + \\sqrt{L}\n\\]\n假定他想以最小的成本来生产固定数量的\\(Q\\)。找出他的要素需求函数。证明拉格朗日乘子为下式：\n\\[\n    \\lambda = 2wrQ/(w + r)\n\\] 并为\\(\\lambda\\)给出一个经济学解释。",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#多个变量和多个约束条件",
+    "href": "lecture2_lagrange.html#多个变量和多个约束条件",
+    "title": "拉格朗日方法",
+    "section": "多个变量和多个约束条件",
+    "text": "多个变量和多个约束条件\n假设有\\(n\\)个选择变量\\((x_1, x_2, \\cdots, x_n)\\)和\\(m\\)个约束：\n\\[\n    G^{i}(x) = c_i,\\ i = 1, 2, \\cdots, m, \\quad m &lt; n\n\\]\n对每个约束我们定义一个乘子\\(\\lambda_i\\)，并定义拉格朗日函数为：\n\\[\n    L(x_1, \\cdots, x_n, \\lambda_1, \\cdots, \\lambda_m) = F(x_1, \\cdots, x_n) + \\sum_{i=1}^m \\lambda_i[c_i - G^{i}(x_1, \\cdots, x_n)]\n\\] 则在最优解\\(\\bar{x}\\)处满足的一阶必要条件为： \\[\n    \\frac{\\partial L}{\\partial x_j} = 0,\\ j = 1, 2, \\cdots, n\n\\] 和 \\[\n    \\frac{\\partial L}{\\partial \\lambda_i} = 0,\\ i = 1, 2, \\cdots, m\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#矩阵形式-i",
+    "href": "lecture2_lagrange.html#矩阵形式-i",
+    "title": "拉格朗日方法",
+    "section": "矩阵形式 I",
+    "text": "矩阵形式 I\n定义一个矩阵形式的最优化问题： \\[\n\\begin{aligned}\n\\mathop{\\max/\\min}_{\\mathbf{x}} & \\quad F(\\mathbf{x}) \\\\\n\\text{s.t.} & \\quad G(\\mathbf{x}) = c\n\\end{aligned}\n\\]\n\n\\(\\mathbf{x} = (x_1, x_2, \\cdots, x_n)\\)是一个n维向量\n\\(G\\)为由分量函数\\(G^{i}\\)组成的列向量函数\n每个\\(G^{i}\\)的偏导数组成行向量\\(G^{i}_{\\mathbf{x}}(\\mathbf{x})\\)\n目标函数\\(F(\\mathbf{x})\\)的偏导数组成行向量\\(F_{x}(\\mathbf{x})\\)\n拉格朗日乘子构成行向量\\(\\lambda = (\\lambda_1, \\lambda_2, \\cdots, \\lambda_m)\\)",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#矩阵形式-ii",
+    "href": "lecture2_lagrange.html#矩阵形式-ii",
+    "title": "拉格朗日方法",
+    "section": "矩阵形式 II",
+    "text": "矩阵形式 II\n在矩阵形式下，拉格朗日函数可以写作： \\[\n    L(\\mathbf{x}, \\lambda) = F(\\mathbf{x}) + \\lambda[c - G(\\mathbf{x})]\n\\] 对应的一阶条件： \\[\n    \\begin{aligned}\nL_x(\\bar{\\mathbf{x}}, \\lambda) & = 0 \\\\\nL_{\\lambda}(\\bar{\\mathbf{x}}, \\lambda) & = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理矩阵形式",
+    "href": "lecture2_lagrange.html#拉格朗日定理矩阵形式",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理：矩阵形式",
+    "text": "拉格朗日定理：矩阵形式\n拉格朗日定理：假定\\(\\mathbf{x}\\)是\\(n\\)维向量，\\(c\\)是\\(m\\)维向量，\\(F\\)为标量值函数，\\(G\\)为\\(m\\)维向量值函数，且\\(m &lt; n\\)。定义\n\\[\n    L(\\mathbf{x}, \\lambda) = F(\\mathbf{x}) + \\lambda[c - G(\\mathbf{x})]\n\\]\n若\\(\\bar{x}\\)在\\(G(x) = c\\)约束下最大化\\(F(x)\\)，且\\(G_x(\\bar{x})\\)的秩\\(=m\\)，则存在\\(\\lambda\\)满足：\n\\[\n\\begin{aligned}\nL_x(\\bar{\\mathbf{x}}, \\lambda) & = 0 \\\\\nL_{\\lambda}(\\bar{\\mathbf{x}}, \\lambda) & = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#非负变量",
+    "href": "lecture2_lagrange.html#非负变量",
+    "title": "拉格朗日方法",
+    "section": "非负变量",
+    "text": "非负变量\n经济学中常假定变量\\(x_j\\)非负： \\[\n    L_j(\\bar{\\mathbf{x}}) = F_j(\\bar{\\mathbf{x}}) - \\sum_{i=1}^m \\lambda_i G^{i}_j(\\bar{\\mathbf{x}}) \\leq 0\n\\] 需满足： \\[\n    L_{j}(\\bar{\\mathbf{x}}) \\leq 0,\\ \\bar{\\mathbf{x}} \\geq 0\n\\] 且至少有一个等式成立",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#互补松弛条件",
+    "href": "lecture2_lagrange.html#互补松弛条件",
+    "title": "拉格朗日方法",
+    "section": "互补松弛条件",
+    "text": "互补松弛条件\n条件：\n\\[\n    \\bar{\\mathbf{x}} L_{j}(\\bar{\\mathbf{x}}) = 0\n\\]\n互补松弛条件\n\n等式成立时为紧约束\n不等式成立时为松约束\n子项说明：松约束允许调整空间\n互补性：一个松弛必伴随另一个紧致",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理非负变量",
+    "href": "lecture2_lagrange.html#拉格朗日定理非负变量",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理：非负变量",
+    "text": "拉格朗日定理：非负变量\n定理：定义 \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n若\\(\\bar{x}\\)在\\(G(x)=c\\)和\\(x\\geq0\\)约束下最大化解，且\\(G_x(\\bar{x})\\)满秩，则存在\\(\\lambda\\)满足： \\[\n\\begin{cases}\nL_{x}(\\bar{x}, \\lambda) \\leq 0 \\\\\n\\bar{x} \\geq 0 \\\\\n\\text{互补松弛条件}\n\\end{cases}\n\\] 和\n\\[\n    L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-i",
+    "href": "lecture2_lagrange.html#不等式约束-i",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 I",
+    "text": "不等式约束 I\n考虑更一般的不等式约束，例如假定约束中的第一个分量只需要以不等式形式成立： \\[\nG^{1}(x) \\leq c_1\n\\]\n此时我们可以定义一个新的变量\\(x_{n+1} = c_1 - G^{1}(x)\\)，使得\n\n不等式约束变成了一个等式约束\n新变量\\(x_{n+1}\\)面临非负约束",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-ii",
+    "href": "lecture2_lagrange.html#不等式约束-ii",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 II",
+    "text": "不等式约束 II\n记新问题的拉格朗日函数为： \\[\n\\begin{aligned}\n\\hat{L}(x_1, \\cdots, x_n, x_{n+1}, \\lambda_1, \\cdots, \\lambda_m) &= F(x_1, \\cdots, x_n)\\\\\n&\\quad + \\lambda_1 [c_1 - G^{1}(x) - x_{n+1}] \\\\\n&\\quad + \\sum_{i=2}^m \\lambda_i[c_i - G^{i}(x)] \\\\\n&= L(x, \\lambda) - \\lambda_1 x_{n+1}output\n\\end{aligned}\n\\]\n一阶条件： - \\(\\frac{\\partial \\hat{L}}{\\partial x_{n+1}} = -\\lambda_1 \\leq 0\\) - \\(x_{n+1} \\geq 0\\)（互补松弛条件）",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-iii",
+    "href": "lecture2_lagrange.html#不等式约束-iii",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 III",
+    "text": "不等式约束 III\n当\\(x_{n+1} = c_1 - G^{1}(x) = \\frac{\\partial L}{\\partial \\lambda_1}\\)时，条件可写为： \\[\n\\frac{\\partial L}{\\partial \\lambda_1} \\geq 0,\\quad \\lambda_1 \\geq 0\n\\]\n满足互补松弛条件：",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理-不等式约束",
+    "href": "lecture2_lagrange.html#拉格朗日定理-不等式约束",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理: 不等式约束",
+    "text": "拉格朗日定理: 不等式约束\n定理 定义拉格朗日函数： \\[\nL(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n若\\(\\bar{x}\\)在\\(G(x) \\leq c\\)下最大化\\(F\\)，且约束规范成立，则存在\\(\\lambda\\)满足：\n\\[\n\\begin{cases}\nL_x(\\bar{x}, \\lambda) = 0 \\\\\nL_\\lambda(\\bar{x}, \\lambda) \\geq 0 \\\\\n\\lambda \\geq 0 \\quad \\text{(互补松弛)}\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#库恩-塔克定理",
+    "href": "lecture2_lagrange.html#库恩-塔克定理",
+    "title": "拉格朗日方法",
+    "section": "库恩-塔克定理",
+    "text": "库恩-塔克定理\n定理 考虑最一般情形： \\[\n\\begin{aligned}\n\\text{最大化} \\quad & F(x) \\\\\n\\text{约束} \\quad & G(x) \\leq c \\\\\n& x \\geq 0\n\\end{aligned}\n\\]\n拉格朗日函数： \\[\nL(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n最优解\\(\\bar{x}\\)满足：\n\\[\n\\begin{cases}\nL_x(\\bar{x}, \\lambda) \\leq 0, \\bar{x} \\geq 0 \\quad \\text{(互补松弛)} \\\\\nL_\\lambda(\\bar{x}, \\lambda) \\geq 0, \\lambda \\geq 0 \\quad \\text{(互补松弛)}\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子-拟线性偏好",
+    "href": "lecture2_lagrange.html#例子-拟线性偏好",
+    "title": "拉格朗日方法",
+    "section": "例子: 拟线性偏好",
+    "text": "例子: 拟线性偏好\n问题 消费者效用函数： \\[\nU(x,y) = y + a\\ln x \\quad (a &gt; 0)\n\\]\n求解 预算约束下最大化效用： \\[\n\\begin{aligned}\n\\max \\quad & y + a\\ln x \\\\\n\\text{s.t.} \\quad & px + qy \\leq I \\\\\n& x &gt; 0,\\ y &gt; 0\n\\end{aligned}\n\\]\n关键步骤：构造拉格朗日函数并求解一阶条件",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子-技术性闲置",
+    "href": "lecture2_lagrange.html#例子-技术性闲置",
+    "title": "拉格朗日方法",
+    "section": "例子: 技术性闲置",
+    "text": "例子: 技术性闲置\n生产可行性约束： \\[\n\\begin{cases}\n2x + y \\leq 300 \\quad (\\text{劳动}) \\\\\nx + 2y \\leq 450 \\quad (\\text{土地})\n\\end{cases}\n\\]\n优化分析： 1. 绘制可行域 2. 识别极值点 3. 计算最优解\n数学模型： \\[\n\\begin{aligned}\n\\max \\quad & \\pi = p_x x + p_y y \\\\\n\\text{s.t.} \\quad & 2x + y \\leq 300 \\\\\n& x + 2y \\leq 450 \\\\\n& x \\geq 0,\\ y \\geq 0\n\\end{aligned}\n\\]\n求解策略： - 使用库恩-塔克条件 - 分析边角解可能性",
+    "crumbs": [
+      "Home",
+      "拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture1.html",
+    "href": "lecture1.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "中文测试",
+    "crumbs": [
+      "Home",
+      "Test"
+    ]
+  },
+  {
+    "objectID": "lecture1.html#test",
+    "href": "lecture1.html#test",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "中文测试",
+    "crumbs": [
+      "Home",
+      "Test"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "Date: 周二 14:00-16:40\nRoom: 沙河主教 401\nInstructors: 范翻\n\n\n\n\n\n\n\nThis workshop template\n\n\n\nThis workshop template contains 4 pages:\n\nHome: index.qmd (this page)\nAbout: about.qmd\n\nTwo content pages\n\nPage without code: part_1_prep.qmd\nPage with R code: part_2_eda.qmd\n\nIt is straightforward to add more content pages: you need to create a new .qmd file (or copy/paste the existing ones), then link the new page inside _quarto.yml.\n\n\n\n\n\n\n\n\nHomepage of your workshop\n\n\n\nThis is the homepage index.qmd for your workshop, so ideally it should contain some key information such as time and place, instructors and information of the course/workshop.\nIt should be easy to navigate.\n\n\n\nWelcome!\n\nThe goal of the workshop is to … (insert your message)\nFor example, introduce kep concepts in machine learning, such as regularisation.\nWorkshop material can be found in the workshop github repository.\n\n\nLearning Objectives\nAt the end of the tutorial, participants will be able to\n\nunderstand key concepts for … (insert your message)\nFor example, training machine learning models such as regularisation.\nanother objective\n\n\n\nPre-requisites\n\nBasic familiarity with R\nSome other knowledge\n\n\n\n\nSchedule\n\n\n\n\n\n\nTabular schedule\n\n\n\nIt can be useful to include a tabular schedule with links.\n\n\n\n\n\nTime\nTopic\nPresenter\n\n\n\n\n9:00 - 10:30\nSession 1: Preparation\nInstructor A\n\n\n10:45 - 12:00\nSession 2: Exploratory Analysis\nInstructor B, C"
   }
 ]

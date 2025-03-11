@@ -2,19 +2,29 @@ project:
   type: website
   output-dir: docs
 
+author: "范翻"
+institute: "中央财经大学(CCFD)"
 
 website:
   title: "经济学中的优化方法"
   navbar:
     left:
       - href: index.qmd
-        text: 首页
+        text: Home
       - href: about.qmd
-        text: 关于
+        text: About
     right:
       - icon: github
-        href: https://github.com/yourrepo
+        href: https://github.com
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - lecture1.qmd
+      - lecture2_lagrange.qmd
+      - lecture3_shadow_price.qmd
   page-navigation: true
+
 
 format:
   # 网页格式
@@ -26,20 +36,22 @@ format:
     embed-resources: true
   # Beamer幻灯片
   beamer:
-    format: beamer
-    output-dir: slides  # Beamer独立输出目录
-    keep-md: true
-    pdf-engine: xelatex
+    latex-engine: xelatex
+    pdf-engine: latexmk  # 启用latexmk引擎
+    pdf-engine-opts: 
+      - -xelatex         # 指定latexmk使用xelatex
+      - -f               # 强制完整编译流程
+    template: templates/cufe-red.latex
+    documentclass: beamer
+    theme: Dresden
+    colortheme: seahorse
+    fonttheme: professionalfonts
     slide-level: 2
-    # template: templates/beamer-template.tex
-    include-in-header:
-      text: |
-        \usepackage{ctex}
-        \usepackage{fontspec}
-        \setCJKmainfont{Songti SC}
-        \usetheme{Madrid}
-        \usecolortheme{dolphin}
+    incremental: true
+    toc: true
+    toc-title: "目录"
 execute:
   keep-md: false
+  keep-tex: true
 
 editor: visual

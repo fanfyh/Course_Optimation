@@ -1,0 +1,31 @@
+% 确保Quarto颜色系统初始化
+\usepackage{xcolor}
+\definecolor{quarto-callout-note-color}{HTML}{E8E8E8}
+\definecolor{quarto-callout-note-color-frame}{HTML}{808080}
+\definecolor{quarto-callout-note-icon-color}{HTML}{404040}
+
+\definecolor{quarto-callout-tip-color}{HTML}{D9E6F2}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{2B5C8A}
+\definecolor{quarto-callout-tip-icon-color}{HTML}{1E3B54}
+
+% 加载必要包
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+% 覆盖默认callout样式
+\renewtcbox{\quartoCallout}[1][]{
+  enhanced jigsaw,
+  colback=quarto-callout-#1-color,
+  colframe=quarto-callout-#1-color-frame,
+  arc=.35mm,
+  left=2mm,
+  right=2mm,
+  top=1mm,
+  bottom=1mm,
+  boxsep=0mm,
+  leftrule=0.5mm,
+  rightrule=0.5mm,
+  toprule=0.5mm,
+  bottomrule=0.5mm,
+  boxrule=0.5mm,
+}
