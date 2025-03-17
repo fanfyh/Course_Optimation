@@ -1,0 +1,291 @@
+% templates/cufe-template.latex
+\documentclass{beamer}
+\usepackage{ctex}
+\usepackage{cufe}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{bookmark}
+\tcbuselibrary{skins, breakable}  % 添加必要库
+
+% 修复enhanced jigsaw为enhancedjigsaw
+\tcbset{
+    mycallout/.style={
+        enhancedjigsaw,  % 正确键名（无空格）
+        breakable,
+        colback=blue!5,
+        colframe=blue!50!black
+    }
+}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\title{财政学专题：中国式财政分权}
+\subtitle{从理论到实践的双重视角}
+\author{范翻}
+\institute{中央财经大学财政学院}
+\date{2023-10-15}
+% ==== 加载自定义设置 ====
+% \input{templates/cufe-settings.sty}  % 可选，用于集中存放样式
+% defs
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+\begin{document}
+
+% ==== 自动插入标题页 ==== 
+\kaishu  % 楷书样式
+\begin{frame}
+  \titlepage
+  \begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.2\linewidth]{pic/cufe_logo_blue.eps}
+  \end{figure}
+\end{frame}
+
+
+
+% ==== Quarto生成的内容 ====
+\section{第一部分：经典财政分权理论（25分钟）}\label{ux7b2cux4e00ux90e8ux5206ux7ecfux5178ux8d22ux653fux5206ux6743ux7406ux8bba25ux5206ux949f}
+
+\begin{frame}{第一代分权理论}
+\phantomsection\label{ux7b2cux4e00ux4ee3ux5206ux6743ux7406ux8bba}
+\vspace{-2mm}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+  \textbf{Tiebout模型} (1956)
+  \begin{itemize}\footnotesize
+    \item 用脚投票机制
+    \item 7大严格假设
+    \item 辖区竞争理论
+  \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+  \textbf{Hayek理论} (1945)
+  \begin{itemize}\footnotesize
+    \item 分散知识利用
+    \item 地方政府信息优势
+    \item 集中决策困境
+  \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Oates分权定理}
+\phantomsection\label{oatesux5206ux6743ux5b9aux7406}
+Oates用一个一般均衡模型从理论上证明了财政分权和合理性，并提出分权定理。假定：
+
+\begin{itemize}[<+->]
+\item
+  假设社会中存在A和B两个人口集合，每个集合内部的人口对相同物品偏好相同，但A集合和B集合之间的偏好不同；
+\item
+  假设全体社会成员都消费两种物品，分别是X和Y，其中物品Y可以由中央政府统一供给，也可以由两个人口集合的地方政府分别提供；
+\item
+  全社会的收入分配达到最优。
+\end{itemize}
+
+Oates证明，由于两个人口集合对物品Y的偏好不同，如果由中央政府对每个人口集合提供相同数量的Y时，会破坏社会福利最大化条件，而地方政府可以根据自己的选民对物品Y的偏好，提供不同数量的Y，从而能够满足社会福利最大化条件。
+\end{frame}
+
+\begin{frame}{Tiebout 模型的前提假设}
+\phantomsection\label{tiebout-ux6a21ux578bux7684ux524dux63d0ux5047ux8bbe}
+Tiebout(1956)首次把主流公共物品理论对全国性公共物品需求分析扩展到对地方公共物品的需求分析，将地方政府引入公共物品供给模型。如果满足一下假设：
+
+\begin{itemize}[<+->]
+\item
+  （1）选民可以自由流动，迁移至可以满足其偏好的地区；
+\item
+  （2）选民完全了解自己的偏好，并且可以对公共品的供给做出选择；
+\item
+  （3）有足够多的辖区供选民选择；
+\item
+  （4）不考虑就业机会的限制；
+\item
+  （5）在不同辖区之间公共物品的供给不存在外部经济或外部不经济；
+\item
+  （6）每个辖区有一个最优的人口规模，进而是最小的公共物品供给成本；
+\item
+  （7）处于最优人口规模以上的辖区也会因为公共物品供给无法满足居民需要而迫使居民离开
+\end{itemize}
+\end{frame}
+
+\begin{frame}{第二代分权理论}
+\phantomsection\label{ux7b2cux4e8cux4ee3ux5206ux6743ux7406ux8bba}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+  \textbf{第一代财政分权理论} (1956)
+  \begin{itemize}\footnotesize
+    \item 核心逻辑
+        \begin{itemize}
+            \item 信息优势
+            \item 辖区竞争
+        \end{itemize}
+    \item 批判
+        \begin{itemize}
+            \item 假设条件大多比较苛刻(提问：比如说？)
+            \item 不现实地假设了"仁慈政府"；
+            \item 关注供给效率，而忽视经济发展问题
+        \end{itemize}
+  \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+  \textbf{第二代分权理论} (1945)
+  \begin{itemize}\footnotesize
+    \item 主要问题
+        \begin{itemize}
+            \item 掠夺之手？扶持之手？
+        \end{itemize}
+    \item 核心逻辑
+        \begin{itemize}
+            \item 可信承诺机制
+            \item 激励相容条件
+        \end{itemize}
+  \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{保护市场型财政联邦主义}
+\phantomsection\label{ux4fddux62a4ux5e02ux573aux578bux8d22ux653fux8054ux90a6ux4e3bux4e49}
+(Qian \& Weingast,
+1997)提出只要符合以下五个条件就可以形成有效的\textbf{市场维护型联邦主义}:
+
+\begin{itemize}[<+->]
+\item
+  (1)政府内存在一个层级体系；
+\item
+  (2)中央政府与地方政府之间存在明确的权力划分，在各自的权力范围内享有充分的自主权，但都不拥有政策法规制定的垄断权；
+\item
+  (3)当地方自主权制度化以后，可以对中央政府的权力形成强有力的制约，使得二者之间的权力分配具有可信的持久性
+\item
+  (4)地方政府在其他地域范围内对地方经济负有主要责任，同时存在一个统一的全国市场，使得商品和要素可以跨地区自由流动；
+\item
+  (5)各级政府都面临硬的预算约束。
+\end{itemize}
+\end{frame}
+
+\section{第二部分：中国分权实践（30分钟）}\label{ux7b2cux4e8cux90e8ux5206ux4e2dux56fdux5206ux6743ux5b9eux8df530ux5206ux949f}
+
+\begin{frame}{财政承包制(1980-1993)}
+\phantomsection\label{ux8d22ux653fux627fux5305ux52361980-1993}
+\begin{table}[htbp]
+\centering
+\caption{边际分成比例演变}
+\begin{tabular}{lcccc}
+\toprule
+年份 & 1980 & 1985 & 1988 & 1993 \\
+\midrule
+边际分成(\%) & 68.2 & 82.2 & 87.7 & (税改) \\
+增值税分成 & -- & 30\%留省 & -- & 25\%留省 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{分税制改革工具包}
+\phantomsection\label{ux5206ux7a0eux5236ux6539ux9769ux5de5ux5177ux5305}
+\end{frame}
+
+\begin{frame}{转移支付机制}
+\phantomsection\label{ux8f6cux79fbux652fux4ed8ux673aux5236}
+\footnotesize
+
+\[
+Transfer_{it} = \alpha + \beta Gap_{it} + \gamma Politics_{it} + \epsilon_{it}
+\] 其中：
+
+\begin{itemize}
+\item $Gap_{it}$: 财政缺口 
+\item $Politics_{it}$: 政治因素
+\end{itemize}
+\end{frame}
+
+\section{第三部分：实证研究方法（25分钟）}\label{ux7b2cux4e09ux90e8ux5206ux5b9eux8bc1ux7814ux7a76ux65b9ux6cd525ux5206ux949f}
+
+\begin{frame}{内生性问题破解策略}
+\phantomsection\label{ux5185ux751fux6027ux95eeux9898ux7834ux89e3ux7b56ux7565}
+\footnotesize
+
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+  \begin{exampleblock}{自然实验法}
+    1994年分税制改革\\
+    2002年所得税分享改革\\
+    \textcolor{gray}{断点回归设计}
+  \end{exampleblock}
+\end{column}
+\begin{column}{0.45\textwidth}
+  \begin{alertblock}{工具变量法}
+    地形破碎度\\
+    历史税率\\
+    中央任职官员比例
+  \end{alertblock}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{最新研究进展}
+\phantomsection\label{ux6700ux65b0ux7814ux7a76ux8fdbux5c55}
+\footnotesize
+
+\begin{itemize}
+\item[$\triangleright$] 机器学习测度分权指标(JEEM,2023)
+\item[$\triangleright$] 卫星灯光数据测度区域竞争(QJE,2022)
+\item[$\triangleright$] 文本分析识别政策偏向(AER,2023)
+\end{itemize}
+\end{frame}
+
+\section{第四部分：新发展趋势（10分钟）}\label{ux7b2cux56dbux90e8ux5206ux65b0ux53d1ux5c55ux8d8bux52bf10ux5206ux949f}
+
+\begin{frame}{支出责任划分改革}
+\phantomsection\label{ux652fux51faux8d23ux4efbux5212ux5206ux6539ux9769}
+\end{frame}
+
+\begin{frame}{Partial Decentralization理论}
+\phantomsection\label{partial-decentralizationux7406ux8bba}
+\[ 
+W = \alpha W_{central} + (1-\alpha)W_{local}
+\] 其中\(\alpha\)反映支出责任划分强度
+\end{frame}
+
+\section{课后研读文献}\label{ux8bfeux540eux7814ux8bfbux6587ux732e}
+
+\begin{frame}{课后研读文献}
+\footnotesize
+
+```\{=latex\}
+
+\begin{enumerate}
+\item Qian \& Weingast (1997) 中文版《转型中的地方政府》
+\item 周飞舟 (2006)《分税制十年》
+\item Xu (2022) Rethinking Fiscal Federalism
+\end{enumerate}
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Qian1997}
+Qian, Y., \& Weingast, B. R. (1997). Federalism as a commitment to
+preserving market incentives. \emph{Journal of Economic Perspectives},
+\emph{11}(4), 83--92.
+\href{https://doi.org/DOI:\%2010.1257/jep.11.4.83}{https://doi.org/DOI:
+10.1257/jep.11.4.83}
+
+\end{CSLReferences}
+\end{frame}
+
+\end{document}
