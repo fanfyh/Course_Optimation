@@ -7,6 +7,11 @@
 \usepackage{tcolorbox}
 \usepackage{bookmark}
 \tcbuselibrary{skins, breakable}  % 添加必要库
+% 添加至模板开头
+\makeatletter
+\newcommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\makeatother
 
 % 修复enhanced jigsaw为enhancedjigsaw
 \tcbset{

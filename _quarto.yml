@@ -23,6 +23,12 @@ website:
       - lecture1.qmd
       - lecture2_lagrange.qmd
       - lecture3_shadow_price.qmd
+      - lecture4_value_function.qmd
+      - lecture5_convex_set.qmd
+      - lecture6_cancave_optimization.qmd
+      - lecture7_second_order.qmd
+      - lecture8_uncertainy.qmd
+      - lecture9_time_related.qmd
   page-navigation: true
 
 
@@ -47,7 +53,6 @@ format:
     colortheme: seahorse
     fonttheme: professionalfonts
     slide-level: 2
-    incremental: true
     toc: true
     toc-title: "目录"
 execute:

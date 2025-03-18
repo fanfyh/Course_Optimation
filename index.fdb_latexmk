@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1741660619.26075 "index.xdv" "index.pdf" "index" 1741660620.02382 0
-  "index.xdv" 1741660619.10656 25232 0605310b30e61275f81efcb922e97aea "xelatex"
+["xdvipdfmx"] 1742257527.60916 "index.xdv" "index.pdf" "index" 1742257528.3054 0
+  "index.xdv" 1742257527.51178 25232 512eee646d988c804a365f76f2d1f4fe "xelatex"
   (generated)
   "index.pdf"
   (rewritten before read)
-["xelatex"] 1741660617.68621 "index.tex" "index.xdv" "index" 1741660620.02141 2
-  "/System/Library/Fonts/Menlo.ttc" 1738688271 2156036 ec05dfca6821d85440da0899493002c3 ""
+["xelatex"] 1742257526.20508 "index.tex" "index.xdv" "index" 1742257528.30308 2
+  "/System/Library/Fonts/Menlo.ttc" 1741255562 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
@@ -249,10 +249,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741515417 5639826 90c4cbe0c8040e5284f829b4c9f22cff ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "cufe.sty" 1740463546 3537 b91ac70be7779113490e39de75675abf ""
-  "index.aux" 1741660619.1063 401 b8c8a34a93b9392573d694a858ec408f "xelatex"
+  "index.aux" 1742257527.51169 401 b8c8a34a93b9392573d694a858ec408f "xelatex"
   "index.nav" 0 -1 0 ""
-  "index.tex" 1741660614.28164 5589 bf0a946965e841c3a3fc40d2b08534ee ""
-  "index.vrb" 1741660619.0911 1638 57b7a67bd36e3c303d9dcc7844b1b9e9 "xelatex"
+  "index.tex" 1742257523.09769 5690 f22c19a5261dd7bfb96be8e524ca1d82 ""
+  "index.vrb" 1742257527.49774 1626 e0614d791904f427d509af3661357677 "xelatex"
   "pic/cufe_logo_blue.eps" 1740463546 1459470 ef91a8dcffa15b1a0a5684062673e8b1 ""
   (generated)
   "index.aux"

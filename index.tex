@@ -7,6 +7,11 @@
 \usepackage{tcolorbox}
 \usepackage{bookmark}
 \tcbuselibrary{skins, breakable}  % 添加必要库
+% 添加至模板开头
+\makeatletter
+\newcommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\makeatother
 
 % 修复enhanced jigsaw为enhancedjigsaw
 \tcbset{
@@ -69,11 +74,11 @@ Instructors: 范翻
 \end{frame}
 
 \begin{frame}[fragile]
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{This workshop template}, colframe=quarto-callout-note-color-frame, rightrule=.15mm, toprule=.15mm, arc=.35mm, breakable, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, opacityback=0, opacitybacktitle=0.6, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{This workshop template}, toprule=.15mm, toptitle=1mm, breakable, bottomtitle=1mm, opacitybacktitle=0.6, leftrule=.75mm, opacityback=0, coltitle=black, colframe=quarto-callout-note-color-frame, titlerule=0mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, bottomrule=.15mm, arc=.35mm]
 
 This workshop template contains 4 pages:
 
-\begin{itemize}[<+->]
+\begin{itemize}
 \item
   Home: \texttt{index.qmd} (this page)
 \item
@@ -82,7 +87,7 @@ This workshop template contains 4 pages:
 
 Two content pages
 
-\begin{itemize}[<+->]
+\begin{itemize}
 \item
   Page without code: \texttt{part\_1\_prep.qmd}
 \item
@@ -95,7 +100,7 @@ new page inside \texttt{\_quarto.yml}.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Homepage of your workshop}, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, toprule=.15mm, arc=.35mm, breakable, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, opacityback=0, opacitybacktitle=0.6, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Homepage of your workshop}, toprule=.15mm, toptitle=1mm, breakable, bottomtitle=1mm, opacitybacktitle=0.6, leftrule=.75mm, opacityback=0, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, bottomrule=.15mm, arc=.35mm]
 
 This is the \textbf{homepage} \texttt{index.qmd} for your workshop, so
 ideally it should contain some key information such as \textbf{time and
@@ -109,7 +114,7 @@ It should be easy to navigate.
 \section{Welcome!}\label{welcome}
 
 \begin{frame}{Welcome!}
-\begin{itemize}[<+->]
+\begin{itemize}
 \tightlist
 \item
   The goal of the workshop is to \ldots{} (\emph{insert your message})
@@ -125,7 +130,7 @@ It should be easy to navigate.
 \phantomsection\label{learning-objectives}
 At the end of the tutorial, participants will be able to
 
-\begin{itemize}[<+->]
+\begin{itemize}
 \tightlist
 \item
   understand key concepts for \ldots{} (\emph{insert your message})
@@ -138,7 +143,7 @@ At the end of the tutorial, participants will be able to
 
 \begin{block}{Pre-requisites}
 \phantomsection\label{pre-requisites}
-\begin{itemize}[<+->]
+\begin{itemize}
 \tightlist
 \item
   Basic familiarity with R
@@ -151,7 +156,7 @@ At the end of the tutorial, participants will be able to
 \section{Schedule}\label{schedule}
 
 \begin{frame}{Schedule}
-\begin{tcolorbox}[enhanced jigsaw, colbacktitle=quarto-callout-tip-color!10!white, leftrule=.75mm, coltitle=black, bottomrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tabular schedule}, colframe=quarto-callout-tip-color-frame, rightrule=.15mm, toprule=.15mm, arc=.35mm, breakable, colback=white, bottomtitle=1mm, toptitle=1mm, titlerule=0mm, opacityback=0, opacitybacktitle=0.6, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colback=white, left=2mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tabular schedule}, toprule=.15mm, toptitle=1mm, breakable, bottomtitle=1mm, opacitybacktitle=0.6, leftrule=.75mm, opacityback=0, coltitle=black, colframe=quarto-callout-tip-color-frame, titlerule=0mm, colbacktitle=quarto-callout-tip-color!10!white, rightrule=.15mm, bottomrule=.15mm, arc=.35mm]
 
 It can be useful to include a tabular schedule with links.
 
