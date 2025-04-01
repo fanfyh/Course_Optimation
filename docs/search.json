@@ -4,10 +4,10 @@
     "href": "lecture3_shadow_price.html",
     "title": "经济学中的优化方法",
     "section": "",
-    "text": "经济模型中包括两类变量，分别是\n\n内生变量：模型的均衡结果变量，如商品的需求量；\n外生变量（参数）：在模型设定中给定的变量，如价格、收入、偏好权重。\n\n静态分析：在给定模型参数设定下，分析模型的均衡结果。\n比较静态分析\n\n改变模型外生变量，分析这种变化对模型均衡结果的影响。或者说，比较最优解如何随着参数的变动而变动。\n例如，保持价格不变，分析收入变化对消费者需求的影响。",
+    "text": "Loading required package: sysfonts\n\n\nLoading required package: showtextdb\n\n\n\n\n\n\n\n\n\n\n情景设定：\n\n某地区电网需要预留备用发电机预防突发停电\n现有容量为8000兆瓦，停电损失曲线呈对数正态分布\n监管机构考虑是否增加200兆瓦备用容量\n\n决策难题：\n\n新增容量需投入2亿元设备费用，对输电网络进行扩容\n如何评估该投资的边际效益？\n\n\n\n如何刻画上面这个问题？\n\n目标函数是什么？\n\n最小化电力系统总成本：\n\n备用设备投资 \\(c \\cdot x\\)\n预期停电损失 \\(\\mathbb{E}[L(x)]\\)\n\n\n决策变量是什么？\n\n备用容量\\(x\\)（兆瓦）\n\n约束条件是什么？\n\n电网传输上限 \\(x \\leq X_{max}\\)\n\n\n数学表达:\n\\[\\begin{align*}\n\\max_{x} \\quad & C(x) = c \\cdot x + \\mathbb{E}[L(x)] \\\\\ns.t. &\\quad x \\leq X_{max}\n\\end{align*}\\]\n构造拉格朗日函数： \\[\n\\mathcal{L} = c x + \\mathbb{E}[L(x)] + \\lambda (X_{\\text{max}} - x)\n\\]\n一阶条件：\n\\[\n\\frac{\\partial \\mathcal{L}}{\\partial x} = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x} - \\lambda = 0\n\\] 解得： \\[\n\\lambda = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x}\n\\]\n影子价格的经济解读\n\n数学定义 \\(\\lambda =\\) 约束条件右端（容量上限）微小增加时，总成本的边际变化率：\\(\\lambda = \\frac{dC}{dX_{max}}\\)\n物理意义\n\n当 \\(X_{max}\\) 增加1单位：\n\n直接成本：节省设备投资 \\(c\\)\n间接收益：减少停电损失 \\(|\\partial \\mathbb{E}[L]/\\partial x|\\)\n\n影子价格\\(\\lambda\\) 即为两者的净效应\n\n决策信号\n\n若\\(\\lambda &gt; 0\\)：容量约束紧，增加容量可降成本 → 应扩大投资\n若\\(\\lambda = 0\\)：容量冗余，当前规模已达最优 → 维持现状",
     "crumbs": [
       "Home",
-      "经济学中的优化方法"
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
     ]
   },
   {
@@ -139,7 +139,7 @@
     "text": "非负的拉格朗日乘子\n\n拉格朗日乘子衡量了稀缺资源禀赋的增加带来的社会福利的增加。\n直觉上，放松某个约束应该是一件有利的事情，因为计划着至少可以取得和原来一样高的福利水平。\n困难在于，在具有等式约束的一般形式问题中，约束等式右边的数值增加并不必然意味着约束的放松。\n因此，如果想要得到非负的影子价格，必须保证约束条件式子右边数值的增加的确放松了对这个选择变量的限制。",
     "crumbs": [
       "Home",
-      "经济学中的优化方法"
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
     ]
   },
   {
@@ -147,10 +147,10 @@
     "href": "lecture3_shadow_price.html#拉格朗日乘子的互补松弛条件",
     "title": "经济学中的优化方法",
     "section": "拉格朗日乘子的互补松弛条件",
-    "text": "拉格朗日乘子的互补松弛条件\n拉格朗日乘子的互补松弛条件： \\[  \n\\lambda \\geq 0,L_{\\lambda}(\\bar{x}) \\geq 0  \n\\] 或者说 \\[  \nG^{i}(x) \\leq c_i, \\lambda \\geq 0  \n\\]\n中至少有一个不等式是以等式形式成立的。拉格朗日乘子\\(\\lambda\\_i = 0\\)意味着资源\\(i\\) 未被充分利用，出现闲置的情况：\n\n如果某种资源已经被部分闲置，那么新增这种资源仍然会被闲置。此时目标函数的最大值不变，影子价格将为零。\n正的影子价格意味着现有资源的一单位边际增加能够得到很好的使用，也就是说，原来的生产计划中这种资源没有被闲置。",
+    "text": "拉格朗日乘子的互补松弛条件\n拉格朗日乘子的互补松弛条件： \\[  \n\\lambda \\geq 0,L_{\\lambda}(\\bar{x}) \\geq 0  \n\\]\n或者说\n\\[  \nG^{i}(x) \\leq c_i, \\lambda \\geq 0  \n\\]\n\n中至少有一个不等式是以等式形式成立的。拉格朗日乘子\\(\\lambda_i = 0\\)意味着资源\\(i\\) 未被充分利用，出现闲置的情况：\n\n如果某种资源已经被部分闲置，那么新增这种资源仍然会被闲置。此时目标函数的最大值不变，影子价格将为零。\n正的影子价格意味着现有资源的一单位边际增加能够得到很好的使用，也就是说，原来的生产计划中这种资源没有被闲置。",
     "crumbs": [
       "Home",
-      "经济学中的优化方法"
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
     ]
   },
   {
@@ -571,147 +571,231 @@
     "href": "lecture4_value_function.html",
     "title": "经济学中的优化方法",
     "section": "",
-    "text": "对于一个最优化问题，一般而言存在着选择变量、目标函数和约束条件。当选择变量达到最优选择\\(\\bar{x}\\) 时，目标函数取得最大值/最小值，即\\(v = F(\\bar{x})\\)\n在给定外生参数\\(\\theta\\)，以及目标函数和约束条件形式的情况下，每个最优化问题对应着一个最大值\\(v\\) ，以及一个（或若干个）最优选择\\(\\bar{x}\\)\n一旦考虑外生参数\\(\\theta\\) 的变化，选择变量所能达到的最优选择将会随之变化。即每种情况下的最优选择\\(\\bar{x}\\) 会是外生参数\\(\\theta\\) 的函数\n对应的最大值/最小值实际上也会是外生参数\\(\\theta\\) 的函数\\(v(\\theta)\\)"
+    "text": "对于一个最优化问题，一般而言存在着选择变量、目标函数和约束条件。当选择变量达到最优选择\\(\\bar{x}\\) 时，目标函数取得最大值/最小值，即\\(v = F(\\bar{x})\\)\n在给定外生参数\\(\\theta\\)，以及目标函数和约束条件形式的情况下，每个最优化问题对应着一个最大值\\(v\\) ，以及一个（或若干个）最优选择\\(\\bar{x}\\)\n一旦考虑外生参数\\(\\theta\\) 的变化，选择变量所能达到的最优选择将会随之变化。即每种情况下的最优选择\\(\\bar{x}\\) 会是外生参数\\(\\theta\\) 的函数\n对应的最大值/最小值实际上也会是外生参数\\(\\theta\\) 的函数\\(v(\\theta)\\)",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#最大值函数",
     "href": "lecture4_value_function.html#最大值函数",
     "title": "经济学中的优化方法",
     "section": "",
-    "text": "对于一个最优化问题，一般而言存在着选择变量、目标函数和约束条件。当选择变量达到最优选择\\(\\bar{x}\\) 时，目标函数取得最大值/最小值，即\\(v = F(\\bar{x})\\)\n在给定外生参数\\(\\theta\\)，以及目标函数和约束条件形式的情况下，每个最优化问题对应着一个最大值\\(v\\) ，以及一个（或若干个）最优选择\\(\\bar{x}\\)\n一旦考虑外生参数\\(\\theta\\) 的变化，选择变量所能达到的最优选择将会随之变化。即每种情况下的最优选择\\(\\bar{x}\\) 会是外生参数\\(\\theta\\) 的函数\n对应的最大值/最小值实际上也会是外生参数\\(\\theta\\) 的函数\\(v(\\theta)\\)"
+    "text": "对于一个最优化问题，一般而言存在着选择变量、目标函数和约束条件。当选择变量达到最优选择\\(\\bar{x}\\) 时，目标函数取得最大值/最小值，即\\(v = F(\\bar{x})\\)\n在给定外生参数\\(\\theta\\)，以及目标函数和约束条件形式的情况下，每个最优化问题对应着一个最大值\\(v\\) ，以及一个（或若干个）最优选择\\(\\bar{x}\\)\n一旦考虑外生参数\\(\\theta\\) 的变化，选择变量所能达到的最优选择将会随之变化。即每种情况下的最优选择\\(\\bar{x}\\) 会是外生参数\\(\\theta\\) 的函数\n对应的最大值/最小值实际上也会是外生参数\\(\\theta\\) 的函数\\(v(\\theta)\\)",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#参数进入目标函数的情况",
     "href": "lecture4_value_function.html#参数进入目标函数的情况",
     "title": "经济学中的优化方法",
     "section": "参数进入目标函数的情况",
-    "text": "参数进入目标函数的情况\n假定参数向量\\(\\theta\\) 进入目标函数，通过选择\\(x\\) ，在向量约束\\(G(x) = c\\) 下(注意：此时参数\\(\\theta\\) 并不会影响约束条件)最大化目标函数\\(F(x, \\theta)\\)\n此时，目标函数和拉格朗日函数均依赖于\\(\\theta\\)，因此\n\\[L(x, \\lambda, \\theta) = F(x, \\theta) + \\lambda[c - G(x)]\\]\n最优选择\\(\\bar{x}\\) 满足一阶条件\n\\[L_{x}(\\bar{x}, \\lambda, \\theta = 0), L_{\\lambda} (\\bar{x},\\lambda, \\theta) =0\\]"
+    "text": "参数进入目标函数的情况\n假定参数向量\\(\\theta\\) 进入目标函数，通过选择\\(x\\) ，在向量约束\\(G(x) = c\\) 下(注意：此时参数\\(\\theta\\) 并不会影响约束条件)最大化目标函数\\(F(x, \\theta)\\)\n此时，目标函数和拉格朗日函数均依赖于\\(\\theta\\)，因此\n\\[L(x, \\lambda, \\theta) = F(x, \\theta) + \\lambda[c - G(x)]\\]\n最优选择\\(\\bar{x}\\) 满足一阶条件\n\\[L_{x}(\\bar{x}, \\lambda, \\theta = 0), L_{\\lambda} (\\bar{x},\\lambda, \\theta) =0\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#最大值的变化",
     "href": "lecture4_value_function.html#最大值的变化",
     "title": "经济学中的优化方法",
     "section": "最大值的变化",
-    "text": "最大值的变化\n目标函数的最大值记作\\(v\\)，假定\\(\\theta\\) 变动到\\(\\theta + d\\theta\\) 。这会导致最优选择\\(\\bar{x}\\) 变到\\(\\bar{x} + d\\bar{x}\\)，进而最大值\\(v\\) 变到\\(d + dv\\)：\n\\[\n\\begin{aligned}\n    dv\n    & = F(\\bar{x} + d\\bar{x}, \\theta + d\\theta) - F(\\bar{x}, \\theta) \\\\\n    & = F_{x}(\\bar{x}, \\theta) d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = \\lambda G_{x}(\\bar{x})d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = F_{\\theta}(\\bar{x}, \\theta) d\\theta\n\\end{aligned}\n\\]\n\n当一个不影响约束条件的参数发生变化后，如果要计算其所导致目标函数最大值的一阶变化，不需要考虑最优选择\\(\\bar{x}\\) 自身的变动\n我们可以考虑在原来的最优选择处计算参数\\(\\theta\\) 变动的偏导数，以及\\(\\theta\\) 的变动情况"
+    "text": "最大值的变化\n目标函数的最大值记作\\(v\\)，假定\\(\\theta\\) 变动到\\(\\theta + d\\theta\\) 。这会导致最优选择\\(\\bar{x}\\) 变到\\(\\bar{x} + d\\bar{x}\\)，进而最大值\\(v\\) 变到\\(d + dv\\)：\n\\[\n\\begin{aligned}\n    dv\n    & = F(\\bar{x} + d\\bar{x}, \\theta + d\\theta) - F(\\bar{x}, \\theta) \\\\\n    & = F_{x}(\\bar{x}, \\theta) d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = \\lambda G_{x}(\\bar{x})d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = F_{\\theta}(\\bar{x}, \\theta) d\\theta\n\\end{aligned}\n\\]\n\n当一个不影响约束条件的参数发生变化后，如果要计算其所导致目标函数最大值的一阶变化，不需要考虑最优选择\\(\\bar{x}\\) 自身的变动\n我们可以考虑在原来的最优选择处计算参数\\(\\theta\\) 变动的偏导数，以及\\(\\theta\\) 的变动情况",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#成本最小化问题-i",
     "href": "lecture4_value_function.html#成本最小化问题-i",
     "title": "经济学中的优化方法",
     "section": "成本最小化问题 I",
-    "text": "成本最小化问题 I\n最大化\\(F(x, \\theta) = -\\theta x\\)，同时满足\\(G(x) = c\\)\n将由此产生的最大值记作\\(-v\\) ，那么\n\\[\nd(-v) = F_{\\theta}(\\bar{x}, \\theta) d\\theta = - d\\theta \\cdot \\bar{x}\\Longrightarrow dv = \\bar{x}d\\theta\n\\]\n\\(v\\) 意味着当投入要素价格为\\(\\theta\\) 时，生产出\\(c\\) 单位产品的最小成本\n当价格发生变化时，生产者会如何调整最优选择？\n生产者会减少使用变得更贵的投入要素，同时用更多的（相对更便宜的）其他要素来替代，并且相互替代会沿着一条等产量线进行"
+    "text": "成本最小化问题 I\n最大化\\(F(x, \\theta) = -\\theta x\\)，同时满足\\(G(x) = c\\)\n将由此产生的最大值记作\\(-v\\) ，那么\n\\[\nd(-v) = F_{\\theta}(\\bar{x}, \\theta) d\\theta = - d\\theta \\cdot \\bar{x}\\Longrightarrow dv = \\bar{x}d\\theta\n\\]\n\\(v\\) 意味着当投入要素价格为\\(\\theta\\) 时，生产出\\(c\\) 单位产品的最小成本\n当价格发生变化时，生产者会如何调整最优选择？\n生产者会减少使用变得更贵的投入要素，同时用更多的（相对更便宜的）其他要素来替代，并且相互替代会沿着一条等产量线进行",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#成本最小化问题-ii",
     "href": "lecture4_value_function.html#成本最小化问题-ii",
     "title": "经济学中的优化方法",
     "section": "成本最小化问题 II",
-    "text": "成本最小化问题 II\n我们对\\(v = \\theta \\bar{x}\\) 进行微分，可得\\(dv = \\theta d\\bar{x} + d\\theta\\bar{x}\\)\n\n第一项意味着，以原来的价格衡量的投入组合变动的价值\n第二项意味着，以原来的最优产量衡量的价格变动的价值\n在原来的价格下，原来的投入组合选择已经是最优的了，因此任何变动的价值的一阶效应必然为零"
+    "text": "成本最小化问题 II\n我们对\\(v = \\theta \\bar{x}\\) 进行微分，可得\\(dv = \\theta d\\bar{x} + d\\theta\\bar{x}\\)\n\n第一项意味着，以原来的价格衡量的投入组合变动的价值\n第二项意味着，以原来的最优产量衡量的价格变动的价值\n在原来的价格下，原来的投入组合选择已经是最优的了，因此任何变动的价值的一阶效应必然为零",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#包络定理",
     "href": "lecture4_value_function.html#包络定理",
     "title": "经济学中的优化方法",
     "section": "包络定理",
-    "text": "包络定理\n\n\n\nCaption"
+    "text": "包络定理\n\n\n\nCaption",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#参数影响所有函数",
     "href": "lecture4_value_function.html#参数影响所有函数",
     "title": "经济学中的优化方法",
     "section": "参数影响所有函数",
-    "text": "参数影响所有函数\n假定参数\\(\\theta\\) 同时影响目标函数F和约束条件G，且约束条件为\\(G(x, \\theta) = c\\)，其中\\(\\theta\\) 和\\(c\\) 是不同的，因此 \\[G_x(x, \\theta) dx + G_{\\theta} (x, \\theta) d\\theta = 0\\]\n对于最大值函数的变动而言\n\\[\n\\begin{aligned}\n    dv & = -\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = L_{\\theta}(\\bar{x}, \\lambda, \\theta) d\\theta\n\\end{aligned}\n\\]\n比较条件5.1和5.4:\n\n当\\(\\theta\\) 影响约束时，变动\\(d\\theta\\) 会影响约束条件\\(G(x)\\)，使得G的值增加\\(G_{\\theta}(\\bar{x}, \\theta)d\\theta\\)\n这相当于\\(c\\) 减少同等量，等价于\\(v\\) 的值下降\\(\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta\\) （注意:\\(\\lambda\\) 代表着\\(c\\) 变化一单位导致最大值函数\\(v\\) 的边际变化）"
+    "text": "参数影响所有函数\n假定参数\\(\\theta\\) 同时影响目标函数F和约束条件G，且约束条件为\\(G(x, \\theta) = c\\)，其中\\(\\theta\\) 和\\(c\\) 是不同的，因此 \\[G_x(x, \\theta) dx + G_{\\theta} (x, \\theta) d\\theta = 0\\]\n对于最大值函数的变动而言\n\\[\n\\begin{aligned}\n    dv & = -\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = L_{\\theta}(\\bar{x}, \\lambda, \\theta) d\\theta\n\\end{aligned}\n\\]\n比较条件5.1和5.4:\n\n当\\(\\theta\\) 影响约束时，变动\\(d\\theta\\) 会影响约束条件\\(G(x)\\)，使得G的值增加\\(G_{\\theta}(\\bar{x}, \\theta)d\\theta\\)\n这相当于\\(c\\) 减少同等量，等价于\\(v\\) 的值下降\\(\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta\\) （注意:\\(\\lambda\\) 代表着\\(c\\) 变化一单位导致最大值函数\\(v\\) 的边际变化）",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#广义的参数向量-i",
     "href": "lecture4_value_function.html#广义的参数向量-i",
     "title": "经济学中的优化方法",
     "section": "广义的参数向量 I",
-    "text": "广义的参数向量 I\n定义一个更大的参数向量\\(\\hat{\\theta}\\) ，其包括子向量\\(\\theta\\) 和\\(c\\) ，并将约束条件写作：\n\\[\\hat{G} (x, \\hat{\\theta}) \\equiv G(x, \\theta) - c = 0\\]\n拉格朗日函数可以写作：\n\\[\\hat{L}(x, \\lambda, \\hat{\\theta}) \\equiv F(x, \\theta) - \\lambda\\hat{G}(x, \\hat{\\theta})\\]\n因此，最大值函数的变动等价于：\n\\[dv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\\]"
+    "text": "广义的参数向量 I\n定义一个更大的参数向量\\(\\hat{\\theta}\\) ，其包括子向量\\(\\theta\\) 和\\(c\\) ，并将约束条件写作：\n\\[\\hat{G} (x, \\hat{\\theta}) \\equiv G(x, \\theta) - c = 0\\]\n拉格朗日函数可以写作：\n\\[\\hat{L}(x, \\lambda, \\hat{\\theta}) \\equiv F(x, \\theta) - \\lambda\\hat{G}(x, \\hat{\\theta})\\]\n因此，最大值函数的变动等价于：\n\\[dv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#广义的参数向量-ii",
     "href": "lecture4_value_function.html#广义的参数向量-ii",
     "title": "经济学中的优化方法",
     "section": "广义的参数向量 II",
-    "text": "广义的参数向量 II\n而对于广义约束条件而言：\n\\[\\hat{G}{\\hat{\\theta}}(x, \\hat{\\theta}) d\\hat{\\theta} = G_{\\theta}(x, \\theta) d\\theta - dc\\]\n因而\\(dv\\) 的表达式可以变为：\n\\[dv = L_{\\theta} (\\bar{x}, \\lambda, \\theta) d\\theta + \\lambda dc.\\]"
+    "text": "广义的参数向量 II\n而对于广义约束条件而言：\n\\[\\hat{G}{\\hat{\\theta}}(x, \\hat{\\theta}) d\\hat{\\theta} = G_{\\theta}(x, \\theta) d\\theta - dc\\]\n因而\\(dv\\) 的表达式可以变为：\n\\[dv = L_{\\theta} (\\bar{x}, \\lambda, \\theta) d\\theta + \\lambda dc.\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#短期和长期的生产计划-i",
     "href": "lecture4_value_function.html#短期和长期的生产计划-i",
     "title": "经济学中的优化方法",
     "section": "短期和长期的生产计划 I",
-    "text": "短期和长期的生产计划 I\n对于一个厂商而言，长期内资本和劳动都可以调整，但在短期内资本固定在某个水平无法变动\n假设选择变量是\\(y, z\\) ，其中：\n\n在长期中，\\(y\\)和\\(z\\) 都可以任意变动\n在短期内，\\(z\\) 固定不变而仅有\\(y\\) 可以变化\n\n最优化问题可以写作： \\[\n\\begin{aligned}\n    max  &\\quad F(y, z, \\theta) \\\\\n    s.t. &\\quad G(y,z,\\theta) = 0\n\\end{aligned}\n\\]"
+    "text": "短期和长期的生产计划 I\n对于一个厂商而言，长期内资本和劳动都可以调整，但在短期内资本固定在某个水平无法变动\n假设选择变量是\\(y, z\\) ，其中：\n\n在长期中，\\(y\\)和\\(z\\) 都可以任意变动\n在短期内，\\(z\\) 固定不变而仅有\\(y\\) 可以变化\n\n最优化问题可以写作： \\[\n\\begin{aligned}\n    max  &\\quad F(y, z, \\theta) \\\\\n    s.t. &\\quad G(y,z,\\theta) = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#短期和长期的生产计划-ii",
     "href": "lecture4_value_function.html#短期和长期的生产计划-ii",
     "title": "经济学中的优化方法",
     "section": "短期和长期的生产计划 II",
-    "text": "短期和长期的生产计划 II\n在长期中，最优选择和对应的值函数是外生参数\\(\\theta\\) 的函数，即\n\\[y_{l} = Y(\\theta), z_{l} = Z(\\theta), v_{l} = V(\\theta)\\]\n在短期中，因为\\(z\\)固定不变，所以本质上是类似\\(\\theta\\) 的参数：\n\\[y_{s} = Y(z, \\theta), v_{s} = V(z, \\theta)\\]\n思考：\\(v_{l}\\) 和\\(v_{s}\\) 之间有什么关系呢？"
+    "text": "短期和长期的生产计划 II\n在长期中，最优选择和对应的值函数是外生参数\\(\\theta\\) 的函数，即\n\\[y_{l} = Y(\\theta), z_{l} = Z(\\theta), v_{l} = V(\\theta)\\]\n在短期中，因为\\(z\\)固定不变，所以本质上是类似\\(\\theta\\) 的参数：\n\\[y_{s} = Y(z, \\theta), v_{s} = V(z, \\theta)\\]\n思考：\\(v_{l}\\) 和\\(v_{s}\\) 之间有什么关系呢？",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#最大值函数的关系",
     "href": "lecture4_value_function.html#最大值函数的关系",
     "title": "经济学中的优化方法",
     "section": "最大值函数的关系",
-    "text": "最大值函数的关系\n长期最大值和短期最大值之间： \\[\nV(\\theta)  \\geq V(z, \\theta), \\forall (z,\\theta)\n\\]\n如果(短期)固定不变的\\(z\\) 恰好是长期的最优选择\\(z_{l} = Z(\\theta)\\)，那么上式取等号\n如果上述函数都是可微的，那么我们可以得到\n\\[\nV^{'}(\\theta)= V_{\\theta}(Z(\\theta), \\theta)\n\\]"
+    "text": "最大值函数的关系\n长期最大值和短期最大值之间： \\[\nV(\\theta)  \\geq V(z, \\theta), \\forall (z,\\theta)\n\\]\n如果(短期)固定不变的\\(z\\) 恰好是长期的最优选择\\(z_{l} = Z(\\theta)\\)，那么上式取等号\n如果上述函数都是可微的，那么我们可以得到\n\\[\nV^{'}(\\theta)= V_{\\theta}(Z(\\theta), \\theta)\n\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#短期和长期成本-i",
     "href": "lecture4_value_function.html#短期和长期成本-i",
     "title": "经济学中的优化方法",
     "section": "短期和长期成本 I",
-    "text": "短期和长期成本 I\n考虑如下生产函数的短期和长期成本曲线之间的关系： \\[\nQ = (KL)^{1/\\alpha}\n\\] 其中，Q代表产量，K是短期固定资本，L是劳动。如果\n\n\\(\\alpha = 2\\)，那么规模报酬不变\n\\(\\alpha &lt; 2\\)，那么规模报酬递增\n\\(\\alpha &gt; 2\\)，那么规模报酬递减"
+    "text": "短期和长期成本 I\n考虑如下生产函数的短期和长期成本曲线之间的关系： \\[\nQ = (KL)^{1/\\alpha}\n\\] 其中，Q代表产量，K是短期固定资本，L是劳动。如果\n\n\\(\\alpha = 2\\)，那么规模报酬不变\n\\(\\alpha &lt; 2\\)，那么规模报酬递增\n\\(\\alpha &gt; 2\\)，那么规模报酬递减",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#短期和长期成本-ii",
     "href": "lecture4_value_function.html#短期和长期成本-ii",
     "title": "经济学中的优化方法",
     "section": "短期和长期成本 II",
-    "text": "短期和长期成本 II\n令\\(w\\)表示工资率，\\(r\\)表示资本使用成本。则长期成本函数为： \\[\nC(w, r, Q) = min_{K,L}\\{wL + rK |KL = Q^{\\alpha}\\}\n\\] 使用拉格朗日方法，很容易得到成本最小的投入选择： \\[\n\\begin{aligned}\n    K & = (wQ^{\\alpha}/r)^{1/2} \\\\\n    L & = (rQ^{\\alpha}/w)^{1/2}\n\\end{aligned}\n\\] 那么，长期成本函数为： \\[\nC(w,r, Q) = 2(wr)^{1/2}Q^{\\alpha/2}\n\\]"
+    "text": "短期和长期成本 II\n令\\(w\\)表示工资率，\\(r\\)表示资本使用成本。则长期成本函数为： \\[\nC(w, r, Q) = min_{K,L}\\{wL + rK |KL = Q^{\\alpha}\\}\n\\] 使用拉格朗日方法，很容易得到成本最小的投入选择： \\[\n\\begin{aligned}\n    K & = (wQ^{\\alpha}/r)^{1/2} \\\\\n    L & = (rQ^{\\alpha}/w)^{1/2}\n\\end{aligned}\n\\] 那么，长期成本函数为： \\[\nC(w,r, Q) = 2(wr)^{1/2}Q^{\\alpha/2}\n\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#短期和长期成本-iii",
     "href": "lecture4_value_function.html#短期和长期成本-iii",
     "title": "经济学中的优化方法",
     "section": "短期和长期成本 III",
-    "text": "短期和长期成本 III\n在短期内没有选择的自由。如果使用资本K生产出产量Q，那么必须使用劳动\\(L = Q^{\\alpha}/K\\)，成本函数变为： \\[\nC(w, r, Q, K)  = wQ^{\\alpha}/K + rK\n\\]\n\n长期的边际成本为： \\(C_{Q}(w,r,Q)= \\alpha(wr)^{1/2}Q^{\\alpha/2 -1}\\)\n短期的边际成本为： \\(C_{Q}(w,r,Q,K) = \\alpha wQ^{\\alpha - 1}/K\\)\n如果\\(K\\)的值恰好是式(5.1)给出的长期中\\(K\\)的最优值，那么短期边际成本和长期边际成本一致"
+    "text": "短期和长期成本 III\n在短期内没有选择的自由。如果使用资本K生产出产量Q，那么必须使用劳动\\(L = Q^{\\alpha}/K\\)，成本函数变为： \\[\nC(w, r, Q, K)  = wQ^{\\alpha}/K + rK\n\\]\n\n长期的边际成本为： \\(C_{Q}(w,r,Q)= \\alpha(wr)^{1/2}Q^{\\alpha/2 -1}\\)\n短期的边际成本为： \\(C_{Q}(w,r,Q,K) = \\alpha wQ^{\\alpha - 1}/K\\)\n如果\\(K\\)的值恰好是式(5.1)给出的长期中\\(K\\)的最优值，那么短期边际成本和长期边际成本一致",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#消费者需求-i",
     "href": "lecture4_value_function.html#消费者需求-i",
     "title": "经济学中的优化方法",
     "section": "消费者需求 I",
-    "text": "消费者需求 I\n\n考虑一个消费者，在\\(\\textbf{p} \\cdot \\textbf{x} = I\\)的预算约束下最大化效用\\(U(x)\\)\n这个最大化问题的参数为价格向量\\(\\textbf{p}\\)和收入\\(I\\)，并由此得到最大效用为\\(V(\\textbf{p}, I)\\)\n称\\(V(\\textbf{p}, I)\\)为间接效用函数，以区别于以消费商品数量决定的(直接)效用函数"
+    "text": "消费者需求 I\n\n考虑一个消费者，在\\(\\textbf{p} \\cdot \\textbf{x} = I\\)的预算约束下最大化效用\\(U(x)\\)\n这个最大化问题的参数为价格向量\\(\\textbf{p}\\)和收入\\(I\\)，并由此得到最大效用为\\(V(\\textbf{p}, I)\\)\n称\\(V(\\textbf{p}, I)\\)为间接效用函数，以区别于以消费商品数量决定的(直接)效用函数",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#消费者需求-ii",
     "href": "lecture4_value_function.html#消费者需求-ii",
     "title": "经济学中的优化方法",
     "section": "消费者需求 II",
-    "text": "消费者需求 II\n对于上述效用最大化问题，其拉格朗日函数为： \\[\nL(x, \\lambda, p, I) = U(x) + \\lambda(I - px)\n\\]\n回忆一下，包络定理告诉我们，最大值的变动等价于 \\[\ndv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\n\\]\n因此，在最优解处必然有 \\[\n\\begin{aligned}\n    V_I(\\textbf{p}, I) & = L_{I}(x, \\lambda, p, I) = \\lambda \\\\\n    V_{p_i}(\\textbf{p}, I) & = L_{p_i}(x, \\lambda, p, I) = - \\lambda x_i\n\\end{aligned}\n\\]"
+    "text": "消费者需求 II\n对于上述效用最大化问题，其拉格朗日函数为： \\[\nL(x, \\lambda, p, I) = U(x) + \\lambda(I - px)\n\\]\n回忆一下，包络定理告诉我们，最大值的变动等价于 \\[\ndv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\n\\]\n因此，在最优解处必然有 \\[\n\\begin{aligned}\n    V_I(\\textbf{p}, I) & = L_{I}(x, \\lambda, p, I) = \\lambda \\\\\n    V_{p_i}(\\textbf{p}, I) & = L_{p_i}(x, \\lambda, p, I) = - \\lambda x_i\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#消费者需求-iii",
     "href": "lecture4_value_function.html#消费者需求-iii",
     "title": "经济学中的优化方法",
     "section": "消费者需求 III",
-    "text": "消费者需求 III\n\n因此，如果我们知道消费者的间接效用函数，那么可以很轻易地找出消费者的需求函数： \\[\nD(\\textbf{p}, I) = - V_{p}(\\textbf{p}, I)/V_I(\\textbf{p}, I), \\forall i = 1, \\cdots, n\n\\]\n相反，如果我们知道消费者的(直接)效用函数，那么需要求解所有约束条件下的最大化问题，才能找到消费者的需求函数"
+    "text": "消费者需求 III\n\n因此，如果我们知道消费者的间接效用函数，那么可以很轻易地找出消费者的需求函数： \\[\nD(\\textbf{p}, I) = - V_{p}(\\textbf{p}, I)/V_I(\\textbf{p}, I), \\forall i = 1, \\cdots, n\n\\]\n相反，如果我们知道消费者的(直接)效用函数，那么需要求解所有约束条件下的最大化问题，才能找到消费者的需求函数",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#支出最小化问题",
     "href": "lecture4_value_function.html#支出最小化问题",
     "title": "经济学中的优化方法",
     "section": "支出最小化问题",
-    "text": "支出最小化问题\n\n考虑消费者如何以最少的支出达到一个目标效用水平的问题，最小支出是关于价格向量\\(\\textbf{p}\\)和目标效用水平\\(u\\)的函数\\(E(\\textbf{p}, u)\\)，称之为支出函数\n这个最小化问题的拉格朗日函数可以写作： \\[\nL(x, \\mu, p, u) = px + \\mu[u - U(x)]\n\\]\n类似地，\\(E_{u}(p, u) = \\mu\\)，意味着为了实现目标效用水平的边际增加，所要求的最小支出的增加\n以及，\\(E_{p}(p,u) =x\\)，代表着对给定效用水平时，使得支出最小的商品组合，我们称之为希克斯需求函数\\(C(p, u)\\)"
+    "text": "支出最小化问题\n\n考虑消费者如何以最少的支出达到一个目标效用水平的问题，最小支出是关于价格向量\\(\\textbf{p}\\)和目标效用水平\\(u\\)的函数\\(E(\\textbf{p}, u)\\)，称之为支出函数\n这个最小化问题的拉格朗日函数可以写作： \\[\nL(x, \\mu, p, u) = px + \\mu[u - U(x)]\n\\]\n类似地，\\(E_{u}(p, u) = \\mu\\)，意味着为了实现目标效用水平的边际增加，所要求的最小支出的增加\n以及，\\(E_{p}(p,u) =x\\)，代表着对给定效用水平时，使得支出最小的商品组合，我们称之为希克斯需求函数\\(C(p, u)\\)",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture4_value_function.html#斯拉茨基分解",
     "href": "lecture4_value_function.html#斯拉茨基分解",
     "title": "经济学中的优化方法",
     "section": "斯拉茨基分解",
-    "text": "斯拉茨基分解\n\n从某个效用水平\\(u\\)开始，在给定价格水平下达到效用水平所需要的最小支出为\\(I = E(p,u)\\)，对应的希克斯需求为\\(C(p,u)\\)\n以上面的最小支出\\(I\\)作为货币收入，并找到效用最大化的选择\\(D(p, I)\\)，则有\\(C(p, u) = D(p, I)\\)\n对于第\\(j\\)个商品的需求，两边同时对第\\(k\\)个商品价格求导，根据链式法则有 \\[\nC^j_k(p, u) = D^j_k(p, E(p,u)) = D^j_k(p, I) + D^j_I(p, I)E_k(p,u)\n\\]"
+    "text": "斯拉茨基分解\n\n从某个效用水平\\(u\\)开始，在给定价格水平下达到效用水平所需要的最小支出为\\(I = E(p,u)\\)，对应的希克斯需求为\\(C(p,u)\\)\n以上面的最小支出\\(I\\)作为货币收入，并找到效用最大化的选择\\(D(p, I)\\)，则有\\(C(p, u) = D(p, I)\\)\n对于第\\(j\\)个商品的需求，两边同时对第\\(k\\)个商品价格求导，根据链式法则有 \\[\nC^j_k(p, u) = D^j_k(p, E(p,u)) = D^j_k(p, I) + D^j_I(p, I)E_k(p,u)\n\\]",
+    "crumbs": [
+      "Home",
+      "最大值函数"
+    ]
   },
   {
     "objectID": "lecture9_time_related.html",
@@ -1519,6 +1603,105 @@
     "crumbs": [
       "Home",
       "基本概念 I"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#等式约束",
+    "href": "lecture3_shadow_price.html#等式约束",
+    "title": "经济学中的优化方法",
+    "section": "等式约束",
+    "text": "等式约束\n假设一个简单的最优化问题，包括两个选择变量\\((x_1, x_2)\\)，一个目标函数\\(F(x)\\)和一个约束等式\\(G(x) = c\\)；\n\n令\\(\\bar{x}\\)代表最优选择，\\(v = F(\\bar{x})\\)表示最高所达到的值；\n假定\\(c\\)增加一个无穷小量\\(dc\\)，令\\(\\bar{x} + d\\bar{x}\\)为新的最优选择， \\(v + dv\\)为新的最优值。\n\n思考：\n\n\\(d\\bar{x}\\)与上一讲的x的微小变动\\(dx\\)是一回事么？\n\\(dv\\)和\\(dc\\)之间有什么关系？\n\n\n将目标函数F和约束函数G的值的变化进行一阶泰勒近似，我们有：\n\\[  \n\\begin{aligned}\ndv\n& = F(\\bar{x} + d\\bar{x}) - F(\\bar{x}) \\\\\n& = F_1(\\bar{x})d\\bar{x}_1 + F_2(\\bar{x})d\\bar{x}_2 \\\\\n& = \\lambda[G_1(\\bar{x})d\\bar{x}_1 + G_2(\\bar{x})d\\bar{x}_2] \\\\\n& = \\lambda[G(\\bar{x} + d\\bar{x}) - G(\\bar{x})] \\\\\n& = \\lambda[(c + dc) - c] = \\lambda dc\n\\end{aligned}\n\\]\n因此，一阶条件中的乘子\\(\\lambda = dv/dc\\)就是目标函数所能达到的最大值的变动，与约束等式右边参数的变动的比例。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#影子价格",
+    "href": "lecture3_shadow_price.html#影子价格",
+    "title": "经济学中的优化方法",
+    "section": "影子价格",
+    "text": "影子价格\n考虑一个计划经济，通过选择一个生产计划\\(\\bar{x}\\)以最大化社会福利函数\\(F(x)\\)。这个计划需要资源向量\\(G(x)\\)，这些资源的现有数量为向量\\(c\\)。假定这个问题已经被求解出来，则拉格朗日乘子向量\\(\\lambda\\)为已知。\n现在假定经济以外的某个力量，对第一种资源（比如说劳动）投入一个小的增量\\(dc_1\\)。那么，最大化问题就可以在新的劳动约束下求解，以确定一种新的生产方式。\n我们知道，劳动的微小增量所导致的社会福利的增加值是\\(\\lambda_1 dc_1\\)，因此，我们认为乘子\\(\\lambda_1\\)就是这个经济中以社会福利单位来衡量的劳动的边际产出。\n\n考虑存在两种资源的情况，资源1是劳动，资源2是土地。假设提供给这个经济额外的劳动\\(dc_1\\)，但是要求\\(dc_2\\)单位的土地作为回报。\n在这一交易中，社会福利净收益为\\(d\\lambda_1 dc_1 - \\lambda_2 dc_2\\)，因而社会计划者最多愿意放弃的土地为\\((\\lambda_1/\\lambda_2)dc_1\\)。\n因此，我们可以把比例\\((\\lambda_1/\\lambda_2)\\)称为以土地单位来衡量的每单位劳动的需求价格，也就是土地和劳动的相对价格。\n为了引出同价格的联系，同时又为了和市场价格在概念上有所区别，拉格朗日乘子常被称作影子价格。",
+    "crumbs": [
+      "Home",
+      "经济学中的优化方法"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#看不见的手分配",
+    "href": "lecture3_shadow_price.html#看不见的手分配",
+    "title": "经济学中的优化方法",
+    "section": "看不见的手——分配",
+    "text": "看不见的手——分配\n考虑一个计划经济体制，中央计划者将在消费者间分配商品，各种商品的产量是已知的。假设有C个消费者，\\(c = 1, 2, \\cdots, C\\)，和G种商品，\\(g = 1, 2, \\cdots, G\\)。记商品g的总数量为\\(X_g\\)，其分配给消费者c的数量为\\(x_{cg}\\)。\n\n每个消费者的效用都取决于分配到的各种商品的数量： \\[  \nu_c = U^{c}(x_{c1}, x_{c2}, \\cdots, x_{cG}).\n\\]\n社会福利函数是关于所有消费者效用的函数: \\[  \nw = W(u_1, u_2, \\cdots, u_C)\n\\]\n中央计划者面临的约束为: \\[  \nx_{1g} + x_{2g} + \\cdots + x_{cg} = X_g, g = 1, 2, \\cdots, G\n\\]\n\n\n构造拉格朗日函数\n\\[  \n\\begin{aligned}\n\\mathcal{L} =\n& W(U^{1}(x_{11}, x_{12}, \\cdots, x_{1G}), \\cdots, U^{C}(x_{C1}, x_{C2}, \\cdots, x_{CG})) + \\\\\n&\\sum_{g} \\pi_g[X_g - \\sum_c x_{cg}]\n\\end{aligned}\n\\]\n其中，\\(\\pi_g\\)表示对应于商品g的约束条件的拉格朗日乘子。\n此时，拉格朗日函数的一阶条件为\n\\[  \n\\frac{\\partial \\mathcal{L}}{\\partial x_{cg}}\n= \\frac{\\partial W}{\\partial u_c} \\frac{\\partial U^{c}}{\\partial x_{cg}} - \\pi_g = 0.\n\\]\n\n现在考虑市场经济体制，假定每种商品的价格为\\(\\pi_g\\)，并给予每一个消费者c一定的货币收入\\(I_c\\)，允许其在预算约束下最大化自己的效用。因此，市场经济下每个消费者面临着效用最大化问题：\n\\[  \n\\begin{aligned}\n\\mathop{\\max_{x_{c1}, \\cdots, x_{cn}}} & U(x_{c1}, x_{c2}, \\cdots, x_{cn}) \\\\\ns.t.\\quad & \\pi_1x_{c1} + \\pi_2x_{c2} + \\cdots \\pi_{G}x_{cG} \\leq I_c\n\\end{aligned}\n\\]\n此时，最优化问题的一阶条件为\n\\[  \n\\partial U^c/\\partial x_{cg} = \\lambda_c \\pi_{g}\n\\]\n\n比较两种经济体制下的一阶条件FOC1和FOC2\n\\[  \n\\begin{aligned}\n(\\partial W/\\partial u_c) (\\partial U^c/\\partial x_{cg}) & =  \\pi_g  \\\\\n\\partial U^c/\\partial x_{cg} & = \\lambda_c \\pi_{g}\n\\end{aligned}\n\\]\n我们发现，如果对于所有的消费者c，令\n\\[  \n\\partial W/\\partial u_c = 1/\\lambda_c\n\\] 那么这两个式子是完全一样的。\n\n回忆一下，对于效用最大化问题而言，拉格朗日乘子\\(\\lambda\\)代表什么？ \\[  \n\\frac{\\partial W}{\\partial u_c} \\lambda = 1\n\\]\n意味着，每个消费者一单位收入对社会福利的边际影响是相等的。换句话说，收入的分配应该被这样安排，以使得在边际上，每一个消费者收入的社会价值都是相等的。只要做到这一点，他们就可以自由地选择自己的消费束。",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#即将过剩的位置",
+    "href": "lecture3_shadow_price.html#即将过剩的位置",
+    "title": "经济学中的优化方法",
+    "section": "即将过剩的位置",
+    "text": "即将过剩的位置\n\n假定\\(c_i\\) 刚好处在某个点上，在这一点资源\\(i\\)正好处在即将过剩的边际上，即已有的资源恰好被充分利用，但该资源任何的增量都不会再被使用。\n互补松弛条件不能告诉我们，在这一点处，拉格朗日乘子为正还是为零。这取决于最大值\\(v\\) 在\\(c_i\\) 的斜率，在边界点处是平滑地变为零还是突然变为零。\n\n\n\n\n\nFigure 4.1\n\n\n\n情况1（图a）：斜率平滑地下降，在该点处的拉格朗日乘子为零；\n情况2（图b）：斜率突然下降，即任何介于左边曲线斜率和右边直线斜率为零之间的\\(\\lambda_i\\) 都有可能代表影子价格恰好从正转变为零。",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买",
+    "href": "lecture3_shadow_price.html#免税的购买",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买",
+    "text": "免税的购买\n一个四处旅行的富翁，可以在家乡商店里购买不同牌子的酒，也可以在世界各地的机场免税商店购买。免税商店中的价格便宜一些，但是他所能购买的总量受到海关的限制：\n\n假设有n种牌子的酒，在富翁家乡商店的价格为\\(p\\)，在免税店的价格为\\(q\\)；\n对于所有的品牌而言，免税店里的价格都较低，即\\(q \\ll p\\)；\n令x代表他在家乡购买的各种酒的数量，y代表他在免税店里购买的各种酒的数量；\n富翁决定每年花在酒上的支出为I；\n海关规定每年富翁可以进口K瓶免税酒；\n富翁的效用取决于总的消费数量\\(U = U(c), c = x+y\\)。\n\n\n拉格朗日函数为：\n\\[  \nL = U(c) + \\lambda[I - px - qy] + \\mu[K- ey]  \n\\]\n对于每一种酒\\(j\\)，我们都有\n\\[  \n\\partial L/\\partial x_j = \\partial U/\\partial c_j - \\lambda p_j \\leq 0, x_j \\geq 0  \n\\]\n满足互补松弛条件，同时，\n\\[  \n\\partial L/\\partial y_j = \\partial U/\\partial c_j - \\lambda q_j - \\mu \\leq 0, y_j \\geq 0  \n\\] 也满足互补松弛条件。\n\n如果富翁同时在家乡商店和机场免税店购买了正数量的酒j，那么\n\\[  \n\\partial U/\\partial c_j - \\lambda p_j = 0 = \\partial U/\\partial c_j -\\lambda q_j - \\mu\n\\]\n或\n\\[  \n\\lambda p_j = \\partial U/\\partial c_j = \\lambda q_j + \\mu  \n\\]\n最多有一个\\(j\\)使得上式成立，否则，假定存在两种酒\\(i\\)和\\(j\\)，我们会有\n\\[  \n\\lambda(p_i - q_i) = \\mu = \\lambda(p_j - q_j)  \n\\]\n由于我们假定该消费者没有满足，\\(\\lambda\\)是正的，所以\n\\[  \np_i - q_i = p_j - q_j  \n\\]\n\n现在假定酒j仅能在家乡商店里被购买，由于\\(x_j &gt; 0, y_j = 0\\)，因此有：\n\\[  \n\\partial U/\\partial c_j = \\lambda p_j \\tag{FOC1}  \n\\]\n和\n\\[  \n\\partial U/\\partial c_j \\leq \\lambda q_j + \\mu \\tag{FOC2}  \n\\]\n\n对于FOC1，等式左边是酒j的边际效用，等式右边是在家乡商店购买酒j的边际机会成本；\n对于FOC2，式子右边是在免税商店购买酒\\(j\\)的边际机会成本(怎么理解\\(\\mu\\)?)。\n\n\n消费者的购买原理是：在有较低的机会成本的商店里购买每一种牌子的酒。注意到 \\[  \n\\lambda q_j + \\mu &lt; \\lambda p_i,\\text{当且仅当} p_i - q_i &gt; \\mu/\\lambda  \n\\] 因此，富翁会把各个牌子的酒按照他们在两种商店的绝对价格差进行排序，绝对价格差最大的酒在免税商店购买，价格差最小的在家乡商品购买。两者的交汇点恰好在用在免税限额的那一点。因此，最多只有一种牌子的酒会同时在两种商店里被购买。",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#案例引入电力市场中的备用容量定价",
+    "href": "lecture3_shadow_price.html#案例引入电力市场中的备用容量定价",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "Loading required package: sysfonts\n\n\nLoading required package: showtextdb\n\n\n\n\n\n\n\n\n\n\n情景设定：\n\n某地区电网需要预留备用发电机预防突发停电\n现有容量为8000兆瓦，停电损失曲线呈对数正态分布\n监管机构考虑是否增加200兆瓦备用容量\n\n决策难题：\n\n新增容量需投入2亿元设备费用，对输电网络进行扩容\n如何评估该投资的边际效益？\n\n\n\n如何刻画上面这个问题？\n\n目标函数是什么？\n\n最小化电力系统总成本：\n\n备用设备投资 \\(c \\cdot x\\)\n预期停电损失 \\(\\mathbb{E}[L(x)]\\)\n\n\n决策变量是什么？\n\n备用容量\\(x\\)（兆瓦）\n\n约束条件是什么？\n\n电网传输上限 \\(x \\leq X_{max}\\)\n\n\n数学表达:\n\\[\\begin{align*}\n\\max_{x} \\quad & C(x) = c \\cdot x + \\mathbb{E}[L(x)] \\\\\ns.t. &\\quad x \\leq X_{max}\n\\end{align*}\\]\n构造拉格朗日函数： \\[\n\\mathcal{L} = c x + \\mathbb{E}[L(x)] + \\lambda (X_{\\text{max}} - x)\n\\]\n一阶条件：\n\\[\n\\frac{\\partial \\mathcal{L}}{\\partial x} = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x} - \\lambda = 0\n\\] 解得： \\[\n\\lambda = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x}\n\\]\n影子价格的经济解读\n\n数学定义 \\(\\lambda =\\) 约束条件右端（容量上限）微小增加时，总成本的边际变化率：\\(\\lambda = \\frac{dC}{dX_{max}}\\)\n物理意义\n\n当 \\(X_{max}\\) 增加1单位：\n\n直接成本：节省设备投资 \\(c\\)\n间接收益：减少停电损失 \\(|\\partial \\mathbb{E}[L]/\\partial x|\\)\n\n影子价格\\(\\lambda\\) 即为两者的净效应\n\n决策信号\n\n若\\(\\lambda &gt; 0\\)：容量约束紧，增加容量可降成本 → 应扩大投资\n若\\(\\lambda = 0\\)：容量冗余，当前规模已达最优 → 维持现状",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#本讲目标",
+    "href": "lecture3_shadow_price.html#本讲目标",
+    "title": "经济学中的优化方法",
+    "section": "本讲目标",
+    "text": "本讲目标\n\n什么是最优化问题中的影子价格？\n为什么计划经济中的\\(\\pi_g\\)与市场价格体系中的价格机制具有相似性？\n请用实例说明互补松弛条件中的\\(\\lambda_i=0\\)意味着什么经济现象？",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#等式约束的微小变动",
+    "href": "lecture3_shadow_price.html#等式约束的微小变动",
+    "title": "经济学中的优化方法",
+    "section": "等式约束的微小变动",
+    "text": "等式约束的微小变动\n假设一个简单的最优化问题，包括两个选择变量\\((x_1, x_2)\\)，一个目标函数\\(F(x)\\)和一个约束等式\\(G(x) = c\\)；\n\n令\\(\\bar{x}\\)代表最优选择，\\(v = F(\\bar{x})\\)表示最高所达到的值；\n假定\\(c\\)增加一个无穷小量\\(dc\\)，令\\(\\bar{x} + d\\bar{x}\\)为新的最优选择， \\(v + dv\\)为新的最优值。\n\n思考：\n\n\\(d\\bar{x}\\)与上一讲的x的微小变动\\(dx\\)是一回事么？\n\\(dv\\)和\\(dc\\)之间有什么关系？\n\n\n将目标函数F和约束函数G的值的变化进行一阶泰勒近似，我们有：\n\\[  \n\\begin{aligned}\ndv\n& = F(\\bar{x} + d\\bar{x}) - F(\\bar{x}) \\\\\n& = F_1(\\bar{x})d\\bar{x}_1 + F_2(\\bar{x})d\\bar{x}_2 \\\\\n& = \\lambda[G_1(\\bar{x})d\\bar{x}_1 + G_2(\\bar{x})d\\bar{x}_2] \\\\\n& = \\lambda[G(\\bar{x} + d\\bar{x}) - G(\\bar{x})] \\\\\n& = \\lambda[(c + dc) - c] = \\lambda dc\n\\end{aligned}\n\\]\n因此，一阶条件中的乘子\\(\\lambda = dv/dc\\)就是目标函数所能达到的最大值的变动，与约束等式右边参数的变动的比例。",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#拉格朗日乘子与影子价格",
+    "href": "lecture3_shadow_price.html#拉格朗日乘子与影子价格",
+    "title": "经济学中的优化方法",
+    "section": "拉格朗日乘子与影子价格",
+    "text": "拉格朗日乘子与影子价格\n如果v为\\(F(x)\\)在向量约束\\(G(x) = c\\)下的最大值，\\(\\lambda\\)为对应约束的乘子组成的列向量，那么由无穷小量变动\\(dc\\)引起的变动\\(dv\\)由下式给出：\n\\[  \ndv = \\lambda dc = \\sum_{i} \\lambda_i dc_i.  \n\\]\n考虑一个计划经济，通过选择一个生产计划\\(\\bar{x}\\)以最大化社会福利函数\\(F(x)\\)。\n\n这个计划需要资源向量\\(G(x)\\)，这些资源的现有数量为向量\\(c\\)。假定这个问题已经被求解出来，则拉格朗日乘子向量\\(\\lambda\\)为已知。\n假定经济以外的某个力量，对第一种资源（比如说劳动）投入一个小的增量\\(dc_1\\)。\n最大化问题就可以在新的劳动约束下求解，以确定一种新的生产方式。\n\n劳动的微小增量所导致的社会福利的增加值是\\(\\lambda_1 dc_1\\)，因此，我们认为乘子\\(\\lambda_1\\)就是这个经济中以社会福利单位来衡量的劳动的边际产出。\n考虑存在两种资源的情况，资源1是劳动，资源2是土地。假设提供给这个经济额外的劳动\\(dc_1\\)，但是要求\\(dc_2\\)单位的土地作为回报。\n\n在这一交易中，社会福利净收益为\\(d\\lambda_1 dc_1 - \\lambda_2 dc_2\\)，因而社会计划者最多愿意放弃的土地为\\((\\lambda_1/\\lambda_2)dc_1\\)。\n因此，我们可以把比例\\((\\lambda_1/\\lambda_2)\\)称为以土地单位来衡量的每单位劳动的需求价格，也就是土地和劳动的相对价格。\n为了引出同价格的联系，同时又为了和市场价格在概念上有所区别，拉格朗日乘子常被称作影子价格。",
+    "crumbs": [
+      "Home",
+      "案例引入：电力市场中的备用容量定价{.allowframebreaks}"
     ]
   }
 ]

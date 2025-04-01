@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1741660653.78691 "lecture2_lagrange.xdv" "lecture2_lagrange.pdf" "lecture2_lagrange" 1741660654.63307 0
-  "lecture2_lagrange.xdv" 1741660653.66269 1236240 968ca5685b28df242e97aab8699728c1 "xelatex"
+["xdvipdfmx"] 1742258081.99254 "lecture2_lagrange.xdv" "lecture2_lagrange.pdf" "lecture2_lagrange" 1742258082.72144 0
+  "lecture2_lagrange.xdv" 1742258081.87689 871628 fcd66203c96777ba2ab7371f1e1bd3bd "xelatex"
   (generated)
   "lecture2_lagrange.pdf"
   (rewritten before read)
-["xelatex"] 1741660647.43732 "lecture2_lagrange.tex" "lecture2_lagrange.xdv" "lecture2_lagrange" 1741660654.62933 0
-  "/System/Library/Fonts/Menlo.ttc" 1738688271 2156036 ec05dfca6821d85440da0899493002c3 ""
+["xelatex"] 1742258077.04968 "lecture2_lagrange.tex" "lecture2_lagrange.xdv" "lecture2_lagrange" 1742258082.7188 0
+  "/System/Library/Fonts/Menlo.ttc" 1741255562 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -271,11 +271,11 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741515417 5639826 90c4cbe0c8040e5284f829b4c9f22cff ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "cufe.sty" 1740463546 3537 b91ac70be7779113490e39de75675abf ""
-  "lecture2_lagrange.aux" 1741660653.66113 11317 a92a6aa5b4b1398ab49ffae80a1225c0 "xelatex"
-  "lecture2_lagrange.nav" 1741660653.66252 3120 56e2963f0c365e84559f84713173cd50 "xelatex"
-  "lecture2_lagrange.tex" 1741660642.32849 15005 3f0ff3d1b11748d33fa6f595eae95b8d ""
-  "lecture2_lagrange.toc" 1741660653.66256 109 680e41a4d5226ca47e32772410e58b96 "xelatex"
-  "lecture2_lagrange.vrb" 1741660653.24786 541 93a3a72142bb1a1e87a75945fb18a634 "xelatex"
+  "lecture2_lagrange.aux" 1742258081.87549 11307 000e017ac3bac49835ac6bef906ca744 "xelatex"
+  "lecture2_lagrange.nav" 1742258081.8768 3114 9235f27d48381c2082ba064830884bec "xelatex"
+  "lecture2_lagrange.tex" 1742258072.74753 15106 28469cde793d3443e123e19eba731bb9 ""
+  "lecture2_lagrange.toc" 1742258081.87683 109 889340701c933faa1548706035a07d63 "xelatex"
+  "lecture2_lagrange.vrb" 1742258081.48783 541 93a3a72142bb1a1e87a75945fb18a634 "xelatex"
   "pic/cufe_logo_blue.eps" 1740463546 1459470 ef91a8dcffa15b1a0a5684062673e8b1 ""
   (generated)
   "lecture2_lagrange.aux"

@@ -27,7 +27,7 @@ website:
       - lecture5_convex_set.qmd
       - lecture6_cancave_optimization.qmd
       - lecture7_second_order.qmd
-      - lecture8_uncertainy.qmd
+      - lecture8_uncertainty.qmd
       - lecture9_time_related.qmd
   page-navigation: true
 
