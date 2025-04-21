@@ -1,0 +1,31 @@
+\begin{table}[!htbp]
+\footnotesize
+\centering
+\caption{更换被解释变量和子样本回归结果}\label{tab:robustness}
+\begin{threeparttable}
+\begin{tabular}{l*{5}{Y}}
+\toprule
+ & \multicolumn{5}{c}{\textbf{因变量}} \\
+\cmidrule(lr){2-6}
+变量 & 私营企业注册数量 & 每万人企业注册数量 & 企业注册数量增长率 & \makecell{删除副省级\\城市样本} & \makecell{删除扩权强县\\样本} \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+省直管县 & 0.060\tnote{***} & 0.305\tnote{**} & 0.030\tnote{*} & 0.078\tnote{***} & 0.107\tnote{***} \\
+ & (0.015) & (0.149) & (0.017) & (0.016) & (0.019) \\
+\addlinespace[2pt]
+时间趋势 & 控制 & 控制 & 控制 & 控制 & 控制 \\
+固定效应 & 个体、时间 & 个体、时间 & 个体、时间 & 个体、时间 & 个体、时间 \\
+\midrule
+观测数 & 24,296 & 24,267 & 24,261 & 22,741 & 15,623 \\
+R平方 & 0.910 & 0.822 & 0.121 & 0.898 & 0.888 \\
+\bottomrule
+\end{tabular}
+
+\begin{tablenotes}
+\scriptsize
+\item 注：括号内为县级聚类稳健标准误。***、**、*分别表示1%、5%、10%显著性水平。
+\item 控制变量包含：人均GDP对数、人口规模对数、财政自给度、产业结构等事前特征时间趋势项。
+\item 列(4)排除副省级城市样本，列(5)排除实施扩权强县改革的样本。
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

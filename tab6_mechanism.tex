@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\footnotesize
+\centering
+\caption{税收征管力度与财政支出的创业驱动效应}\label{tab:mechanism}
+\begin{threeparttable}
+\begin{tabular}{l*{4}{c}}
+\toprule
+ & \multicolumn{4}{c}{\textbf{因变量}} \\
+\cmidrule(lr){2-5}
+变量 & (1) 税收征管力度 & (2) 生产性支出 & (3) 民生性支出 & (4) 县域创业活力 \\
+\midrule
+省直管县 & 0.031 & 0.161\tnote{**} & 0.028\tnote{*} & 0.057\tnote{**} \\
+ & (0.022) & (0.084) & (0.015) & (0.037) \\
+\addlinespace[2pt]
+税收征管力度 & — & — & — & 0.008 \\
+ &  &  &  & (0.025) \\
+生产性支出 & — & — & — & 0.015\tnote{***} \\
+ &  &  &  & (0.005) \\
+民生性支出 & — & — & — & 0.050\tnote{*} \\
+ &  &  &  & (0.029) \\
+\midrule
+时间趋势 & 控制 & 控制 & 控制 & 控制 \\
+固定效应 & 个体、时间 & 个体、时间 & 个体、时间 & 个体、时间 \\
+观测数 & 12,202 & 12,202 & 12,202 & 12,202 \\
+R平方 & 0.736 & 0.802 & 0.941 & 0.903 \\
+\bottomrule
+\end{tabular}
+
+\begin{tablenotes}
+\scriptsize
+\item 注：括号内为县级聚类稳健标准误。***、**、*分别表示1%、5%、10%显著性水平。
+\item 时间趋势包含：人均GDP、人口规模等社会经济变量的二次项趋势。
+\item 财政支出口径调整导致样本期间为2000-2006年，数据来源为《全国地市县财政统计资料汇编》。
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

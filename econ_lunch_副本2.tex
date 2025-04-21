@@ -1,0 +1,343 @@
+% templates/cufe-template.latex
+\documentclass{beamer}
+\usepackage{ctex}
+\usepackage{cufe}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{makecell}
+\usepackage{adjustbox}
+% 在导言区添加
+\usepackage{array}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+\tcbuselibrary{skins, breakable}  % 添加必要库
+% 添加至模板开头
+\makeatletter
+\newcommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\makeatother
+
+% 修复enhanced jigsaw为enhancedjigsaw
+\tcbset{
+    mycallout/.style={
+        enhancedjigsaw,  % 正确键名（无空格）
+        breakable,
+        colback=blue!5,
+        colframe=blue!50!black
+    }
+}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine}
+\title{省以下财政体制改革如何激发县域创业活力}
+\subtitle{基于财政治理方式的机制分析}
+\author{范翻}
+\institute{中国财政发展协同创新中心}
+\date{2025-04-15}
+% ==== 加载自定义设置 ====
+% \input{templates/cufe-settings.sty}  % 可选，用于集中存放样式
+% defs
+
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+\begin{document}
+
+% ==== 自动插入标题页 ==== 
+\kaishu  % 楷书样式
+\begin{frame}
+  \titlepage
+  \begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.2\linewidth]{pic/cufe_logo_blue.eps}
+  \end{figure}
+\end{frame}
+
+
+
+% ==== Quarto生成的内容 ====
+\section{研究背景}\label{ux7814ux7a76ux80ccux666f}
+
+\begin{frame}{问题缘起}
+\phantomsection\label{ux95eeux9898ux7f18ux8d77}
+\begin{itemize}
+\tightlist
+\item
+  随着经济高质量发展的推动，创业活动成为推动就业和创新的核心力量。
+\item
+  近年来，我国出台了一系列支持创业的政策，其中商事制度改革和``双创''政策尤为突出。
+\item
+  然而，现有研究主要集中在政策工具上，较少关注基础性的财政体制对创业的影响。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{研究价值}
+\phantomsection\label{ux7814ux7a76ux4ef7ux503c}
+\begin{itemize}
+\tightlist
+\item
+  财税制度改革，尤其是省直管县改革，作为国家治理的重要组成部分，如何影响地方政府的行为，从而激活县域的创业活力，是本研究的核心问题。
+\item
+  本文探讨了如何通过财政体制改革，特别是通过优化资源配置和提升地方政府财政自主性，来激发地方创业活力。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{1994年分税制改革}
+\phantomsection\label{ux5e74ux5206ux7a0eux5236ux6539ux9769}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{目标}：通过中央财权集中推动区域协调发展，优化政府间财政关系。
+\item
+  \textbf{效果}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    地方财政自给率持续下降，地方财政承压。
+  \item
+    省以下财政体制逐级模仿中央-地方分成模式，形成``市卡县''\,``市压县''的层级挤压效应。
+  \item
+    基层政府面临``支出责任与财力错配''的问题，公共服务供给不足，县域经济活力受到严重制约。
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{省直管县改革}
+\phantomsection\label{ux7701ux76f4ux7ba1ux53bfux6539ux9769}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{背景}：为破解基层财政困境，2004年起实施省直管县改革，增强县级政府财政自主权。
+\item
+  \textbf{改革内容}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    通过重构税收分成机制，提升县级政府财政自主权。
+  \item
+    改革直接联系省与县的财政，优化资源配置，提高基层政府的财政自主性。
+  \end{itemize}
+\item
+  \textbf{目标}：提升基层财政自主权，改善县级政府的税收征管能力，优化公共服务供给，提升县域创业活力。
+\end{itemize}
+\end{frame}
+
+\section{文献综述与研究假说}\label{ux6587ux732eux7efcux8ff0ux4e0eux7814ux7a76ux5047ux8bf4}
+
+\begin{frame}{1. 创业驱动因素}
+\phantomsection\label{ux521bux4e1aux9a71ux52a8ux56e0ux7d20}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{个人特征}：早期研究聚焦于企业家个人特质，如风险偏好、人力资本等。
+\item
+  \textbf{宏观经济环境}：商业周期波动对资源分配和创业风险的影响。
+\item
+  \textbf{制度环境}：制度环境的稳定性和透明度对创业活力的支撑作用。
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{相关文献}：Dai 和 Si (2018)，Clark 和 Ramachandran
+    (2019)，Sahasranamam 和 Nandakumar (2020)。
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{2. 省直管县的经济效应}
+\phantomsection\label{ux7701ux76f4ux7ba1ux53bfux7684ux7ecfux6d4eux6548ux5e94}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{财政体制改革}：通过改变税收征管和公共支出结构，省直管县改革可能促进地方创业。
+\item
+  \textbf{地方财政自主权}：增强地方财政自给能力，改善税收政策和公共服务供给，提升创业环境。
+\item
+  \textbf{已有研究}：Li等（2016），宋恒等（2024）讨论了改革对资源配置和经济增长的影响。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{3. 省直管县的财政治理方式}
+\phantomsection\label{ux7701ux76f4ux7ba1ux53bfux7684ux8d22ux653fux6cbbux7406ux65b9ux5f0f}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{税收分成和转移支付}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{税收分成}：通过提高税收分成比例，增强地方政府税收自主权，推动税收征管力度。
+  \item
+    \textbf{转移支付}：通过扩大转移支付，提升地方政府财政支出能力，影响公共服务供给。
+  \end{itemize}
+\item
+  \textbf{两种财政治理方式的不同作用}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    税收分成提升：增强地方税收征管力度。
+  \item
+    转移支付扩张：可能削弱税收征管力度，但加强公共服务供给。
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{研究假说}
+\phantomsection\label{ux7814ux7a76ux5047ux8bf4}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{假说1}：省直管县改革会提升地区创业活力。
+\item
+  \textbf{假说2}：省直管县对税收征管力度的影响方向不明确。
+\item
+  \textbf{假说3a}：省直管县会通过增加生产性支出促进创业活力。
+\item
+  \textbf{假说3b}：省直管县会通过增加民生性支出促进创业活力。
+\end{itemize}
+\end{frame}
+
+\section{研究设计}\label{ux7814ux7a76ux8bbeux8ba1}
+
+\begin{frame}{模型设计与变量说明}
+\phantomsection\label{ux6a21ux578bux8bbeux8ba1ux4e0eux53d8ux91cfux8bf4ux660e}
+\begin{itemize}
+\tightlist
+\item
+  本研究采用多期双重差分（DID）模型来检验省直管县改革对县域创业活力的影响。
+\end{itemize}
+
+\[
+Y_{it} = \alpha + \beta \cdot \text{Post}_{it} + \gamma X_{it} + \mu_i + \lambda_t + \varepsilon_{it}
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \(Y_{it}\)：被解释变量，表示县域创业活力的度量。
+\item
+  \(\text{Post}_{it}\)：处理变量，表示县在年份\(t\)是否实施了省直管县改革。
+\item
+  \(X_{it}\)：控制变量，包括人均GDP、人口规模、财政自主度等。
+\item
+  \(\mu_i\)，\(\lambda_t\)：县级和年份固定效应。
+\item
+  \(\varepsilon_{it}\)：随机误差项。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{主要变量及描述性统计}
+\phantomsection\label{ux4e3bux8981ux53d8ux91cfux53caux63cfux8ff0ux6027ux7edfux8ba1}
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+\text{变量名} & \text{观测数} & \text{均值} & \text{最小值} & \text{最大值} \\
+\hline
+\text{县域创业活力} & 24,297 & 4.95 & 0.00 & 9.12 \\
+\text{私营企业注册数量对数} & 24,297 & 4.62 & 0.00 & 9.11 \\
+\text{每万人新注册企业数量} & 24,297 & 5.78 & 0.00 & 217.00 \\
+\text{企业注册数量增长率} & 24,261 & 0.21 & -0.69 & 2.40 \\
+\text{“省直管县”改革} & 24,297 & 0.22 & 0.00 & 1.00 \\
+\text{“扩权强县”改革} & 24,297 & 0.21 & 0.00 & 1.00 \\
+\text{人均地区生产总值对数} & 24,297 & 8.94 & 6.51 & 12.57 \\
+\text{人口规模对数} & 24,297 & 12.77 & 8.99 & 14.70 \\
+\text{财政自主度} & 24,296 & 0.33 & 0.03 & 1.09 \\
+\text{产业结构} & 24,296 & 0.72 & 0.37 & 1.00 \\
+\text{人口密度} & 24,297 & 5.05 & 0.49 & 8.04 \\
+\hline
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}{样本选择与数据来源}
+\phantomsection\label{ux6837ux672cux9009ux62e9ux4e0eux6570ux636eux6765ux6e90}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{数据来源}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{工商企业注册数据}：2000-2013年中国工商企业注册数据库，包含企业名称、注册地址、成立时间、企业类型等。
+  \item
+    \textbf{社会经济数据}：来自《中国县域统计年鉴》（2000-2013）、《中国城市统计年鉴》（2000-2013）等。
+  \end{itemize}
+\item
+  \textbf{样本选择}：选取1745个县（市）作为研究对象，样本总观测值为24,297，其中887个县（市）实施了省直管县改革，858个县（市）未实施改革。
+\end{itemize}
+\end{frame}
+
+\begin{frame}{基准回归结果}
+\phantomsection\label{ux57faux51c6ux56deux5f52ux7ed3ux679c}
+\begin{adjustbox}{max width=0.95\textwidth}
+\input{table2.tex}
+\end{adjustbox}
+
+\begin{itemize}
+\tightlist
+\item
+  改革平均提升创业活力6.3\%(1\%显著)，通过逐步加入控制变量验证稳健性
+\end{itemize}
+\end{frame}
+
+\begin{frame}{稳健性检验：替代变量与子样本}
+\phantomsection\label{ux7a33ux5065ux6027ux68c0ux9a8cux66ffux4ee3ux53d8ux91cfux4e0eux5b50ux6837ux672c}
+\vspace{-2mm}
+\begin{adjustbox}{width=0.95\textwidth,center} 
+\input{tab3_robustness.tex}
+\end{adjustbox}
+
+\begin{itemize}
+\tightlist
+\item
+  结果稳定性检验显示：删除干扰样本后改革效应更显著
+\end{itemize}
+\end{frame}
+
+\begin{frame}{稳健性检验：Goodman-Bacon分解结果}
+\phantomsection\label{ux7a33ux5065ux6027ux68c0ux9a8cgoodman-baconux5206ux89e3ux7ed3ux679c}
+\begin{adjustbox}{max totalheight=0.7\textheight} 
+\input{goodmanbacon_table.tex}
+\end{adjustbox}
+
+\vspace{-2mm}
+
+\begin{itemize}
+\tightlist
+\item
+  分解显示75.6\%的效应源自处理组vs.未处理组对比，验证DID结果可靠性
+\end{itemize}
+\end{frame}
+
+\begin{frame}{稳健性检验：PSM-DID}
+\phantomsection\label{ux7a33ux5065ux6027ux68c0ux9a8cpsm-did}
+\begin{adjustbox}{max totalheight=0.7\textheight} 
+\input{table5_psmdid.tex}
+\end{adjustbox}
+
+\vspace{-2mm}
+\end{frame}
+
+\end{document}

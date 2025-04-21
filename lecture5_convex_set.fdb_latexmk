@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1742202365.3788 "lecture5_convex_set.xdv" "lecture5_convex_set.pdf" "lecture5_convex_set" 1742202367.04109 0
-  "lecture5_convex_set.xdv" 1742202365.27803 288800 3a43481215b2912093801aa0ca36986d "xelatex"
+["xdvipdfmx"] 1744071623.49514 "lecture5_convex_set.xdv" "lecture5_convex_set.pdf" "lecture5_convex_set" 1744071625.20283 0
+  "lecture5_convex_set.xdv" 1744071623.38896 187012 5d9a5fd756e5c447531c343122fe349f "xelatex"
   (generated)
   "lecture5_convex_set.pdf"
   (rewritten before read)
-["xelatex"] 1742202363.2841 "lecture5_convex_set.tex" "lecture5_convex_set.xdv" "lecture5_convex_set" 1742202367.03872 0
-  "/System/Library/Fonts/Menlo.ttc" 1741255562 2156036 ec05dfca6821d85440da0899493002c3 ""
+["xelatex"] 1744071621.50554 "lecture5_convex_set.tex" "lecture5_convex_set.xdv" "lecture5_convex_set" 1744071625.20041 0
+  "/System/Library/Fonts/Menlo.ttc" 1743073233 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -271,9 +271,9 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741515417 5639826 90c4cbe0c8040e5284f829b4c9f22cff ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "cufe.sty" 1740463546 3537 b91ac70be7779113490e39de75675abf ""
-  "lecture5_convex_set.aux" 1742202365.27661 5164 bd535a6a0613b497e89a3e9585e457fd "xelatex"
-  "lecture5_convex_set.nav" 1742202365.27795 1586 1dfc322e23336ca7b2c7930bd761e0fa "xelatex"
-  "lecture5_convex_set.tex" 1742202359.65868 7441 5733ef804625defea0ec3f90ce2e364b ""
+  "lecture5_convex_set.aux" 1744071623.38782 5143 d7240bf9f6bba8e61a2d39e171fcbab0 "xelatex"
+  "lecture5_convex_set.nav" 1744071623.38888 1574 f5abf7444d939a8c2cd188b6df8c9c87 "xelatex"
+  "lecture5_convex_set.tex" 1744071617.90261 7632 7287e1d65bf6a6860fbc133b277d337a ""
   "pic/cufe_logo_blue.eps" 1740463546 1459470 ef91a8dcffa15b1a0a5684062673e8b1 ""
   "pic/figure_6_1.png" 1716095256 1107274 1957ffad03999a3340432695a65a0fe5 ""
   "pic/figure_6_2.png" 1716095256 188890 3559ebc483728326ff9f8243a965db01 ""

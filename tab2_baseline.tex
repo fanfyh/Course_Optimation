@@ -1,0 +1,36 @@
+\begin{table}[!htbp]
+  \footnotesize
+  \centering
+  \caption{基准回归结果}\label{tab:baseline}
+  \begin{threeparttable}
+  \begin{tabular}{l*{4}{c}}
+  \toprule
+   & \multicolumn{4}{c}{\textbf{县域创业活力指数}} \\
+  \cmidrule(lr){2-5}
+  变量 & (1) & (2) & (3) & (4) \\
+   & 总效应 & 制造业 & 服务业 & 个体经营 \\
+  \midrule
+  省直管县 & 0.163\tnote{***} & 0.088\tnote{**} & 0.214\tnote{***} & 0.032 \\
+   & (0.045) & (0.038) & (0.054) & (0.021) \\
+  地区GDP增长率 & 0.012\tnote{*} & 0.007 & 0.017\tnote{**} & 0.003 \\
+   & (0.006) & (0.005) & (0.008) & (0.003) \\
+  人口密度 & 0.084\tnote{**} & 0.051 & 0.103\tnote{**} & 0.019 \\
+   & (0.034) & (0.032) & (0.041) & (0.016) \\
+  \addlinespace[0.5ex]
+  控制变量 & 是 & 是 & 是 & 是 \\
+  时间固定效应 & 是 & 是 & 是 & 是 \\
+  个体固定效应 & 是 & 是 & 是 & 是 \\
+  \midrule
+  观测数 & 12,201 & 12,201 & 12,201 & 12,201 \\
+  R平方 & 0.836 & 0.768 & 0.804 & 0.612 \\
+  \bottomrule
+  \end{tabular}
+  
+  \begin{tablenotes}
+  \scriptsize
+  \item 注：***、**、*分别表示1%、5%、10%显著性水平；括号内为县级聚类标准误
+  \item 控制变量包含城乡收入比、工业化率等7项指标（受限版面未展示）
+  \end{tablenotes}
+  \end{threeparttable}
+  \end{table}
+  

@@ -12,17 +12,18 @@ editor: visual
 library(ggplot2)
 library(showtext)
 showtext::showtext_auto()  # 自动加载字体
+
 sysfonts::font_add("Hei", "/System/Library/Fonts/STHeiti Light.ttc")  # 添加系统黑体
-df <- data.frame(
-  电池成本 = seq(800, 1200, 50),
-  最大利润 = 10000 - 0.5*(seq(800,1200,50)-1000)^2
-)
-ggplot(df, aes(x=电池成本, y=最大利润)) +
-  geom_line(color="#E69F00", linewidth=1.5) +
-  geom_vline(xintercept = 1000, linetype="dashed") +
-  labs(title="电池价格波动对最大利润的影响",
-       subtitle="某新能源车企生产优化模拟") +
-  theme_minimal()
+
+df <- 
+    data.frame(`电池成本` = seq(800, 1200, 50),
+                 `最大利润` = 10000 - 0.5 * (seq(800, 1200, 50) - 1000)^2)
+
+ggplot(df, aes(x = `电池成本`, y = `最大利润`)) +
+    geom_line(color = "#E69F00", linewidth = 1.5) +
+    geom_vline(xintercept = 1000, linetype = "dashed") +
+    labs(title = "电池价格波动对最大利润的影响", subtitle = "某新能源车企生产优化模拟") +
+    theme_minimal()
 ```
 
 **决策困境**：
@@ -82,7 +83,7 @@ $$
     & = \lambda G_{x}(\bar{x})d\bar{x} + F_{\theta}(\bar{x}, \theta) d\theta \\
     & = F_{\theta}(\bar{x}, \theta) d\theta
 \end{aligned}
-$$ 
+$$
 
 \footnotesize
 
@@ -121,7 +122,6 @@ $v$ 意味着当投入要素价格为$\theta$ 时，生产出$c$ 单位产品的
 
 ## 包络定理
 
-
 **包络定理 (Envelope Theorem) 的标准定义：**
 
 在优化问题中，若参数变化时最优值的响应可通过直接效应完全刻画，则间接效应（通过调整决策变量）为零。数学表述为：
@@ -136,7 +136,6 @@ $$
 \frac{dV(a)}{da} = \frac{\partial f(x^*, a)}{\partial a} \bigg|_{x=x^*(a)}
 $$
 即参数变化对最优值的影响仅需计算其对目标函数的直接偏导数，无需考虑$x(a)$的调整路径。
-
 
 ## 参数影响所有函数
 
@@ -176,21 +175,45 @@ $$
 
 拉格朗日函数可以写作：
 
-$$\hat{L}(x, \lambda, \hat{\theta}) \equiv F(x, \theta) - \lambda\hat{G}(x, \hat{\theta})$$
+$$
+\hat{L}(x, \lambda, \hat{\theta}) \equiv F(x, \theta) - \lambda\hat{G}(x, \hat{\theta})
+$$
 
 因此，最大值函数的变动等价于：
 
-$$dv = \hat{L}_{\hat{\theta}}(\bar{x}, \lambda, \hat{\theta})d\hat{\theta}$$
-
-<!-- ## 广义的参数向量 II -->
+$$
+dv = \hat{L}_{\hat{\theta}}(\bar{x}, \lambda, \hat{\theta})d\hat{\theta}
+$$
 
 而对于广义约束条件而言：
 
-$$\hat{G}{\hat{\theta}}(x, \hat{\theta}) d\hat{\theta} = G_{\theta}(x, \theta) d\theta - dc$$
+$$
+\hat{G}{\hat{\theta}}(x, \hat{\theta}) d\hat{\theta} = G_{\theta}(x, \theta) d\theta - dc
+$$
 
 因而$dv$ 的表达式可以变为：
 
-$$dv = L_{\theta} (\bar{x}, \lambda, \theta) d\theta + \lambda dc.$$
+$$
+dv = L_{\theta} (\bar{x}, \lambda, \theta) d\theta + \lambda dc.
+$$
+
+## 某些选择变量固定不变
+
+- 当外生参数$\theta$发生变化时，会影响最优选择向量$x$的取值，进而影响最大值$v$。
+
+- 包络定理告诉我们，关于最大值$v$的变化$dv$，我们可以不需要了解最优选择$x$的变化。
+
+$$
+dv = L_{\theta} (\bar{x}, \lambda, \theta) d\theta + \lambda dc.
+$$
+
+- 上式中，$dv$的变化可以区分为两个部分：
+
+  1. 当$x$固定在原来的最优选择下，$\theta$变化对最大值的偏导数效应；
+  
+  2. 如果参数变动还影响约束条件，还要考虑等价的约束条件右边$c$的影响。
+
+
 
 ## 短期和长期的生产计划 {.allowframebreaks}
 
@@ -203,14 +226,14 @@ $$dv = L_{\theta} (\bar{x}, \lambda, \theta) d\theta + \lambda dc.$$
 
 -   在短期内，$z$ 固定不变而仅有$y$ 可以变化
 
-最优化问题可以写作： $$
+最优化问题可以写作： 
+
+$$
 \begin{aligned}
     max  &\quad F(y, z, \theta) \\
     s.t. &\quad G(y,z,\theta) = 0
 \end{aligned}
 $$
-
-<!-- ## 短期和长期的生产计划 II -->
 
 在长期中，最优选择和对应的值函数是外生参数$\theta$ 的函数，即
 
@@ -226,18 +249,24 @@ $$y_{s} = Y(z, \theta), v_{s} = V(z, \theta)$$
 
 ## 最大值函数的关系
 
-长期最大值和短期最大值之间： $$
+长期最大值和短期最大值之间满足
+$$
 V(\theta)  \geq V(z, \theta), \forall (z,\theta)
 $$
 
-如果(短期)固定不变的$z$
-恰好是长期的最优选择$z_{l} = Z(\theta)$，那么上式取等号
+- 对于任意给定的外生参数$\theta$，长期最大值必然大于等于短期最大值；
+
+- 原因在于，短期最大值所能做出的最优选择$y_s = Y(z, \theta)$，一定可以在长期内被选择；
+
+- 等号成立恰好在$y_s = y_l$，即短期内$z$的取值恰好等于长期内$z_l = Z(\theta)$。
 
 如果上述函数都是可微的，那么我们可以得到
 
 $$
 V^{'}(\theta)= V_{\theta}(Z(\theta), \theta)
 $$
+
+  - 等式右边是短期最优值函数$V(z, \theta)$在变量$z$不变时，在点$z = Z(\theta)$处取值的偏导数。
 
 ## 短期和长期成本 {.allowframebreaks}
 
@@ -251,10 +280,10 @@ $$ 其中，Q代表产量，K是短期固定资本，L是劳动。如果
 
 -   $\alpha > 2$，那么规模报酬递减
 
-<!-- ## 短期和长期成本 II -->
+令$w$表示工资率，$r$表示资本使用成本。则长期成本函数为： 
 
-令$w$表示工资率，$r$表示资本使用成本。则长期成本函数为： $$
-C(w, r, Q) = min_{K,L}\{wL + rK |KL = Q^{\alpha}\}
+$$
+C(w, r, Q) = \min_{K,L}\{\underbrace{wL + rK}_{\text{最小化成本}} |\underbrace{KL = Q^{\alpha}}_{\text{生产目标}}\}
 $$ 使用拉格朗日方法，很容易得到成本最小的投入选择：
 
 $$
@@ -262,13 +291,16 @@ $$
     K & = (wQ^{\alpha}/r)^{1/2} \\
     L & = (rQ^{\alpha}/w)^{1/2}
 \end{aligned}
-$$ 那么，长期成本函数为： $$
+$$ 
+
+那么，长期成本函数为：
+
+$$
 C(w,r, Q) = 2(wr)^{1/2}Q^{\alpha/2}
 $$
 
-<!-- ## 短期和长期成本 III -->
 
-在短期内没有选择的自由。如果使用资本K生产出产量Q，那么必须使用劳动$L = Q^{\alpha}/K$，成本函数变为：
+在短期内没有选择资本$K$的自由。如果使用资本K生产出产量Q，那么必须使用劳动$L = Q^{\alpha}/K$，成本函数变为：
 $$
 C(w, r, Q, K)  = wQ^{\alpha}/K + rK
 $$
@@ -277,27 +309,39 @@ $$
 
 -   短期的边际成本为： $C_{Q}(w,r,Q,K) = \alpha wQ^{\alpha - 1}/K$
 
--   如果$K$的值恰好是式(5.1)给出的长期中$K$的最优值，那么短期边际成本和长期边际成本一致
+-   如果$K$的值恰好是长期中最优值$\bar{K} = (wQ^{\alpha}/r)^{1/2}$，那么短期边际成本和长期边际成本是一样的么？
+
+$$
+\begin{aligned}
+C_{Q}(w,r,Q,\bar{K})
+& = \alpha wQ^{\alpha - 1}/\bar{K} \\
+& = \alpha wQ^{\alpha - 1}/(wQ^{\alpha}/r)^{1/2}  \\
+& = \alpha(wr)^{1/2}Q^{\alpha/2 -1} \\
+\end{aligned}
+$$
 
 ## 消费者需求 {.allowframebreaks}
 
--   考虑一个消费者，在$\textbf{p} \cdot \textbf{x} = I$的预算约束下最大化效用$U(x)$
+考虑一个消费者，在$\textbf{p} \cdot \textbf{x} = I$的预算约束下最大化效用$U(x)$
 
 -   这个最大化问题的参数为价格向量$\textbf{p}$和收入$I$，并由此得到最大效用为$V(\textbf{p}, I)$
 
 -   称$V(\textbf{p}, I)$为**间接效用函数**，以区别于以消费商品数量决定的(直接)效用函数
 
-<!-- ## 消费者需求 II -->
 
 对于上述效用最大化问题，其拉格朗日函数为： $$
 L(x, \lambda, p, I) = U(x) + \lambda(I - px)
 $$
 
-回忆一下，包络定理告诉我们，最大值的变动等价于 $$
+回忆一下，包络定理告诉我们，最大值的变动等价于 
+
+$$
 dv = \hat{L}_{\hat{\theta}}(\bar{x}, \lambda, \hat{\theta})d\hat{\theta}
 $$
 
-因此，在最优解处必然有 $$
+因此，在最优解处必然有
+
+$$
 \begin{aligned}
     V_I(\textbf{p}, I) & = L_{I}(x, \lambda, p, I) = \lambda \\
     V_{p_i}(\textbf{p}, I) & = L_{p_i}(x, \lambda, p, I) = - \lambda x_i
@@ -317,9 +361,11 @@ $$
 
 -   考虑消费者如何以最少的支出达到一个目标效用水平的问题，最小支出是关于价格向量$\textbf{p}$和目标效用水平$u$的函数$E(\textbf{p}, u)$，称之为**支出函数**
 
--   这个最小化问题的拉格朗日函数可以写作： $$
+-   这个最小化问题的拉格朗日函数可以写作：
+
+$$
     L(x, \mu, p, u) = px + \mu[u - U(x)]
-    $$
+$$
 
 -   类似地，$E_{u}(p, u) = \mu$，意味着为了实现目标效用水平的边际增加，所要求的最小支出的增加
 
@@ -332,6 +378,11 @@ $$
 -   以上面的最小支出$I$作为货币收入，并找到效用最大化的选择$D(p, I)$，则有$C(p, u) = D(p, I)$
 
 -   对于第$j$个商品的需求，两边同时对第$k$个商品价格求导，根据链式法则有
-    $$
-    C^j_k(p, u) = D^j_k(p, E(p,u)) = D^j_k(p, I) + D^j_I(p, I)E_k(p,u)
-    $$
+    
+$$
+\begin{aligned}
+    C^j_k(p, u) & = D^j_k(p, E(p,u)) \\
+    & = \underbrace{D^j_k(p, I)}_{\text{替代效应}} + 
+    \underbrace{D^j_I(p, I)E_k(p,u)}_{\text{收入效应}}\\
+\end{aligned}
+$$

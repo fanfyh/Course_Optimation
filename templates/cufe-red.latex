@@ -6,6 +6,14 @@
 \usepackage{xcolor}
 \usepackage{tcolorbox}
 \usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{makecell}
+\usepackage{adjustbox}
+% 在导言区添加
+\usepackage{array}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
 \tcbuselibrary{skins, breakable}  % 添加必要库
 % 添加至模板开头
 \makeatletter

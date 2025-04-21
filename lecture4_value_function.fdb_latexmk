@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1742824123.68356 "lecture4_value_function.xdv" "lecture4_value_function.pdf" "lecture4_value_function" 1742824124.38943 0
-  "lecture4_value_function.xdv" 1742824123.54641 264424 cb6cd6d130e595145f7fa2fa791bd385 "xelatex"
+["xdvipdfmx"] 1743476579.93272 "lecture4_value_function.xdv" "lecture4_value_function.pdf" "lecture4_value_function" 1743476580.74525 0
+  "lecture4_value_function.xdv" 1743476579.79791 284220 8a12fedbfa007f5e3e01aaccd6c5b524 "xelatex"
   (generated)
   "lecture4_value_function.pdf"
   (rewritten before read)
-["xelatex"] 1742824120.48622 "lecture4_value_function.tex" "lecture4_value_function.xdv" "lecture4_value_function" 1742824124.38625 0
+["xelatex"] 1743476577.02117 "lecture4_value_function.tex" "lecture4_value_function.xdv" "lecture4_value_function" 1743476580.74217 0
   "/System/Library/Fonts/Menlo.ttc" 1741255562 2156036 ec05dfca6821d85440da0899493002c3 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -33,6 +33,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm" 1136768653 520 82a3d37183f34b6eb363a161dfc002c2 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm" 1136768653 520 d082ac03a1087bc1ec2a06e24a9f68c0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm" 1136768653 520 a74c6ed8cb48679fdc3ea874d9d34a7e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm" 1136768653 520 7bb3abb160b19e0ed6ac404bb59052b7 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy9.tfm" 1136768653 520 1cc7cc05f4d7bae5c23bf7516f88fa52 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss10.tfm" 1254269338 11176 53ebf7a171df1f9447b387b178768bb5 ""
@@ -281,10 +282,10 @@
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741515417 5639826 90c4cbe0c8040e5284f829b4c9f22cff ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
   "cufe.sty" 1740463546 3537 b91ac70be7779113490e39de75675abf ""
-  "lecture4_value_function.aux" 1742824123.54492 6548 36cb6e2e238d10dbbc19052168a25ded "xelatex"
-  "lecture4_value_function.nav" 1742824123.54626 1946 f3029f0ea7518f0529e14244bc6d504d "xelatex"
-  "lecture4_value_function.tex" 1742824115.78357 14509 2c1a972ba4c43224926fb05716d6e0cf ""
-  "lecture4_value_function_files/figure-beamer/unnamed-chunk-1-1.pdf" 1742824115.40599 74059 6c5d3e530131380fa09091131e9b8770 ""
+  "lecture4_value_function.aux" 1743476579.79634 6966 e50eff54092f65c2a25ce69f9d60d95a "xelatex"
+  "lecture4_value_function.nav" 1743476579.79768 2039 40759b706c1b76d134ff8b54f1b1fda3 "xelatex"
+  "lecture4_value_function.tex" 1743476572.2274 16259 b42f7f8dfe1c8f7d7d523561be948166 ""
+  "lecture4_value_function_files/figure-beamer/unnamed-chunk-1-1.pdf" 1743476571.42707 74059 4675894ad59a382b65c47feea054fb2a ""
   "pic/cufe_logo_blue.eps" 1740463546 1459470 ef91a8dcffa15b1a0a5684062673e8b1 ""
   (generated)
   "lecture4_value_function.aux"
