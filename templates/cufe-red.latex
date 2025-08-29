@@ -10,6 +10,7 @@
 \usepackage{threeparttable}
 \usepackage{makecell}
 \usepackage{adjustbox}
+\usepackage{longtable}
 % 在导言区添加
 \usepackage{array}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
