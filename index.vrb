@@ -1,0 +1,35 @@
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, colback=white, breakable, bottomrule=.15mm, left=2mm, leftrule=.75mm, titlerule=0mm, coltitle=black, opacitybacktitle=0.6, toprule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{This workshop template}, colbacktitle=quarto-callout-note-color!10!white, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, opacityback=0]
+
+This workshop template contains 4 pages:
+
+\begin{itemize}
+\item
+  Home: \texttt{index.qmd} (this page)
+\item
+  About: \texttt{about.qmd}
+\end{itemize}
+
+Two content pages
+
+\begin{itemize}
+\item
+  Page without code: \texttt{lecture1\_intro.qmd}
+\item
+  Page with R code: \texttt{lecture2\_lagrange.qmd}
+\end{itemize}
+
+It is straightforward to add more content pages: you need to create a
+new \texttt{.qmd} file (or copy/paste the existing ones), then link the
+new page inside \texttt{\_quarto.yml}.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, colback=white, breakable, bottomrule=.15mm, left=2mm, leftrule=.75mm, titlerule=0mm, coltitle=black, opacitybacktitle=0.6, toprule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Homepage of your workshop}, colbacktitle=quarto-callout-tip-color!10!white, bottomtitle=1mm, rightrule=.15mm, toptitle=1mm, arc=.35mm, opacityback=0]
+
+This is the \textbf{homepage} \texttt{index.qmd} for your workshop, so
+ideally it should contain some key information such as \textbf{time and
+place, instructors} and information of the course/workshop.
+
+It should be easy to navigate.
+
+\end{tcolorbox}

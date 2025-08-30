@@ -1,5 +1,7 @@
 ---
 title: "经济学中的优化方法"
+format:
+    html
 ---
 
 Date: 周二 14:00-16:40
@@ -21,9 +23,9 @@ This workshop template contains 4 pages:
 
 Two content pages
 
--   Page without code: `part_1_prep.qmd`
+-   Page without code: `lecture1_intro.qmd`
 
--   Page with R code: `part_2_eda.qmd`
+-   Page with R code: `lecture2_lagrange.qmd`
 
 It is straightforward to add more content pages: you need to create a new `.qmd` file (or copy/paste the existing ones), then link the new page inside `_quarto.yml`.
 :::
@@ -65,5 +67,5 @@ It can be useful to include a tabular schedule with links.
 
 | Time | Topic | Presenter |
 |:----------------------:|:----------------------:|:----------------------:|
-| 9:00 - 10:30 | [Session 1: Preparation](part_1_prep.qmd) | Instructor A |
-| 10:45 - 12:00 | [Session 2: Exploratory Analysis](part_2_eda.qmd) | Instructor B, C |
+| 9:00 - 10:30 | [Session 1: Preparation](lecture1_intro.qmd) | Instructor A |
+| 10:45 - 12:00 | [Session 2: Exploratory Analysis](lecture2_lagrange.qmd) | Instructor B, C |

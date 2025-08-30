@@ -1692,5 +1692,2036 @@
     "title": "省以下财政体制改革如何激发县域创业活力",
     "section": "异质性分析：企业类型",
     "text": "异质性分析：企业类型\n\n省直管县改革更显著促进大型企业和非个体工商户的创业，而中小企业及个体户的激励效应较弱"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "Date: 周二 14:00-16:40\nRoom: 沙河主教 401\nInstructors: 范翻\n\n\n\n\n\n\n\nThis workshop template\n\n\n\nThis workshop template contains 4 pages:\n\nHome: index.qmd (this page)\nAbout: about.qmd\n\nTwo content pages\n\nPage without code: lecture1_intro.qmd\nPage with R code: lecture2_lagrange.qmd\n\nIt is straightforward to add more content pages: you need to create a new .qmd file (or copy/paste the existing ones), then link the new page inside _quarto.yml.\n\n\n\n\n\n\n\n\nHomepage of your workshop\n\n\n\nThis is the homepage index.qmd for your workshop, so ideally it should contain some key information such as time and place, instructors and information of the course/workshop.\nIt should be easy to navigate.\n\n\n\nWelcome!\n\nThe goal of the workshop is to … (insert your message)\nFor example, introduce kep concepts in machine learning, such as regularisation.\nWorkshop material can be found in the workshop github repository.\n\n\nLearning Objectives\nAt the end of the tutorial, participants will be able to\n\nunderstand key concepts for … (insert your message)\nFor example, training machine learning models such as regularisation.\nanother objective\n\n\n\nPre-requisites\n\nBasic familiarity with R\nSome other knowledge\n\n\n\n\nSchedule\n\n\n\n\n\n\nTabular schedule\n\n\n\nIt can be useful to include a tabular schedule with links.\n\n\n\n\n\nTime\nTopic\nPresenter\n\n\n\n\n9:00 - 10:30\nSession 1: Preparation\nInstructor A\n\n\n10:45 - 12:00\nSession 2: Exploratory Analysis\nInstructor B, C"
+  },
+  {
+    "objectID": "lecture8_uncertainty.html",
+    "href": "lecture8_uncertainty.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "假定存在一系列不同状态的基本事件(events)\\(i = 1, 2, \\cdots, m\\)；\n记第\\(i\\)个基本事件发生的概率为\\(p_i\\)，这些概率非负且和为一；\n与经济事件相关的实现结果通常是收入水平、财富或者决策者应得的利润\\(Y_i\\)，这些结果所带来的效用分别为\\(U(Y_i)\\)；\n定义期望效用函数（冯·诺依曼-摩根斯坦效用）为：\n\n\\[\n\\sum_{i = 1}^m p_iU(Y_i)\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#期望效用",
+    "href": "lecture8_uncertainty.html#期望效用",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "假定存在一系列不同状态的基本事件(events)\\(i = 1, 2, \\cdots, m\\)；\n记第\\(i\\)个基本事件发生的概率为\\(p_i\\)，这些概率非负且和为一；\n与经济事件相关的实现结果通常是收入水平、财富或者决策者应得的利润\\(Y_i\\)，这些结果所带来的效用分别为\\(U(Y_i)\\)；\n定义期望效用函数（冯·诺依曼-摩根斯坦效用）为：\n\n\\[\n\\sum_{i = 1}^m p_iU(Y_i)\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#风险规避",
+    "href": "lecture8_uncertainty.html#风险规避",
+    "title": "经济学中的优化方法",
+    "section": "风险规避",
+    "text": "风险规避\n定义决策者是风险规避的，如果对于若干个事件\\(Y_1, Y_2, \\cdots, Y_m\\)，有\n\\[\nU(\\sum_{i = 1}^m p_i Y_i) &gt; \\sum_{i = 1}^m p_i U(Y_i)\n\\]\n\n左边是期望收益的效用，右边是事件的期望效用；\nU在所有事件组成的集合中是（严格）凹的，换言之如果\\(U\\)是二次可微的，则\\(U^{''} &lt;0\\)意味着风险规避。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#最优保费问题-i",
+    "href": "lecture8_uncertainty.html#最优保费问题-i",
+    "title": "经济学中的优化方法",
+    "section": "最优保费问题 I",
+    "text": "最优保费问题 I\n假设存在两个事件，其收益和发生概率分别为\\(Y_1, Y_2\\)和\\(p_1, p_2\\)，且\\(Y_1 &lt; Y_2\\)。为了规避风险，决策者可以预付保费\\(x\\)，并在事件1发生时赔付\\(X = x/p\\)，在事件2发生时不赔付。 购买保险后的期望效用为：\n\\[\npU(Y_1 - x + x/p) + (1 - p)U(Y_2 - x)\n\\]\n用链式法则可以找到\\(x\\)为最优解的一阶条件\n\\[\npU^{'}(Y_1 - x + x/p) (1/p - 1) = (1 - p)U^{'}(Y_2 - x)\n\\]\n如果\\(U^{''} &lt; 0\\)(风险规避者)，上述条件也是充分的，并且意味着\n\\[\nY_1 - x + x/p = Y_2 - x\n\\]\n因此，最优保费为\\(x = p(Y_2 - Y_1)\\)，即一个风险规避的决策者会购买保险，使得各个不同状态下的收益相等。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#最优保费问题-ii",
+    "href": "lecture8_uncertainty.html#最优保费问题-ii",
+    "title": "经济学中的优化方法",
+    "section": "最优保费问题 II",
+    "text": "最优保费问题 II\n假设保险不仅影响事件的收益，同时会影响事件的发生概率，即决策者可以通过一个预算的支出\\(z\\)降低坏结果1的概率（但不进行赔付）。例如，使用一个更可靠但更昂贵的产品，或者在有风险的活动中更加谨慎小心，而这种小心翼翼会带来负效用。\n则目标函数变为\n\\[\nO(z) \\equiv p(z)U(Y_1 - z) + [1 - p(z)]U(Y_2 - z)\n\\]\n其中\\(p(z)\\)是关于\\(z\\)的递减函数。意味着随着保费的增加，坏结果1发生的概率会降低。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#最优保费问题-iii",
+    "href": "lecture8_uncertainty.html#最优保费问题-iii",
+    "title": "经济学中的优化方法",
+    "section": "最优保费问题 III",
+    "text": "最优保费问题 III\n此时对期望收益\\(O(z)\\)求导可得\n\\[\n\\begin{aligned}\n    O^{'}(z) & = - p^{'}(z)[U(Y_2 - z) - U(Y_1 - z)] \\\\\n    & - \\{p(z)U^{'}(Y_1 - z) + [1 - p(z)]U^{'}(Y_2 - z)\\}\n\\end{aligned}\n\\]\n\n第一项代表着谨慎行为或使用高质量产品的期望边际收益，是坏结果概率的边际减少乘以两种结果的效用差；\n第二项是谨慎行为或使用高质量产品的期望边际成本。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#最优保费问题-iv",
+    "href": "lecture8_uncertainty.html#最优保费问题-iv",
+    "title": "经济学中的优化方法",
+    "section": "最优保费问题 IV",
+    "text": "最优保费问题 IV\n假设保险和谨慎行为都存在，保险公司不能辨别人们是否谨慎行事，而只能观察到结果。如果存在保险经算上公平的保险，目标函数为\n\\[\nO(x, z) \\equiv p(z)U(Y_1 - z - x + x/p(z)) + [1 - p(z)]U(Y_2 - z - x)\n\\]\n关于\\(x\\)的一阶条件为\n\\[\nY_1 - z - x + x/p(z) = Y_2 - z - x\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#最优保费问题-v",
+    "href": "lecture8_uncertainty.html#最优保费问题-v",
+    "title": "经济学中的优化方法",
+    "section": "最优保费问题 V",
+    "text": "最优保费问题 V\n关于\\(z\\)的一阶条件为\n\\[\n\\begin{aligned}\n    O_z(x, z) & = - p^{'}(z) [U(Y_2 - z - x) - U(Y_1 - z - x + x/p(z))] \\\\\n    & - \\{\n    p(z)U^{'}(Y_1 - z - x + x/p(z)) \\\\\n    & + [1 - p(z)]U^{'}(Y_2 - z - x)\\}\n\\end{aligned}\n\\]\n记\\(Y_0\\)为满足\\(x\\)一阶条件的值，则上述条件可以表示为\n\\[\n\\begin{aligned}\n    O_z(x, z) & = - p^{'}[U(Y_0) - U(Y_0)] - U^{'}(Y_0) \\\\\n    & = - U^{'}(Y_0) &lt; 0\n\\end{aligned}\n\\]\n当存在完全保险时，谨慎行为所获得的边际收益消失了，但边际成本仍然为正。因而谨慎行为的最优值位于角点\\(z = 0\\)处，即存在道德风险问题。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#连续变量下的不确定性问题",
+    "href": "lecture8_uncertainty.html#连续变量下的不确定性问题",
+    "title": "经济学中的优化方法",
+    "section": "连续变量下的不确定性问题",
+    "text": "连续变量下的不确定性问题\n假设存在一个事件连续统\\([\\underline{r}, \\overline{r}]\\)，随机变量\\(r\\)代表事件，概率密度函数为\\(f(r)\\)。期望效用函数为\n\\[\nE[U(Y)] = \\int_{\\underline{r}}^{\\underline{r}}U(Y(r))f(r)dr\n\\]\n类似地，\\(Y\\)的期望收益为\n\\[\nE[Y] = \\int_{\\underline{r}}^{\\underline{r}}Y(r)f(r)dr\n\\]\n因此\\(U^{''} &lt; 0\\)意味着\n\\[\nU[E(Y)] &gt; E[U(Y)]\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#风险资产和无风险资产-i",
+    "href": "lecture8_uncertainty.html#风险资产和无风险资产-i",
+    "title": "经济学中的优化方法",
+    "section": "风险资产和无风险资产 I",
+    "text": "风险资产和无风险资产 I\n一个投资者拥有初始财富\\(W_0\\)。投资于风险资产\\(x\\)产生总收益（本金加利息）\\(x(1 + r)\\)，其中\\(r\\)为一个随机变量，其密度函数为\\(f(x)\\)；无风险资产则支付零利息。最终的（随机）财富为\n\\[\nW = (W_0 - x) + x(1 + r) = W_0 + xr, x \\in [0, W_0]\n\\]\n投资者有严格凹的冯·诺依曼-摩根斯坦函数\\(U\\)，选择\\(x\\)以最大化\n\\[\nE[U(W)] = \\int_{\\underline{r}}^{\\overline{r}}U(W_0 + xr)f(r)dr\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#风险资产和无风险资产-ii",
+    "href": "lecture8_uncertainty.html#风险资产和无风险资产-ii",
+    "title": "经济学中的优化方法",
+    "section": "风险资产和无风险资产 II",
+    "text": "风险资产和无风险资产 II\n因此，投资者的最优决策应满足\n\\[\nO^{'}(x) = \\int_{\\underline{r}}^{\\overline{r}}rU^{'}(W_0 + xr)f(r)dr = 0\n\\]\n特别地\n\\[\nO^{'}(0) = U^{'}(W_0)\\int_{\\underline{r}}^{\\overline{r}}rf(r)dr = U^{'}(W_0)E[r]\n\\]\n如果风险资产利率的数学期望是正的(\\(E[r] &gt; 0\\))，则\\(O^{'}(0)\\)必为正。那么，\\(x\\)的最优值就不可能为零。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#风险资产和无风险资产-iii",
+    "href": "lecture8_uncertainty.html#风险资产和无风险资产-iii",
+    "title": "经济学中的优化方法",
+    "section": "风险资产和无风险资产 III",
+    "text": "风险资产和无风险资产 III\n如果\\(\\underline{r} &gt; 0\\)，那么对于所有的\\(x\\)，都有\\(O^{'}(x) &gt; 0\\)， 而且将所有的\\(W_0\\)投资于风险资产是最优的。关于\\(x\\)的一阶条件是\n\\[\n\\int_{\\underline{r}}^{\\overline{r}}rU^{'}(W_0 + xr)f(r)dr = 0\n\\]\n如果存在一个满足上述条件的\\(x &lt; W_0\\)，则\\(U\\)的凹姓保证了它是全局最优值。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#比较静态分析-i",
+    "href": "lecture8_uncertainty.html#比较静态分析-i",
+    "title": "经济学中的优化方法",
+    "section": "比较静态分析 I",
+    "text": "比较静态分析 I\n假定初始财富\\(W_0\\)是可变的，将最大值函数写为\\(O(x, W_0)\\)，对其全微分可得\n\\[\ndx/dW_0 = - O_{xw}(x, W_0)/O_{xx}(w, W_0)\n\\]\n由二阶条件可知，上式分母为负，因此\\(dx/dW_0\\)的符号取决于二阶交叉导数的符号。而分子\n\\[\nO_{xw}(x, W_0) = \\int_{\\underline{r}}^{\\overline{r}}rU^{''}(W_0 + xr)fr(r)dr\n\\]\n当且仅当\\(\\underline{r} &lt; 0 &lt; \\overline{r}\\)时，才存在一个可能的最优内点解\\(x\\)。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#风险规避系数",
+    "href": "lecture8_uncertainty.html#风险规避系数",
+    "title": "经济学中的优化方法",
+    "section": "风险规避系数",
+    "text": "风险规避系数\n定义一个冯·诺依曼-摩根斯坦效用函数的绝对风险规避系数为\n\\[\nA(W) = - U^{''}(W)/U^{'}(W)\n\\]\n\n如果\\(A(W) &lt; 0\\)，意味着决策者是风险厌恶的；反之则是风险偏好的；\n当\\(|A(w)|\\)越大时，意味着决策者的风险厌恶/偏好程度越大；\n较为富有的投资者更能容忍给定的边际风险，因此预期\\(A(W)\\)应该是递减函数。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#比较静态分析-ii",
+    "href": "lecture8_uncertainty.html#比较静态分析-ii",
+    "title": "经济学中的优化方法",
+    "section": "比较静态分析 II",
+    "text": "比较静态分析 II\n如果绝对风险规避系数\\(A(W)\\)是财富的递减函数，那么富有的投资者将持有更有的风险资源。注意到，如果\\(r &lt; 0\\)，则\n\\[\n- U^{''}(W_0 + xr)/U^{'}(W_0 + xr) &gt;  - U^{''}(W0)/U^{'}(W0) = A(W0)\n\\]\n两边乘以\\(-r\\)有\n\\[\nrU^{''}(W0 + xr)/U^{'}(W0 + xr) &gt;  -r A(W0)\n\\]\n即\n\\[\nrU^{''}(W0 + xr) &gt; -A(W0)rU^{'}(W0 + xr)\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#比较静态分析-iii",
+    "href": "lecture8_uncertainty.html#比较静态分析-iii",
+    "title": "经济学中的优化方法",
+    "section": "比较静态分析 III",
+    "text": "比较静态分析 III\n类似地，对\\(r &gt;0\\)同样有\n\\[\nrU^{''}(W0 + xr) &gt; -A(W0)rU^{'}(W0 + xr)\n\\]\n因此，对任意区间的\\(r\\)积分有\n\\[\n\\int_{\\underline{r}}^{\\overline{r}}rU^{''}(W0 + xr) f(r) dr &gt; - A(W0)\\int_{\\underline{r}}^{\\overline{r}}rU^{'}(W0 + xr)f(r)dr = 0\n\\]\n这意味着，\\(dx/dW0 &gt;0\\)。换言之，随着初始财富\\(W0\\)的增加，最优风险资产持有\\(x\\)会上升。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#投资组合选择-i",
+    "href": "lecture8_uncertainty.html#投资组合选择-i",
+    "title": "经济学中的优化方法",
+    "section": "投资组合选择 I",
+    "text": "投资组合选择 I\n假设投资者的目标函数可以表示成财富的均值\\(M\\)和标准差\\(S\\)的一个函数，在期望效用函数框架中，这对应着两种特殊情况\n如果冯·诺依曼-摩根斯坦效用函数是二次的 \\[\nU(W) = W - \\frac{1}{2}aW^2, a &gt; 0\n\\]\n那么 \\[\nE[U(W)] = M - \\frac{1}{2}a(M^2 + S^2)\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#投资组合选择-ii",
+    "href": "lecture8_uncertainty.html#投资组合选择-ii",
+    "title": "经济学中的优化方法",
+    "section": "投资组合选择 II",
+    "text": "投资组合选择 II\n\n如果每一种资产都有正态分布的回报，那么财富也是正态分布的。并且任何冯·诺依曼-摩根斯坦效用函数都可以用均值和方差来表示。例如 \\[\nU(W) = - exp(-aW), a &gt;0\n\\]\n其期望为 \\[\nE[U(W)] = - exp(- a[M - \\frac{1}{2}aS^2])\n\\]\n当\\((M - \\frac{1}{2}aS^2)\\)达到最大值时，期望效用也达到最大。同时，对于这个函数而言，绝对风险规避系数为常数，并且等于\\(a\\)。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#投资组合选择-iii",
+    "href": "lecture8_uncertainty.html#投资组合选择-iii",
+    "title": "经济学中的优化方法",
+    "section": "投资组合选择 III",
+    "text": "投资组合选择 III\n\n假设初始财富始终不变，且标准化为1；\n存在\\(n\\)种资产，且总收益可以写作\\(r = (r_1, r_2, \\cdots, r_n)\\)，其数学期望为\\(\\mu = (\\mu_1, \\mu_2, \\cdots, \\mu_n)\\);\n总收益的方差-协方差矩阵为\\(\\sum = (\\sigma_{ij})\\)；\n投资组合即为投资于各种不同资产的财富比例向量\\(x = (x_1, x_2, \\cdots, x_n)\\)\n\n投资组合选择问题本质上是要构建\\(M\\)和\\(S\\)之间的可行转换边界。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#投资组合选择-iv",
+    "href": "lecture8_uncertainty.html#投资组合选择-iv",
+    "title": "经济学中的优化方法",
+    "section": "投资组合选择 IV",
+    "text": "投资组合选择 IV\n因此，随机的最终财富为\n\\[\nW = \\sum_{i = 1}^n x_i r_i = x^{T}r\n\\]\n最终财富的均值和方差分别为\n\\[\n\\begin{aligned}\n    M & = \\sum_{i =1}^n x_i \\mu_i = x^{T}\\mu \\\\\n    S^2 & = \\sum_{i = 1}^n \\sum_{j = 1}^n x_i x_j \\sigma_{ij} = x^{T}\\sum x\n\\end{aligned}\n\\]\n注意\\(M\\)和\\(S^2\\)都是\\(x\\)的函数。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#可行转化边界-i",
+    "href": "lecture8_uncertainty.html#可行转化边界-i",
+    "title": "经济学中的优化方法",
+    "section": "可行转化边界 I",
+    "text": "可行转化边界 I\n为了找到\\(M\\)和\\(S\\)之间的可行转换边界，对于给定的均值要最小化标准差，即\n\\[\n\\begin{aligned}\n    min\\quad & S = (x^{T}\\sum x)^{1/2} \\\\\n    s.t.\\quad & x^{T}\\mu = M, x^{T} e = 1\n\\end{aligned}\n\\]\n在两种资产的情况下，令\\(x\\)代表\\(x_1\\)，那么\\(x_2 = 1 - x\\)。因而\n\\[\nM = \\mu_2 + (\\mu_1 - \\mu_2)x\n\\]\n且\n\\[\nS^2 = \\sigma_2^2 - 2K_{2}x +(K_1 + K_2) x^2\n\\]\n其中\n\\[\nK_1 \\equiv \\sigma_1^2 - \\rho \\sigma_1 \\sigma_2, K_2 \\equiv \\sigma_1^2 - \\rho \\sigma_1 \\sigma_2\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#可行转化边界-ii",
+    "href": "lecture8_uncertainty.html#可行转化边界-ii",
+    "title": "经济学中的优化方法",
+    "section": "可行转化边界 II",
+    "text": "可行转化边界 II\n将资产排序确保\\(\\mu_1 &gt; \\mu_2\\)。当\\(x\\)从0增加到1，\\(M\\)从\\(\\mu_2\\)增加到\\(\\mu_1\\)，且\\(S\\)从\\(\\sigma_2\\)变到\\(\\sigma_1\\)时，沿此方向有\n\\[\nSdS/dx = - K_2 + (K_1 + K_2)x\n\\]\n因此，在\\(x = 0\\)处\n\\[\ndS/dx = -  (\\sigma_2 - \\rho \\sigma_1)\n\\]\n以及在\\(x = 1\\)处\n\\[\ndS/dx = \\sigma_1 - \\rho \\sigma_2\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#可行转化边界-iii",
+    "href": "lecture8_uncertainty.html#可行转化边界-iii",
+    "title": "经济学中的优化方法",
+    "section": "可行转化边界 III",
+    "text": "可行转化边界 III\n\n如果\\(\\sigma_1 &gt; \\sigma_2\\)，那么在两个完全专门化的投资组合之间，存在风险-收益的权衡。因此在\\(x = 1\\)附近\\(dS/dx\\)肯定为正。\n即使\\(\\sigma_1 &lt; \\sigma_2\\)，即资产1完全优于资产2，只要\\(\\rho\\)足够小，也可能通过混合两种资产而得到分散化的收益，从而也存在一个权衡。\n更一般地，方差最小的投资组合由下式给出 \\[\nx = \\frac{K_1}{K_1 + K_2} = \\frac{\\sigma_2^2 - \\rho \\sigma_1 \\sigma_2}{(\\sigma_1^2 - \\rho \\sigma_1 \\sigma_2) + (\\sigma_2^2 - \\rho \\sigma_1 \\sigma_2)}\n\\]\n从上式看，\\(x \\in [0,1]\\)，即不存在任何卖空行为。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#可行转化边界-iv",
+    "href": "lecture8_uncertainty.html#可行转化边界-iv",
+    "title": "经济学中的优化方法",
+    "section": "可行转化边界 IV",
+    "text": "可行转化边界 IV\n对 \\(dS/dx = - K_2 + (K_1 + K_2)x\\) 两边同时再次微分\n\\[\n\\begin{aligned}\n    K_1 + K_2 & = S d^2S/dx^2 + dS/dx dS/dx \\\\\n    & = Sd^2S/dx^2 + (dS/dx)^2\n\\end{aligned}\n\\]\n而根据 \\(SdS/dx = - K_2 + (K_1 + K_2)x\\) 化简可得\\(d^2S/dx^2\\)的符号取决于\\((1 - \\rho^2)\\sigma_1^2\\sigma_2^2\\)，即\n\\[\nd^2S/dx^2 &gt; 0.\n\\]\n因此，在\\((M, S)\\)空间内，可行转化边界函数为凸的。",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#均值-方差框架下的投资组合选择",
+    "href": "lecture8_uncertainty.html#均值-方差框架下的投资组合选择",
+    "title": "经济学中的优化方法",
+    "section": "均值-方差框架下的投资组合选择",
+    "text": "均值-方差框架下的投资组合选择",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#有一种无风险资产时的投资组合选择",
+    "href": "lecture8_uncertainty.html#有一种无风险资产时的投资组合选择",
+    "title": "经济学中的优化方法",
+    "section": "有一种无风险资产时的投资组合选择",
+    "text": "有一种无风险资产时的投资组合选择",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#管理者的激励-i",
+    "href": "lecture8_uncertainty.html#管理者的激励-i",
+    "title": "经济学中的优化方法",
+    "section": "管理者的激励 I",
+    "text": "管理者的激励 I\n假设企业所有者必须雇佣一个管理者来经营某项目：\n\n如果项目成功的话，该项目将产生价值\\(V\\)\n在高质量工作的情况下，项目成功的概率为\\(p\\)，在低质量工作的情况下，项目成功的概率为\\(q\\)\n吸引一个管理者的基本薪水为\\(w\\)，为了实现高质量他必须更加努力，并且只有当他得到奖金\\(e\\)时他才会这么做\n企业所有者和管理者都是风险中性的",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#管理者的激励-ii",
+    "href": "lecture8_uncertainty.html#管理者的激励-ii",
+    "title": "经济学中的优化方法",
+    "section": "管理者的激励 II",
+    "text": "管理者的激励 II\n假定企业所有者可以观察到管理者的工作质量：\n\n高质量工作期望利润：\\(pV - (w + e)\\)\n低质量工作期望利润：\\(qV - w\\)\n\n高质量工作利润必须满足：\n\n\\((p - q)V &gt; e\\) （比较优势）\n\\(pV &gt; w + e\\) （正利润）\n\n当无法观察努力时，差异性工作方案：\n\n成功时支付\\(x\\)，失败时支付\\(y\\)。激励相容条件为：\n\n\\[\n(p - q)(x - y) \\geq e\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#管理者的激励-iii",
+    "href": "lecture8_uncertainty.html#管理者的激励-iii",
+    "title": "经济学中的优化方法",
+    "section": "管理者的激励 III",
+    "text": "管理者的激励 III\n参与约束： \\[\npx + (1-p)y \\geq w + e\n\\]\n所有者利润最大化： \\[\n\\pi = pV - [px + (1-p)y]\n\\]\n受约束于： \\[\n\\begin{aligned}\n(p - q)(x - y) & \\geq e \\\\\ny + p(x - y) & \\geq w + e\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#管理者的激励-v",
+    "href": "lecture8_uncertainty.html#管理者的激励-v",
+    "title": "经济学中的优化方法",
+    "section": "管理者的激励 V",
+    "text": "管理者的激励 V\n最优解特征： \\[\n\\begin{aligned}\nx - y & = e/(p - q) \\\\\ny & = w - eq/(p - q) \\\\\n\\pi & = pV - w - e\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture8_uncertainty.html#成本加成合约-i",
+    "href": "lecture8_uncertainty.html#成本加成合约-i",
+    "title": "经济学中的优化方法",
+    "section": "成本加成合约 I",
+    "text": "成本加成合约 I\n政府采购的特殊性：\n\n信息不对称下的成本造假风险\n需设计激励相容方案\n\n关键约束条件：\n\n个体理性约束 \\(R_i \\geq c_i q_i\\)\n激励相容约束 \\(\\begin{cases}\nR_1 - c_1 q_1 \\geq R_2 - c_1 q_2 \\\\\nR_2 - c_2 q_2 \\geq R_1 - c_2 q_1\n\\end{cases}\\)",
+    "crumbs": [
+      "Home",
+      "第八讲：不确定性条件下的优化"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html",
+    "href": "lecture3_shadow_price.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "情景设定：\n\n某地区电网需要预留备用发电机预防突发停电\n现有容量为8000兆瓦，停电损失曲线呈对数正态分布\n监管机构考虑是否增加200兆瓦备用容量\n\n决策难题：\n\n新增容量需投入2亿元设备费用，对输电网络进行扩容\n如何评估该投资的边际效益？\n\n\n\n如何刻画上面这个问题？\n\n目标函数是什么？\n\n最小化电力系统总成本：\n\n备用设备投资 \\(c \\cdot x\\)\n预期停电损失 \\(\\mathbb{E}[L(x)]\\)\n\n\n决策变量是什么？\n\n备用容量\\(x\\)（兆瓦）\n\n约束条件是什么？\n\n电网传输上限 \\(x \\leq X_{max}\\)\n\n\n数学表达:\n\\[\\begin{align*}\n\\max_{x} \\quad & C(x) = c \\cdot x + \\mathbb{E}[L(x)] \\\\\ns.t. &\\quad x \\leq X_{max}\n\\end{align*}\\]\n构造拉格朗日函数： \\[\n\\mathcal{L} = c x + \\mathbb{E}[L(x)] + \\lambda (X_{\\text{max}} - x)\n\\]\n一阶条件：\n\\[\n\\frac{\\partial \\mathcal{L}}{\\partial x} = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x} - \\lambda = 0\n\\] 解得： \\[\n\\lambda = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x}\n\\]\n影子价格的经济解读\n\n数学定义 \\(\\lambda =\\) 约束条件右端（容量上限）微小增加时，总成本的边际变化率：\\(\\lambda = \\frac{dC}{dX_{max}}\\)\n物理意义\n\n当 \\(X_{max}\\) 增加1单位：\n\n直接成本：节省设备投资 \\(c\\)\n间接收益：减少停电损失 \\(|\\partial \\mathbb{E}[L]/\\partial x|\\)\n\n影子价格\\(\\lambda\\) 即为两者的净效应\n\n决策信号\n\n若\\(\\lambda &gt; 0\\)：容量约束紧，增加容量可降成本 \\(\\rightarrow\\) 应扩大投资\n若\\(\\lambda = 0\\)：容量冗余，当前规模已达最优 \\(\\rightarrow\\) 维持现状",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#案例引入电力市场中的备用容量定价",
+    "href": "lecture3_shadow_price.html#案例引入电力市场中的备用容量定价",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "情景设定：\n\n某地区电网需要预留备用发电机预防突发停电\n现有容量为8000兆瓦，停电损失曲线呈对数正态分布\n监管机构考虑是否增加200兆瓦备用容量\n\n决策难题：\n\n新增容量需投入2亿元设备费用，对输电网络进行扩容\n如何评估该投资的边际效益？\n\n\n\n如何刻画上面这个问题？\n\n目标函数是什么？\n\n最小化电力系统总成本：\n\n备用设备投资 \\(c \\cdot x\\)\n预期停电损失 \\(\\mathbb{E}[L(x)]\\)\n\n\n决策变量是什么？\n\n备用容量\\(x\\)（兆瓦）\n\n约束条件是什么？\n\n电网传输上限 \\(x \\leq X_{max}\\)\n\n\n数学表达:\n\\[\\begin{align*}\n\\max_{x} \\quad & C(x) = c \\cdot x + \\mathbb{E}[L(x)] \\\\\ns.t. &\\quad x \\leq X_{max}\n\\end{align*}\\]\n构造拉格朗日函数： \\[\n\\mathcal{L} = c x + \\mathbb{E}[L(x)] + \\lambda (X_{\\text{max}} - x)\n\\]\n一阶条件：\n\\[\n\\frac{\\partial \\mathcal{L}}{\\partial x} = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x} - \\lambda = 0\n\\] 解得： \\[\n\\lambda = c + \\frac{\\partial \\mathbb{E}[L]}{\\partial x}\n\\]\n影子价格的经济解读\n\n数学定义 \\(\\lambda =\\) 约束条件右端（容量上限）微小增加时，总成本的边际变化率：\\(\\lambda = \\frac{dC}{dX_{max}}\\)\n物理意义\n\n当 \\(X_{max}\\) 增加1单位：\n\n直接成本：节省设备投资 \\(c\\)\n间接收益：减少停电损失 \\(|\\partial \\mathbb{E}[L]/\\partial x|\\)\n\n影子价格\\(\\lambda\\) 即为两者的净效应\n\n决策信号\n\n若\\(\\lambda &gt; 0\\)：容量约束紧，增加容量可降成本 \\(\\rightarrow\\) 应扩大投资\n若\\(\\lambda = 0\\)：容量冗余，当前规模已达最优 \\(\\rightarrow\\) 维持现状",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#本讲目标",
+    "href": "lecture3_shadow_price.html#本讲目标",
+    "title": "经济学中的优化方法",
+    "section": "本讲目标",
+    "text": "本讲目标\n\n什么是最优化问题中的影子价格？\n为什么计划经济中的\\(\\pi_g\\)与市场价格体系中的价格机制具有相似性？\n互补松弛条件中的\\(\\lambda_i=0\\)意味着什么经济现象？",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#等式约束的微小变动",
+    "href": "lecture3_shadow_price.html#等式约束的微小变动",
+    "title": "经济学中的优化方法",
+    "section": "等式约束的微小变动",
+    "text": "等式约束的微小变动\n假设一个简单的最优化问题，包括两个选择变量\\((x_1, x_2)\\)，一个目标函数\\(F(x)\\)和一个约束等式\\(G(x) = c\\)；\n\n令\\(\\bar{x}\\)代表最优选择，\\(v = F(\\bar{x})\\)表示最高所达到的值；\n假定\\(c\\)增加一个无穷小量\\(dc\\)，令\\(\\bar{x} + d\\bar{x}\\)为新的最优选择， \\(v + dv\\)为新的最优值。\n\n思考：\n\n\\(d\\bar{x}\\)与上一讲的x的微小变动\\(dx\\)是一回事么？\n\\(dv\\)和\\(dc\\)之间有什么关系？\n\n\n将目标函数F和约束函数G的值的变化进行一阶泰勒近似，我们有：\n\\[  \n\\begin{aligned}\ndv\n& = F(\\bar{x} + d\\bar{x}) - F(\\bar{x}) \\\\\n& = F_1(\\bar{x})d\\bar{x}_1 + F_2(\\bar{x})d\\bar{x}_2 \\\\\n& = \\lambda[G_1(\\bar{x})d\\bar{x}_1 + G_2(\\bar{x})d\\bar{x}_2] \\\\\n& = \\lambda[G(\\bar{x} + d\\bar{x}) - G(\\bar{x})] \\\\\n& = \\lambda[(c + dc) - c] = \\lambda dc\n\\end{aligned}\n\\]\n因此，一阶条件中的乘子\\(\\lambda = dv/dc\\)就是目标函数所能达到的最大值的变动，与约束等式右边参数的变动的比例。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#拉格朗日乘子与影子价格",
+    "href": "lecture3_shadow_price.html#拉格朗日乘子与影子价格",
+    "title": "经济学中的优化方法",
+    "section": "拉格朗日乘子与影子价格",
+    "text": "拉格朗日乘子与影子价格\n如果v为\\(F(x)\\)在向量约束\\(G(x) = c\\)下的最大值，\\(\\lambda\\)为对应约束的乘子组成的列向量，那么由无穷小量变动\\(dc\\)引起的变动\\(dv\\)由下式给出：\n\\[  \ndv = \\lambda dc = \\sum_{i} \\lambda_i dc_i.  \n\\]\n考虑一个计划经济，通过选择一个生产计划\\(\\bar{x}\\)以最大化社会福利函数\\(F(x)\\)。\n\n这个计划需要资源向量\\(G(x)\\)，这些资源的现有数量为向量\\(c\\)。假定这个问题已经被求解出来，则拉格朗日乘子向量\\(\\lambda\\)为已知。\n假定经济以外的某个力量，对第一种资源（比如说劳动）投入一个小的增量\\(dc_1\\)。\n最大化问题就可以在新的劳动约束下求解，以确定一种新的生产方式。\n\n劳动的微小增量所导致的社会福利的增加值是\\(\\lambda_1 dc_1\\)，因此，我们认为乘子\\(\\lambda_1\\)就是这个经济中以社会福利单位来衡量的劳动的边际产出。\n考虑存在两种资源的情况，资源1是劳动，资源2是土地。假设提供给这个经济额外的劳动\\(dc_1\\)，但是要求\\(dc_2\\)单位的土地作为回报。\n\n在这一交易中，社会福利净收益为\\(d\\lambda_1 dc_1 - \\lambda_2 dc_2\\)，因而社会计划者最多愿意放弃的土地为\\((\\lambda_1/\\lambda_2)dc_1\\)。\n因此，我们可以把比例\\((\\lambda_1/\\lambda_2)\\)称为以土地单位来衡量的每单位劳动的需求价格，也就是土地和劳动的相对价格。\n为了引出同价格的联系，同时又为了和市场价格在概念上有所区别，拉格朗日乘子常被称作影子价格。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#中央计划经济分配",
+    "href": "lecture3_shadow_price.html#中央计划经济分配",
+    "title": "经济学中的优化方法",
+    "section": "中央计划经济：分配",
+    "text": "中央计划经济：分配\n考虑一个计划经济体制，中央计划者将在消费者间分配商品，各种商品的产量是已知的。假设有C个消费者，\\(c = 1, 2, \\cdots, C\\)，和G种商品，\\(g = 1, 2, \\cdots, G\\)。记商品g的总数量为\\(X_g\\)，其分配给消费者c的数量为\\(x_{cg}\\)。\n\n每个消费者的效用都取决于分配到的各种商品的数量： \\[  \nu_c = U^{c}(x_{c1}, x_{c2}, \\cdots, x_{cG}).\n\\]\n社会福利函数是关于所有消费者效用的函数: \\[  \nw = W(u_1, u_2, \\cdots, u_C)\n\\]\n中央计划者面临的约束为: \\[  \nx_{1g} + x_{2g} + \\cdots + x_{cg} = X_g, g = 1, 2, \\cdots, G\n\\]\n\n\n构造拉格朗日函数\n\\[  \n\\begin{aligned}\n\\mathcal{L} =\n& W(U^{1}(x_{11}, x_{12}, \\cdots, x_{1G}), \\cdots, U^{C}(x_{C1}, x_{C2}, \\cdots, x_{CG})) + \\\\\n&\\sum_{g} \\pi_g[X_g - \\sum_c x_{cg}]\n\\end{aligned}\n\\]\n其中，\\(\\pi_g\\)表示对应于商品g的约束条件的拉格朗日乘子。\n此时，拉格朗日函数的一阶条件为\n\\[  \n\\frac{\\partial \\mathcal{L}}{\\partial x_{cg}}\n= \\frac{\\partial W}{\\partial u_c} \\frac{\\partial U^{c}}{\\partial x_{cg}} - \\pi_g = 0.\n\\]\n\n现在考虑市场经济体制，假定每种商品的价格为\\(\\pi_g\\)，并给予每一个消费者c一定的货币收入\\(I_c\\)，允许其在预算约束下最大化自己的效用。因此，市场经济下每个消费者面临着效用最大化问题：\n\\[  \n\\begin{aligned}\n\\mathop{\\max_{x_{c1}, \\cdots, x_{cn}}} & U(x_{c1}, x_{c2}, \\cdots, x_{cn}) \\\\\ns.t.\\quad & \\pi_1x_{c1} + \\pi_2x_{c2} + \\cdots \\pi_{G}x_{cG} \\leq I_c\n\\end{aligned}\n\\]\n此时，最优化问题的一阶条件为\n\\[  \n\\partial U^c/\\partial x_{cg} = \\lambda_c \\pi_{g}\n\\]\n\n比较两种经济体制下的一阶条件FOC1和FOC2\n\\[  \n\\begin{aligned}\n(\\partial W/\\partial u_c) (\\partial U^c/\\partial x_{cg}) & =  \\pi_g  \\\\\n\\partial U^c/\\partial x_{cg} & = \\lambda_c \\pi_{g}\n\\end{aligned}\n\\]\n我们发现，如果对于所有的消费者\\(c\\)，令\n\\[  \n\\partial W/\\partial u_c = 1/\\lambda_c\n\\] 那么这两个式子是完全一样的。\n\n回忆一下，对于效用最大化问题而言，拉格朗日乘子\\(\\lambda\\)代表什么？ \\[  \n\\frac{\\partial W}{\\partial u_c} \\lambda = 1\n\\]\n意味着，每个消费者一单位收入对社会福利的边际影响是相等的。换句话说，收入的分配应该被这样安排，以使得在边际上，每一个消费者收入的社会价值都是相等的。只要做到这一点，他们就可以自由地选择自己的消费束。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#非负的拉格朗日乘子",
+    "href": "lecture3_shadow_price.html#非负的拉格朗日乘子",
+    "title": "经济学中的优化方法",
+    "section": "非负的拉格朗日乘子",
+    "text": "非负的拉格朗日乘子\n\n拉格朗日乘子衡量了稀缺资源禀赋的增加带来的社会福利的增加。\n直觉上，放松某个约束应该是一件有利的事情，因为计划着至少可以取得和原来一样高的福利水平。\n困难在于，在具有等式约束的一般形式问题中，约束等式右边的数值增加并不必然意味着约束的放松。\n因此，如果想要得到，必须保证约束条件式子右边数值的增加的确放松了对这个选择变量的限制。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#拉格朗日乘子的互补松弛条件",
+    "href": "lecture3_shadow_price.html#拉格朗日乘子的互补松弛条件",
+    "title": "经济学中的优化方法",
+    "section": "拉格朗日乘子的互补松弛条件",
+    "text": "拉格朗日乘子的互补松弛条件\n拉格朗日乘子的互补松弛条件： \\[  \n\\lambda \\geq 0,L_{\\lambda}(\\bar{x}) \\geq 0  \n\\]\n或者说\n\\[  \nG^{i}(x) \\leq c_i, \\lambda_i \\geq 0  \n\\]\n\n中至少有一个不等式是以等式形式成立的。拉格朗日乘子\\(\\lambda_i = 0\\)意味着资源\\(i\\) 未被充分利用，出现闲置的情况：\n\n如果某种资源已经被部分闲置，那么新增这种资源仍然会被闲置。此时目标函数的最大值不变，影子价格将为零。\n正的影子价格意味着现有资源的一单位边际增加能够得到很好的使用，也就是说，原来的生产计划中这种资源没有被闲置。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#即将过剩的位置",
+    "href": "lecture3_shadow_price.html#即将过剩的位置",
+    "title": "经济学中的优化方法",
+    "section": "即将过剩的位置",
+    "text": "即将过剩的位置\n\n假定\\(c_i\\) 刚好处在某个点上，在这一点资源\\(i\\)正好处在即将过剩的边际上，即已有的资源恰好被充分利用，但该资源任何的增量都不会再被使用。\n互补松弛条件不能告诉我们，在这一点处，拉格朗日乘子为正还是为零。这取决于最大值\\(v\\) 在\\(c_i\\) 的斜率，在边界点处是平滑地变为零还是突然变为零。\n\n\n\n\n情况1（图a）：斜率平滑地下降，在该点处的拉格朗日乘子为零；\n情况2（图b）：斜率突然下降，即任何介于左边曲线斜率和右边直线斜率为零之间的\\(\\lambda_i\\)都有可能代表影子价格恰好从正转变为零。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture3_shadow_price.html#免税的购买",
+    "href": "lecture3_shadow_price.html#免税的购买",
+    "title": "经济学中的优化方法",
+    "section": "免税的购买",
+    "text": "免税的购买\n一个四处旅行的富翁，可以在家乡商店里购买不同牌子的酒，也可以在世界各地的机场免税商店购买。免税商店中的价格便宜一些，但是他所能购买的总量受到海关的限制：\n\n假设有n种牌子的酒，在富翁家乡商店的价格为\\(p\\)，在免税店的价格为\\(q\\)；\n对于所有的品牌而言，免税店里的价格都较低，即\\(q \\ll p\\)；\n令x代表他在家乡购买的各种酒的数量，y代表他在免税店里购买的各种酒的数量；\n富翁决定每年花在酒上的支出为I；\n海关规定每年富翁可以进口K瓶免税酒；\n富翁的效用取决于总的消费数量\\(U = U(c), c = x+y\\)。\n\n\n拉格朗日函数为：\n\\[  \nL = U(c) + \\lambda[I - px - qy] + \\mu[K- ey]  \n\\]\n对于每一种酒\\(j\\)，我们都有\n\\[  \n\\partial L/\\partial x_j = \\partial U/\\partial c_j - \\lambda p_j \\leq 0, x_j \\geq 0  \n\\]\n满足互补松弛条件，同时，\n\\[  \n\\partial L/\\partial y_j = \\partial U/\\partial c_j - \\lambda q_j - \\mu \\leq 0, y_j \\geq 0  \n\\] 也满足互补松弛条件。\n\n如果富翁同时在家乡商店和机场免税店购买了正数量的酒j，那么\n\\[  \n\\partial U/\\partial c_j - \\lambda p_j = 0 = \\partial U/\\partial c_j -\\lambda q_j - \\mu\n\\]\n或\n\\[  \n\\lambda p_j = \\partial U/\\partial c_j = \\lambda q_j + \\mu  \n\\]\n最多有一个\\(j\\)使得上式成立，否则，假定存在两种酒\\(i\\)和\\(j\\)，我们会有\n\\[  \n\\lambda(p_i - q_i) = \\mu = \\lambda(p_j - q_j)  \n\\]\n由于我们假定该消费者没有满足，\\(\\lambda\\)是正的，所以\n\\[  \np_i - q_i = p_j - q_j  \n\\]\n\n现在假定酒j仅能在家乡商店里被购买，由于\\(x_j &gt; 0, y_j = 0\\)，因此有：\n\\[  \n\\partial U/\\partial c_j = \\lambda p_j \\tag{FOC1}  \n\\]\n和\n\\[  \n\\partial U/\\partial c_j \\leq \\lambda q_j + \\mu \\tag{FOC2}  \n\\]\n\n对于FOC1，等式左边是酒j的边际效用，等式右边是在家乡商店购买酒j的边际机会成本；\n对于FOC2，式子右边是在免税商店购买酒\\(j\\)的边际机会成本(怎么理解\\(\\mu\\)?)。\n\n\n消费者的购买原理是：在有较低的机会成本的商店里购买每一种牌子的酒。注意到 \\[  \n\\lambda q_j + \\mu &lt; \\lambda p_i,\\text{当且仅当} p_i - q_i &gt; \\mu/\\lambda  \n\\] 因此，富翁会把各个牌子的酒按照他们在两种商店的绝对价格差进行排序，绝对价格差最大的酒在免税商店购买，价格差最小的在家乡商品购买。两者的交汇点恰好在用在免税限额的那一点。因此，最多只有一种牌子的酒会同时在两种商店里被购买。",
+    "crumbs": [
+      "Home",
+      "第三讲：影子价格"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html",
+    "href": "lecture1_intro.html",
+    "title": "最优化问题概述",
+    "section": "",
+    "text": "成绩构成：\n\n考勤（15分）：总计3次，每次5分；\n期中考试（15分）\n期末考试（70分）\n\n教材：\n\n《经济理论中的最优化方法》 迈克西特\n《动态最优化基础》 蒋中一",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#课程信息",
+    "href": "lecture1_intro.html#课程信息",
+    "title": "最优化问题概述",
+    "section": "",
+    "text": "成绩构成：\n\n考勤（15分）：总计3次，每次5分；\n期中考试（15分）\n期末考试（70分）\n\n教材：\n\n《经济理论中的最优化方法》 迈克西特\n《动态最优化基础》 蒋中一",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#一般表述",
+    "href": "lecture1_intro.html#一般表述",
+    "title": "最优化问题概述",
+    "section": "一般表述",
+    "text": "一般表述\n一个典型的最优化问题可以表述为：\n\\[\n\\begin{aligned}\n\\mathop{\\max/\\min}_{x} & \\quad F(x) \\\\\n& \\quad G(x) \\leq 0 \\\\\n& \\quad H(x) = 0\n\\end{aligned}\n\\tag{P}\n\\]\n\n选择变量 \\(x \\in X\\)\n目标函数 \\(F(x): X\\rightarrow R\\),\n约束条件:\n\n不等式约束 \\(G(x): X \\rightarrow Y\\)\n等式约束 \\(H(x): X \\rightarrow Z\\)\n\n\\(X\\)为选择变量\\(x\\)的取值空间（范围），\\(R\\)为实数空间, \\(X, Y, Z\\)可为多维（有限维）实数空间或无限维函数空间。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#非线性规划问题nonlinear-programming-nlp",
+    "href": "lecture1_intro.html#非线性规划问题nonlinear-programming-nlp",
+    "title": "最优化问题概述",
+    "section": "非线性规划问题(nonlinear programming, NLP)",
+    "text": "非线性规划问题(nonlinear programming, NLP)\n当变量空间\\(X\\)和约束条件中函数的取值空间 \\(Y, Z\\) 均为有限维实数空间时，上述最优化问题(P)被称为非线性规划问题:\n\\[\n\\begin{aligned}\n\\mathop{\\min_{x_1, \\cdots, x_n}} & f(x_1, x_2, \\cdots, x_n) \\\\\ns.t.\\quad & g(x) \\leq 0 \\\\\n& h(x) = 0\n\\end{aligned}\n\\tag{NLP}\n\\]\n其中\n\\[\ng(x) = \\begin{pmatrix}\ng_1(x_1, x_2, \\cdots, x_n) \\\\\ng_2(x_1, x_2, \\cdots, x_n) \\\\\n\\vdots \\\\\ng_m(x_1, x_2, \\cdots, x_n)\n\\end{pmatrix}\n\\quad \\text{和} \\quad\nh(x) = \\begin{pmatrix}\nh_1(x_1, x_2, \\cdots, x_n) \\\\\nh_2(x_1, x_2, \\cdots, x_n) \\\\\n\\vdots \\\\\nh_l(x_1, x_2, \\cdots, x_n)\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#消费者选择问题-i",
+    "href": "lecture1_intro.html#消费者选择问题-i",
+    "title": "最优化问题概述",
+    "section": "消费者选择问题 I",
+    "text": "消费者选择问题 I\n给定消费者的效用函数形式，在完全竞争市场下，消费者面对给定的市场价格，在给定收入约束下，如何选择不同消费品的最优组合以最大化效用？对于这个问题：\n\n消费者的选择变量是什么？\n目标函数是什么？\n约束条件是什么？\n\n从另一个角度来看，如果消费者要达到一定的效用水平，如何最小化消费总支出？对应的选择变量、目标函数和约束条件是什么？如何用非线性规划的形式来表述上述问题？",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#消费者选择问题-ii",
+    "href": "lecture1_intro.html#消费者选择问题-ii",
+    "title": "最优化问题概述",
+    "section": "消费者选择问题 II",
+    "text": "消费者选择问题 II\n效用最大化问题:\n\\[\n\\begin{aligned}\n\\mathop{\\max_{x_1, \\cdots, x_n}} & U(x_1, x_2, \\cdots, x_n) \\\\\ns.t.\\quad & p_1x_1 + p_2x_2 + \\cdots p_nx_n \\leq y\n\\end{aligned}\n\\]\n支出最小化问题：\n\\[\n\\begin{aligned}\n\\mathop{\\min_{x_1, \\cdots, x_n}} & p_1x_1 + p_2x_2 + \\cdots p_nx_n \\\\\ns.t. \\quad &  U(x_1, x_2, \\cdots, x_n)  \\geq v\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#古典变分法问题calculus-of-variation",
+    "href": "lecture1_intro.html#古典变分法问题calculus-of-variation",
+    "title": "最优化问题概述",
+    "section": "古典变分法问题(calculus of variation)",
+    "text": "古典变分法问题(calculus of variation)\n当变量空间\\(X\\)为函数空间时，最优化问题(P)可称为函数空间的非线性规划问题。函数空间的最优化问题，包括古典变分法问题与在其基础上发展而来的最优控制问题。\n一个最简变分法问题寻求符合端点条件的、使目标积分值最小的函数：\n\\[\n\\begin{aligned}\n\\mathop{\\min_{x(\\cdot)}}\n& \\int_{t_0}^{t_1} f(t, x(t), \\dot{x}(t)) dt \\\\\ns.t.\\quad & x(t_0) = x_0, \\quad x(t_1) = x_1.\n\\end{aligned}\n\\tag{CVP}\n\\]\n其中，\\(\\dot{x}(t) = dx(t)/dt\\) 表示 \\(x(t)\\) 的导函数。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#最优控制问题optimal-control-problem-ocp",
+    "href": "lecture1_intro.html#最优控制问题optimal-control-problem-ocp",
+    "title": "最优化问题概述",
+    "section": "最优控制问题(optimal control problem, OCP)",
+    "text": "最优控制问题(optimal control problem, OCP)\n20世纪50年代，古典变分法进一步发展出最优控制理论(optimal control theory)，一个基础的最优控制问题如下：\n\\[\n\\begin{aligned}\n\\mathop{\\min}_{x(\\cdot), u(\\cdot)} \\quad & \\int_{t_0}^{t_1} f(t, x(t), u(t)) \\, dt  \\\\\n\\text{s.t.} \\quad & \\dot{x}(t) = \\Phi(t, x(t), u(t)) \\\\\n& x(t_0) = x_0\n\\end{aligned}\n\\]\n状态变量 \\(x(t)\\) 的变化由微分方程(b)决定，且通过(a)直接影响目标函数 \\(f(t, x, u)\\);\n控制变量 \\(u(t)\\) 会通过两种渠道影响最优值:\n\n直接渠道是影响(a)中的目标函数;\n间接渠道是影响(b)中的控制变量 \\(x(t)\\) 的值，进而影响目标函数.",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#最优经济增长问题连续型i",
+    "href": "lecture1_intro.html#最优经济增长问题连续型i",
+    "title": "最优化问题概述",
+    "section": "最优经济增长问题（连续型）I",
+    "text": "最优经济增长问题（连续型）I\n假设经济体中存在无限期生存的消费者：\n\n经济体的人均产出完全转化为消费者的收入，且取决于人均资本存量和技术水平，即 \\(f(k(t))\\);\n消费者在每一时点上选择当期的消费 \\(c(t)\\) 和储蓄，且储蓄完全转化为下一期的投资，初始人均资本存量为 \\(k(0)\\);\n消费者的效用函数形式为 \\(U(c(t))\\);\n\\(\\theta\\) 代表时间偏好率或主观贴现率，衡量了不同时点效用的替代程度。\n\n在这个连续型最优经济增长问题中，消费者的状态变量、控制变量分别是什么？",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#最优经济增长问题连续型ii",
+    "href": "lecture1_intro.html#最优经济增长问题连续型ii",
+    "title": "最优化问题概述",
+    "section": "最优经济增长问题（连续型）II",
+    "text": "最优经济增长问题（连续型）II\n最优增长问题的核心是消费者在预期每期收入的情况下，选择最优的消费路径，并由此决定了相对应的资本路径，从而最大化其从现在到将来的效用贴现值总和。以最优控制问题的形式可以表述为：\n\\[\n\\begin{aligned}\n\\mathop{\\max}_{c(\\cdot), k(\\cdot)} \\quad & \\int_{0}^{\\infty} U(c(t))e^{-\\theta t} dt  \\\\\ns.t. \\quad & \\dot{k}(t) = f(k(t)) - c(t)  \\\\\n& k(0) = k_0  \n\\end{aligned}\n\\]\n在这个最优控制问题中，消费路径\\(c(t)\\)控制变量，资本存量\\(k(t)\\)是状态变量，该问题的最优解\\(c(t), k(t)\\)即表示最优的消费和资本的增长路径。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#动态规划dynamic-programming",
+    "href": "lecture1_intro.html#动态规划dynamic-programming",
+    "title": "最优化问题概述",
+    "section": "动态规划(dynamic programming)",
+    "text": "动态规划(dynamic programming)\n当选择变量\\(X\\)是有限维向量时，要考虑的最优化问题也就是有限维空间的非线性规划问题(NLP)。如果选择函数\\(X\\)是无限维的离散变量\\((x_1, x_2, \\cdots)\\)时，通常采取动态规划方法(dynamic programming, DP)：\n\\[\n\\begin{aligned}\n\\mathop{\\min_{x_t, u_t}} \\quad\n&  \\sum_{t = 0}^{\\infty} f(t, x_t, u_t) \\\\\ns.t.\\quad & x_{t+1} - x_{t} = g(t, x_t, u_t) \\\\\n& x_0 = \\bar{x}_0 \\\\\n& u_t \\in U \\\\\n\\end{aligned}\n\\tag{DP}\n\\]\n其中\\(t\\)代表离散的时间，\\(t = 0, 1, 2, \\cdots\\)，约束条件的动态方程一般称为差分方程。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#无限期离散型ramsey最优经济增长问题",
+    "href": "lecture1_intro.html#无限期离散型ramsey最优经济增长问题",
+    "title": "最优化问题概述",
+    "section": "无限期离散型Ramsey最优经济增长问题",
+    "text": "无限期离散型Ramsey最优经济增长问题\n用离散型变量描述上述最优经济增长问题时，可以重新表述为：\n\\[\n\\begin{aligned}\n\\mathop{\\max_{c_t, k_t}} & \\sum_{t=0}^{\\infty} \\beta^t U(c_t) \\\\\ns.t. \\quad & k_{t+1} - k_{t} = f(k_t) - c_t, \\quad t = 0, 1, \\cdots \\\\\n& k_0 = \\bar{k}_0\n\\end{aligned}\n\\]\n离散形式的目标函数更直观地表述了每期消费效用贴现值的总和，差分方程也更直观地描述了前后期资本存量的变化。但不论是表述为连续形式还是离散形式，主要数学结论与经济学含义应该是一致的。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#消费者的最优选择",
+    "href": "lecture1_intro.html#消费者的最优选择",
+    "title": "最优化问题概述",
+    "section": "消费者的最优选择",
+    "text": "消费者的最优选择\n\n\n\n\n考虑一个两商品的效用最大化问题，对于消费者而言：\n\n选择变量是什么？\n目标函数是什么？\n约束条件是什么？",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#套利方法-i",
+    "href": "lecture1_intro.html#套利方法-i",
+    "title": "最优化问题概述",
+    "section": "套利方法 I",
+    "text": "套利方法 I\n在任意试验性的消费束下，考虑消费者选择的商品组合出现一个微小的变动：\n\n如果这种微小变动带来效用的改进，那么后者将作为一个新的试验性消费束而被消费者采取；\n一旦发现某个消费束已经无法用这种方式来改进，那么它就成为消费者的最优配置。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#套利方法-ii",
+    "href": "lecture1_intro.html#套利方法-ii",
+    "title": "最优化问题概述",
+    "section": "套利方法 II",
+    "text": "套利方法 II\n当两种商品分别变动\\(dx_1, dx_2\\)时，消费者效用变化为： \\[MU_1 dx_1 + MU_2 dx_2\\]\n\n\\(dx_1, dx_2\\)代表对应商品的”一个微小（边际、无穷小量）变动”，意味着\\(\\Delta x \\rightarrow 0\\)，但不能理解为等于0;\n\\(MU_1, MU_2\\)代表对应商品的边际效用，意味着每单位商品增加所能额外给消费者带来的效用;\n\\(dx_1\\)和\\(dx_2\\)之间存在什么关系？",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#套利方法-iii",
+    "href": "lecture1_intro.html#套利方法-iii",
+    "title": "最优化问题概述",
+    "section": "套利方法 III",
+    "text": "套利方法 III\n由于预算约束\\(p_1 x_1 + p_2 x_2 = I\\)的存在，\\(dx_1\\)和\\(dx_2\\)之间必然满足： \\[p_1 dx_1 + p_2 dx_2 = dI\\]\n假设消费者的收入没有发生变化(\\(dI = 0\\))，则商品1消费数量的微小增加\\(dx_1 &gt; 0\\)必然导致商品2消费数量的微小减少： \\[dx_2 = - \\frac{p_1}{p_2} dx_1 &lt; 0\\]\n此时，消费者效用的边际变化为： \\[\n\\begin{aligned}\nMU_1 & dx_1 + MU_2 dx_2 = \\\\\n& p_1dx_1\\big[\\frac{MU_1}{p_1} - \\frac{MU_2}{p_2}\\big]\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#套利方法-iv",
+    "href": "lecture1_intro.html#套利方法-iv",
+    "title": "最优化问题概述",
+    "section": "套利方法 IV",
+    "text": "套利方法 IV\n如果在某个消费束\\((x_1, x_2)\\)处，消费者达到效用最大化，意味着\\(x_1\\)任意方向的变化（增加或减少），都至少不会增加消费者效用： \\[p_1dx_1\\big[\\frac{MU_1}{p_1} - \\frac{MU_2}{p_2}\\big] \\leq 0\\]\n具体而言\n\n当\\(x_1\\)略微增加时，\\(dx_1 &gt; 0\\)，必然有\\(\\frac{MU_1}{p_1} - \\frac{MU_2}{p_2} \\leq 0\\);\n当\\(x_1\\)略微减少时，\\(dx_1 &lt; 0\\)，必然有\\(\\frac{MU_1}{p_1} - \\frac{MU_2}{p_2} \\geq 0\\)。\n\n综合上述可得，最优配置下的消费束必然满足无套利条件： \\[\n\\frac{MU_1}{p_1} = \\frac{MU_2}{p_2}\n\\tag{no-arbitrage}\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#相切条件方法",
+    "href": "lecture1_intro.html#相切条件方法",
+    "title": "最优化问题概述",
+    "section": "相切条件方法",
+    "text": "相切条件方法\n从图形可以看出，最优化的消费束必然满足预算约束线和无差异曲线相切，即两者的斜率相等。将预算约束方程改写为： \\[x_2 = (I/p_2) - x_1 (p_1/p_2)\\]\n可以看出预算约束线的斜率为\\((p_1/p_2)\\)。无差异曲线的斜率是消费者的边际替代率(MRS)，它等于商品边际效用的比率\\((MU_1/MU_2)\\)。\n在最优选择处，无差异曲线的斜率（边际替代率）等于预算约束线的斜率（价格比），因而 \\[MU_1/MU_2 = p_1/p_2\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#角点解",
+    "href": "lecture1_intro.html#角点解",
+    "title": "最优化问题概述",
+    "section": "角点解",
+    "text": "角点解\n套利方法相比相切条件方法的优势在哪儿？考虑其中一种商品存在不被购买可能的情况：",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#收入的边际效用",
+    "href": "lecture1_intro.html#收入的边际效用",
+    "title": "最优化问题概述",
+    "section": "收入的边际效用",
+    "text": "收入的边际效用\n假定消费者获得额外收入\\(dI\\)且全部用于消费，此时他可以\n\n全部用于商品1，即购买额外的\\((dI/p_1)\\)单位的商品1，并取得额外的\\((MU_1dI/p_1)\\)单位的效用；\n全部用于商品2，即购买额外的\\((dI/p_2)\\)单位的商品2，并取得额外的\\((MU_2dI/p_2)\\)单位的效用；\n\n根据无套利条件(no-arbitrage condition)，这两个效用的增量必须相等，才能达到新的最优值点。此时消费者获得的边际效用为\n\\[\n\\lambda dI = MU_1 dI/p_1 = MU_2dI/p_2\n\\]\n\\(\\lambda\\) 可以理解为收入的边际效用:\n\\[\n\\lambda = MU_1/p_1 = MU_2/p_2\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#多商品情形",
+    "href": "lecture1_intro.html#多商品情形",
+    "title": "最优化问题概述",
+    "section": "多商品情形",
+    "text": "多商品情形\n假定有\\(n\\)种商品，价格和数量分别为 \\((p_1, p_2, \\cdots, p_n)\\)和\\((x_1, x_2, \\cdots , x_n)\\)，在最优消费束下：\n\n对于所有购买了正数量的商品，必然存在一个相同的边际效用，而这个值可以被解释为收入的边际效用\\(\\lambda\\)；\n对于没有被购买的商品而言，其边际效用对价格的比例必然小于或至多等于收入的边际效用 \\(\\lambda\\)。\n\n因此，对任意商品\\(i\\)而言：\n\\[\nMU_i/p_i \\left\\{\n         \\begin{array}{ll}\n          = \\lambda,    & \\text{当 } x_i &gt; 0\\text{时} \\\\\n          \\leq \\lambda, & \\text{当 } x_i = 0\\text{时}\n         \\end{array}\n\\right.\n\\]\n对于多个约束条件，我们可以对每个约束条件设置一个单独的\\(\\lambda\\)，它可以理解为放松该约束条件的边际效用。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#非紧的约束条件",
+    "href": "lecture1_intro.html#非紧的约束条件",
+    "title": "最优化问题概述",
+    "section": "非紧的约束条件",
+    "text": "非紧的约束条件\n假设一个有钱的消费者已经满足到无法花光所有收入，那么预算约束应该是一个不等式 \\(p_1x_1 + p_2x_2 \\leq I\\)。\n通过定义一种新商品\\(x_3\\)（“没有被花掉且不带来任何效用的收入”），其价格为1，那么预算方程将变为： \\[\np_1x_1 + p_2x_2 + x_3 = I\n\\]\n假设消费者选择了一个正的\\(x_3\\)：\n\n那么对于 \\(i = 3\\)而言，\\(\\lambda = MU_3 = 0\\)，意味着如果消费者没有花完所有收入，那么收入增量所带来的边际效用应该为零；\n对于 \\(x_1, x_2\\)而言，由\\(\\lambda = 0\\)可知，最优消费下\\(MU_{i} = 0\\)，意味着这些商品被消费到了一个产生零边际效用的水平。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#不带约束的最优化问题",
+    "href": "lecture1_intro.html#不带约束的最优化问题",
+    "title": "最优化问题概述",
+    "section": "不带约束的最优化问题",
+    "text": "不带约束的最优化问题\n\n考虑多变量函数 \\(f(\\textbf{x}): D \\subset R^{n} \\rightarrow R, \\textbf{x} = (x_1, \\cdots, x_n)\\):\n\n如果存在\\(\\delta &gt; 0\\)，使得所有满足 \\(x \\in D, |\\textbf{x} - \\textbf{x}^{*}| &lt; \\delta\\)的\\(x\\)都有\\(f(\\textbf{x}) \\geq(\\leq) f(\\textbf{x}^{*})\\)，则称 \\(\\textbf{x}^{*}\\) 为局部极小(极大)值点；\n如果对任意满足 \\(\\textbf{x} \\in D, |\\textbf{x} - \\textbf{x}^{*}| &lt; \\delta, \\textbf{x} \\neq \\textbf{x}^{*}\\)的 \\(\\textbf{x}\\)都有\\(f(\\textbf{x}) &gt;(&lt;) f(\\textbf{x}^{*})\\)，则称 \\(\\textbf{x}^{*}\\)为局部严格极小(极大)值点；\n若 \\(\\forall \\textbf{x} \\in D\\) 都有 \\(f(\\textbf{x}) \\geq(\\leq) f(\\textbf{x}^{*})\\)，则称 \\(\\textbf{x}^{*}\\) 为全局极小(极大)值点。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#梯度向量和海塞矩阵",
+    "href": "lecture1_intro.html#梯度向量和海塞矩阵",
+    "title": "最优化问题概述",
+    "section": "梯度向量和海塞矩阵",
+    "text": "梯度向量和海塞矩阵\n对于多变量函数\\(f(\\textbf{x}): D \\subset R^{n} \\rightarrow R\\)，其梯度向量为： \\[\n\\nabla f(\\textbf{x}) = (\\frac{\\partial f}{\\partial x_1}, \\cdots, \\frac{\\partial f}{\\partial x_n})\n\\]\n记其二阶偏导数为\\(f_{ij} = \\frac{\\partial^2 f}{\\partial x_i \\partial x_j}\\)，其海塞矩阵为： \\[\nH(\\textbf{x}) = \\left[\n\\begin{array}{cccc}\nf_{11}& f_{12} &\\cdots & f_{1n}\\\\\nf_{21}& f_{22} &\\cdots& f_{2n}\\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\nf_{n1}& f_{n2} &\\cdots & f_{nn}\n\\end{array}\n\\right]\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#必要条件",
+    "href": "lecture1_intro.html#必要条件",
+    "title": "最优化问题概述",
+    "section": "必要条件",
+    "text": "必要条件\n\n设定义开集\\(D\\)上的函数\\(f: D \\subset R^{n} \\rightarrow R\\)在\\(D\\)上可微，若\\(\\textbf{x}^{*}\\)是局部极小/极大值点，则有\\(\\nabla f(\\textbf{x}) = \\textbf{0}\\)。\n\n\n设定义开集\\(D\\)上的函数\\(f: D \\subset R^{n} \\rightarrow R\\)在\\(D\\)上二阶可微，若\\(\\textbf{x}^{*}\\)是局部极小/极大值点，则有： \\[\\nabla f(\\textbf{x}) = \\textbf{0}, \\quad d^{T}H(\\textbf{x}^{*})d \\geq 0, \\quad \\forall d \\in R^{n}\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#二阶充分条件",
+    "href": "lecture1_intro.html#二阶充分条件",
+    "title": "最优化问题概述",
+    "section": "二阶充分条件",
+    "text": "二阶充分条件\n设定义开集\\(D\\)上的函数\\(f: D \\subset R^{n} \\rightarrow R\\)在\\(D\\)上二阶可微，如果对于\\(\\textbf{x}^{*}\\)有： \\[\\nabla f(\\textbf{x}) = \\textbf{0}, \\quad d^{T}Hd &gt; 0, \\quad \\forall d \\in R^{n}, \\quad d \\neq 0.\\]\n则\\(\\textbf{x}^{*}\\)是一个严格局部极小值点。\n\nProof. 考虑二阶泰勒展开： \\[f(\\textbf{x}^{*} + \\epsilon d) = f(\\textbf{x}^{*}) + \\nabla f(\\textbf{x})^{T} \\epsilon d + \\frac{1}{2}\\epsilon^{2} d^{T}H(\\textbf{x}^{*})d\\]\n这里，\\(\\forall d \\in R^{n}, \\theta \\in [0,1], \\epsilon \\rightarrow 0\\)。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#带等式约束的最优化问题-i",
+    "href": "lecture1_intro.html#带等式约束的最优化问题-i",
+    "title": "最优化问题概述",
+    "section": "带等式约束的最优化问题 I",
+    "text": "带等式约束的最优化问题 I\n考虑以下含等式约束的最优化问题： \\[\n\\begin{aligned}\n\\mathop{\\max_{x_1, x_2}}\\quad & f(x_1, x_2) \\\\\ns.t.\\quad & g(x_1, x_2) = 0\n\\end{aligned}\n\\tag{NLP-1}\n\\]\n假定 \\(g\\) 满足隐函数定理的相关条件，则等式约束隐含了 \\(x_2 = x_2(x_1)\\) ，代入目标函数则有 \\[\nf(x_1, x_2(x_2)) = \\phi(x_1)\n\\]\n且 \\(\\frac{dx_2}{dx_1} = -\\frac{g_{x_1}}{g_{x_2}}\\) 。其对 \\(x_1\\) 的一阶导数为 \\[\n\\frac{d\\phi}{dx_1} = f_{x_1} - f_{x_2}\\frac{g_{x_1}}{g_{x_2}}\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#带等式约束的最优化问题-ii",
+    "href": "lecture1_intro.html#带等式约束的最优化问题-ii",
+    "title": "最优化问题概述",
+    "section": "带等式约束的最优化问题 II",
+    "text": "带等式约束的最优化问题 II\n根据无约束条件下最优化问题的一阶条件，对于\\(\\phi(x_1)\\)有\\(\\frac{d\\phi}{dx_1}(x_1^{*}) = 0\\)。此时，不妨设\\(\\lambda = \\frac{f_{x_2}(x^{*})}{g_{x_2}(x^{*})}\\)，则有： \\[\nf_{x_1}(x^{*}) + \\lambda g_{x_1}(x^{*}) = 0\n\\]\n类似地，等式约束隐含了\\(x_1 = x_1(x_2)\\)，可以得出 \\[\nf_{x_2}(x^{*}) + \\lambda g_{x_2}(x^{*}) = 0\n\\]\n因此，带等式约束的最优化问题(NLP-1)在\\(x^{*}\\)处取得最优化的一阶必要条件等价于函数 \\[\n\\mathcal{L}(x_1, x_2, \\lambda) = f(x_1, x_2) + \\lambda g(x_1, x_2)\n\\]\n在\\(x^{*}\\)处取得最优化的一阶必要条件。",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture1_intro.html#拉格朗日函数",
+    "href": "lecture1_intro.html#拉格朗日函数",
+    "title": "最优化问题概述",
+    "section": "拉格朗日函数",
+    "text": "拉格朗日函数\n称 \\(\\mathcal{L}(x_1, x_2, \\lambda)\\) 为拉格朗日(Lagrange)函数，则其在 \\((x_1^{*}, x_2^{*}, \\lambda^{*})\\) 处取得最大值/最小值的一阶条件为：\n\\[\n\\left\\{\n         \\begin{array}{ccc}\n         f_{x_1}(x_1^{*}, x_2^{*}) + \\lambda^{*} g_{x_1}(x_1^{*}, x_2^{*}) = 0 \\\\\n         f_{x_2}(x_1^{*}, x_2^{*}) + \\lambda^{*} g_{x_2}(x_1^{*}, x_2^{*}) = 0 \\\\\n         g(x_1^{*}, x_2^{*}) = 0\n         \\end{array}\n\\right.\n\\]",
+    "crumbs": [
+      "Home",
+      "第一讲：最优化问题概述"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html",
+    "href": "lecture6_cancave_optimization.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "对于\\(\\theta \\in [0,1]\\)而言，称\\(F(x)\\)是凹函数，当且仅当:\n\\[\n\\begin{aligned}\nF(x^a + & \\theta (x^b - x^a)) = F(\\theta x^b + (1 - \\theta) x^a) \\geq \\\\\n& \\theta F(x^b) + (1 - \\theta) F(x^a)\n\\end{aligned}\n\\]\n稍作变形有 \\[\n\\frac{F(x^a + \\theta (x^b - x^a)) - F(x^a)}{\\theta} \\geq F(x)\n\\]\n当\\(\\theta \\rightarrow 0\\)，如果\\(F\\)是可微的，那么上式左边会趋近于\\(F_x(x^a)(x^b - x^a)\\)（洛必达法则）。因此有 \\[\nF_x(x^a) \\geq \\frac{F(x^b) - F(x^a)}{x^b - x^a}\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹函数及其导数-i",
+    "href": "lecture6_cancave_optimization.html#凹函数及其导数-i",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "对于\\(\\theta \\in [0,1]\\)而言，称\\(F(x)\\)是凹函数，当且仅当:\n\\[\n\\begin{aligned}\nF(x^a + & \\theta (x^b - x^a)) = F(\\theta x^b + (1 - \\theta) x^a) \\geq \\\\\n& \\theta F(x^b) + (1 - \\theta) F(x^a)\n\\end{aligned}\n\\]\n稍作变形有 \\[\n\\frac{F(x^a + \\theta (x^b - x^a)) - F(x^a)}{\\theta} \\geq F(x)\n\\]\n当\\(\\theta \\rightarrow 0\\)，如果\\(F\\)是可微的，那么上式左边会趋近于\\(F_x(x^a)(x^b - x^a)\\)（洛必达法则）。因此有 \\[\nF_x(x^a) \\geq \\frac{F(x^b) - F(x^a)}{x^b - x^a}\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹函数及其导数-ii",
+    "href": "lecture6_cancave_optimization.html#凹函数及其导数-ii",
+    "title": "经济学中的优化方法",
+    "section": "凹函数及其导数 II",
+    "text": "凹函数及其导数 II\n当\\(x\\)是一维的时候：\n\n\\(F_x(x^a)\\)就是函数\\(F(x)\\)在\\(x^a\\)处切线的斜率\n\\(\\frac{F(x^b) - F(x^a)}{x^b - x^a}\\)是函数\\(F(x)\\)在点\\(x^a, x^b\\)之间连线的斜率\n函数的凹性意味着切线位于函数曲线之上",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹规划concave-programming的定义",
+    "href": "lecture6_cancave_optimization.html#凹规划concave-programming的定义",
+    "title": "经济学中的优化方法",
+    "section": "凹规划（Concave Programming）的定义",
+    "text": "凹规划（Concave Programming）的定义\n凹规划是一类特殊的数学优化问题，其目标函数为凹函数，且约束条件定义的可行域为凸集。具体形式如下：\n\\[\n\\begin{aligned}\n\\max_{x} \\quad & f(x) \\\\\n\\text{s.t.} \\quad & g_i(x) \\geq 0, \\quad i = 1, \\dots, m, \\\\\n& h_j(x) = 0, \\quad j = 1, \\dots, p, \\\\\n& x \\in X \\subseteq \\mathbb{R}^n,\n\\end{aligned}\n\\] 其中：\n\n目标函数 \\(f(x)\\) 是凹函数（若为最小化问题，则要求 \\(f(x)\\) 是凸函数）。\n不等式约束 \\(g_i(x)\\) 是凹函数（确保可行域 \\(\\{x \\mid g_i(x) \\geq 0\\}\\) 是凸集）。\n等式约束 \\(h_j(x)\\) 是仿射函数（即线性函数加常数，形如 \\(h_j(x) = a_j^T x + b_j\\)）。\n集合约束 \\(X\\) 是凸集（如 \\(\\mathbb{R}^n\\) 或某个凸多面体）。",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#最大值函数的性质",
+    "href": "lecture6_cancave_optimization.html#最大值函数的性质",
+    "title": "经济学中的优化方法",
+    "section": "最大值函数的性质",
+    "text": "最大值函数的性质\n对于每组给定的外生参数\\(c\\)，最优选择\\(\\bar{x}\\)和最大值\\(\\bar{v} = F(\\bar{x})\\)都是\\(c\\)的函数。令\\(X(c)\\)表示最优选择函数，\\(V(c)\\)表示最大值函数：\n\n\\(V\\)对于\\(c\\)是非减函数，意味着约束条件放松，最大值不可能下降（最多持平）\n\\(V\\)是凹函数，换言之对于任意给定的两组投入要素\\(c, c'\\)，以及\\(\\theta \\in [0,1]\\)，最大值函数满足 \\[\nV(\\theta c + (1 - \\theta) c') \\geq \\theta V(c) + (1 - \\theta) V(c')\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹性的证明-i",
+    "href": "lecture6_cancave_optimization.html#凹性的证明-i",
+    "title": "经济学中的优化方法",
+    "section": "凹性的证明 I",
+    "text": "凹性的证明 I\n自然地，我们考虑\\(\\theta \\bar{x} + (1 - \\theta) \\bar{x}'\\)是否可以满足上述要求。\n\n对于每一个\\(j\\)，约束条件\\(G^j\\)是凸的，意味着 \\[\n\\begin{aligned}\n& G^{j}(\\theta \\bar{x} + (1 - \\theta) \\bar{x}') \\\\\n& \\leq \\theta G^j(\\bar{x}) + (1 - \\theta)G^j(\\bar{x}') \\\\\n& \\leq \\theta c_i + (1 - \\theta) c_i'\n\\end{aligned}\n\\]\n因此，\\(\\theta \\bar{x} + (1 - \\theta) \\bar{x}'\\)是约束条件\\(G(x) \\leq \\theta c_i + (1 - \\theta) c_i'\\)下的一个可行选择",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹性的证明-ii",
+    "href": "lecture6_cancave_optimization.html#凹性的证明-ii",
+    "title": "经济学中的优化方法",
+    "section": "凹性的证明 II",
+    "text": "凹性的证明 II\n\n根据\\(F\\)的凹性有 \\[\n\\begin{aligned}\n& F(\\theta \\bar{x} + (1 - \\theta)\\bar{x}') \\\\\n& \\geq \\theta F(\\bar{x}) + (1 - \\theta) F(\\bar{x}') \\\\\n& \\geq \\theta \\bar{v} + (1 - \\theta) \\bar{v}'\n\\end{aligned}\n\\]\n而最大值\\(V(\\theta c + (1 - \\theta) c')\\)代表着所有可行选择中最大的收入，换言之，一定有 \\[\n\\begin{aligned}\n& V(\\theta c + (1 - \\theta) c') \\\\\n& \\geq F(\\theta \\bar{x} + (1 - \\theta)\\bar{x}') \\\\\n& \\geq \\theta \\bar{v} + (1 - \\theta) \\bar{v}'\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#经济学含义",
+    "href": "lecture6_cancave_optimization.html#经济学含义",
+    "title": "经济学中的优化方法",
+    "section": "经济学含义",
+    "text": "经济学含义\n\n\\(G\\)为凸函数，排除了生产中的规模经济或专业化，确保了一个加权平均的产量能够通过相同权重的平均投入生产出来\n\\(F\\)为凹函数，保证了由此产生的收入大于等于各个收入的对应加权平均值",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹规划中的值函数",
+    "href": "lecture6_cancave_optimization.html#凹规划中的值函数",
+    "title": "经济学中的优化方法",
+    "section": "凹规划中的值函数",
+    "text": "凹规划中的值函数",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#分离性质",
+    "href": "lecture6_cancave_optimization.html#分离性质",
+    "title": "经济学中的优化方法",
+    "section": "分离性质",
+    "text": "分离性质\n\n集合A是所有满足\\(v \\leq V(c)\\)的点\\((c, v)\\)的集合，意味着使用投入向量\\(c\\)进行生产，生产出的产品至少能带来\\(v\\)的收入\n在集合A中选择一点\\((c^*, v^*)\\)，使得\\(v^* = V(c^*)\\)，这必然是一个边界点\n集合B是所有满足\\(c \\leq c^*\\)和\\(v \\geq v^*\\)的点\\((c, v)\\)的集合\n\n分离超平面： \\[\n\\epsilon v - \\lambda c = b = \\epsilon v^* - \\lambda c^*\n\\] 其中\\(\\epsilon\\)是一个标量，\\(\\lambda\\)是一个m维向量，且满足 \\[\n\\epsilon v - \\lambda c\n\\begin{cases}\n\\leq b, & \\forall (c,v) \\in A \\\\\n\\geq b, & \\forall (c,v) \\in B\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#约束规格",
+    "href": "lecture6_cancave_optimization.html#约束规格",
+    "title": "经济学中的优化方法",
+    "section": "约束规格",
+    "text": "约束规格",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#斯拉特条件",
+    "href": "lecture6_cancave_optimization.html#斯拉特条件",
+    "title": "经济学中的优化方法",
+    "section": "斯拉特条件",
+    "text": "斯拉特条件\n斯拉特条件：集合A至少存在一个内点\\(x_0\\)使得\\(G(x_0) \\ll c^*\\)，即\\(x_0\\)满足所有约束条件且严格不等式成立\n证明思路：\n\n假设存在\\(x_0\\)满足所有约束严格不等式 - 当\\(\\epsilon = 0\\)时推导矛盾\n得出结论\\(\\epsilon &gt; 0\\)\n\n关键等式： \\[\n\\lambda(G(x_0) - c^*) = \\sum_{i=1}^m \\lambda_i(G^i(x_0) - c_i^*) &lt; 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#影子价格",
+    "href": "lecture6_cancave_optimization.html#影子价格",
+    "title": "经济学中的优化方法",
+    "section": "影子价格",
+    "text": "影子价格\n\n令\\(\\epsilon = 1\\)，则\\(\\lambda\\)解释为投入要素的影子价格\n最大值函数\\(V\\)的可微性导致\\(\\lambda = V_c(c^*)\\)\n当\\(V\\)不可微时，存在双边不等式： \\[\nV_i^- \\geq \\lambda_i \\geq V_i^+\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#一般化的边际产品",
+    "href": "lecture6_cancave_optimization.html#一般化的边际产品",
+    "title": "经济学中的优化方法",
+    "section": "一般化的边际产品",
+    "text": "一般化的边际产品",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#选择变量",
+    "href": "lecture6_cancave_optimization.html#选择变量",
+    "title": "经济学中的优化方法",
+    "section": "选择变量",
+    "text": "选择变量\n通过分离定理推导关键不等式： \\[\nF(\\bar{x}) - \\lambda G(\\bar{x}) \\leq V(c) - \\lambda c\n\\]\n结合互补松弛条件：\n\n对于每个约束\\(i\\)，\\(\\lambda_i[c_i - G^i(\\bar{x})] = 0\\)\n要么\\(\\lambda_i = 0\\)，要么\\(G^i(\\bar{x}) = c_i\\)",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹规划的必要条件",
+    "href": "lecture6_cancave_optimization.html#凹规划的必要条件",
+    "title": "经济学中的优化方法",
+    "section": "凹规划的必要条件",
+    "text": "凹规划的必要条件\n若\\(\\bar{x}\\)是凹规划问题的最优解，存在向量\\(\\lambda\\)满足：\n\n\\(\\bar{x}\\)在无约束下最大化\\(F(x) - \\lambda G(x)\\)\n\\(\\lambda \\geq 0\\)且满足互补松弛条件\n可微情形下的一阶条件： \\[\nF_{x}(\\bar{x}) - \\lambda G_{x}(\\bar{x}) = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凸规划的充分条件-i",
+    "href": "lecture6_cancave_optimization.html#凸规划的充分条件-i",
+    "title": "经济学中的优化方法",
+    "section": "凸规划的充分条件 I",
+    "text": "凸规划的充分条件 I\n若\\(\\bar{x}\\)满足：\n\n最大化\\(F(x) - \\lambda G(x)\\)\n满足互补松弛条件\n\n则对任意可行\\(x\\)有： \\[\nF(\\bar{x}) \\geq F(x)\n\\]\n利用凹函数性质： \\[\n[F(x) - \\lambda G(x)] - [F(\\bar{x}) - \\lambda G(\\bar{x})] \\leq 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#凹规划的充分条件-ii",
+    "href": "lecture6_cancave_optimization.html#凹规划的充分条件-ii",
+    "title": "经济学中的优化方法",
+    "section": "凹规划的充分条件 II",
+    "text": "凹规划的充分条件 II\n若\\(\\bar{x}\\)和\\(\\lambda\\)满足以下条件：\n\n\\(\\bar{x}\\)在无约束的情况下最大化了\\(F(x) - \\lambda G(x)\\)\n\\(\\lambda \\geq 0\\)和\\(G(\\bar{x}) \\leq c\\)满足互补松弛条件\n\n那么\\(\\bar{x}\\)在约束\\(G(x) \\geq c\\)下最大化\\(F(x)\\)。如果\\((F - \\lambda G)\\)是凹函数，那么 \\[\nF(x) - \\lambda G(x) \\leq F(\\bar{x}) -\\lambda G(\\bar{x})\n\\] 也意味着条件(i)成立。",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#拟凹规划-f拟凹g为线性函数",
+    "href": "lecture6_cancave_optimization.html#拟凹规划-f拟凹g为线性函数",
+    "title": "经济学中的优化方法",
+    "section": "拟凹规划 (\\(F\\)拟凹，\\(G\\)为线性函数)",
+    "text": "拟凹规划 (\\(F\\)拟凹，\\(G\\)为线性函数)\n如果\\(F\\)为拟凹函数，那么 \\[\n\\begin{aligned}\nF((1 - \\theta) x^a + \\theta x^b) \\geq \\min(F(x^a), F(x^b))\n\\end{aligned}\n\\]\n假定\\(F(x^b) \\geq F(x^a)\\)，那么 \\[\nF(x^a + \\theta(x^b - x^a)) \\geq F(x^a)\n\\]\n将上式看作关于\\(\\theta\\)的函数： \\[\nh(\\theta) \\geq h(0), \\quad \\forall \\theta \\in [0,1]\n\\]\n通过链式法则推导： \\[\n\\begin{aligned}\nh'(\\theta) &= F_x(x^a + \\theta (x^b - x^a))(x^b - x^a) \\\\\nh'(0) &= F_x(x^a)(x^b - x^a) \\geq 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#拟凹规划-ii",
+    "href": "lecture6_cancave_optimization.html#拟凹规划-ii",
+    "title": "经济学中的优化方法",
+    "section": "拟凹规划 II",
+    "text": "拟凹规划 II\n考虑在线性约束\\(px \\leq b\\)下最大化\\(F(x)\\)，最优解必要条件为： \\[\nF_x(\\bar{x}) - \\lambda p = 0\n\\]\n充分性证明： 对任意满足\\(F(x) &gt; F(\\bar{x}) \\equiv \\bar{v}\\)的\\(x\\)，取\\(x^a = \\bar{x}\\)和\\(x^b = x\\)，由拟凹性可得： \\[\nF_x(\\bar{x})(x - \\bar{x}) \\geq 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture6_cancave_optimization.html#拟凹规划-iii",
+    "href": "lecture6_cancave_optimization.html#拟凹规划-iii",
+    "title": "经济学中的优化方法",
+    "section": "拟凹规划 III",
+    "text": "拟凹规划 III\n结合必要条件推导： \\[\np(x - \\bar{x}) \\geq 0 \\Rightarrow px \\geq p\\bar{x}\n\\]\n反证结论：\n\n若\\(px = p\\bar{x}\\)，则\\(x\\)在满足约束下得到更大\\(F\\)，矛盾\n故必有\\(px &gt; p\\bar{x}\\)，即\\(x\\)不可行",
+    "crumbs": [
+      "Home",
+      "第六讲：凹优化"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html",
+    "href": "lecture4_value_function.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "Loading required package: sysfonts\n\n\nLoading required package: showtextdb\n\n\n\n\n\n\n\n\n\n决策困境：\n\n当电池成本θ从1000元/kWh上涨时：\n单日最大利润下降速度如何量化？\n是否应调整生产计划或库存策略？",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#案例导入新能源车企的产能规划",
+    "href": "lecture4_value_function.html#案例导入新能源车企的产能规划",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "Loading required package: sysfonts\n\n\nLoading required package: showtextdb\n\n\n\n\n\n\n\n\n\n决策困境：\n\n当电池成本θ从1000元/kWh上涨时：\n单日最大利润下降速度如何量化？\n是否应调整生产计划或库存策略？",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#本讲学习目标",
+    "href": "lecture4_value_function.html#本讲学习目标",
+    "title": "经济学中的优化方法",
+    "section": "本讲学习目标",
+    "text": "本讲学习目标\n\n理解最大值函数的数学构造与经济内涵\n\n掌握包络定理的内容\n\n应用定理解析短期/长期决策差异\n\n构建消费者与生产者行为的统一分析框架",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#最大值函数",
+    "href": "lecture4_value_function.html#最大值函数",
+    "title": "经济学中的优化方法",
+    "section": "最大值函数",
+    "text": "最大值函数\n\n对于一个最优化问题，一般而言存在着选择变量、目标函数和约束条件。当选择变量达到最优选择\\(\\bar{x}\\) 时，目标函数取得最大值/最小值，即\\(v = F(\\bar{x})\\)\n在给定外生参数\\(\\theta\\)，以及目标函数和约束条件形式的情况下，每个最优化问题对应着一个最大值\\(v\\) ，以及一个（或若干个）最优选择\\(\\bar{x}\\)\n一旦考虑外生参数\\(\\theta\\) 的变化，选择变量所能达到的最优选择将会随之变化。即每种情况下的最优选择\\(\\bar{x}\\) 会是外生参数\\(\\theta\\) 的函数\n对应的最大值/最小值实际上也会是外生参数\\(\\theta\\) 的函数\\(v(\\theta)\\)",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#参数进入目标函数的情况",
+    "href": "lecture4_value_function.html#参数进入目标函数的情况",
+    "title": "经济学中的优化方法",
+    "section": "参数进入目标函数的情况",
+    "text": "参数进入目标函数的情况\n假定参数向量\\(\\theta\\) 进入目标函数，通过选择\\(x\\) ，在向量约束\\(G(x) = c\\) 下(注意：此时参数\\(\\theta\\) 并不会影响约束条件)最大化目标函数\\(F(x, \\theta)\\)\n此时，目标函数和拉格朗日函数均依赖于\\(\\theta\\)，因此\n\\[L(x, \\lambda, \\theta) = F(x, \\theta) + \\lambda[c - G(x)]\\]\n最优选择\\(\\bar{x}\\) 满足一阶条件\n\\[L_{x}(\\bar{x}, \\lambda, \\theta) = 0 , L_{\\lambda} (\\bar{x},\\lambda, \\theta) =0\\]",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#最大值的变化",
+    "href": "lecture4_value_function.html#最大值的变化",
+    "title": "经济学中的优化方法",
+    "section": "最大值的变化",
+    "text": "最大值的变化\n目标函数的最大值记作\\(v\\)，假定\\(\\theta\\) 变动到\\(\\theta + d\\theta\\) 。这会导致最优选择\\(\\bar{x}\\) 变到\\(\\bar{x} + d\\bar{x}\\)，进而最大值\\(v\\) 变到\\(d + dv\\)：\n\\[\n\\begin{aligned}\n    dv\n    & = F(\\bar{x} + d\\bar{x}, \\theta + d\\theta) - F(\\bar{x}, \\theta) \\\\\n    & = F_{x}(\\bar{x}, \\theta) d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = \\lambda G_{x}(\\bar{x})d\\bar{x} + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = F_{\\theta}(\\bar{x}, \\theta) d\\theta\n\\end{aligned}\n\\]\n\n\\(G_{x}(\\bar{x})d\\bar{x} = 0\\)，因为\\(G(\\bar{x}) = G(\\bar{x} + d\\bar{x})\\)\n当一个不影响约束条件的参数发生变化后，如果要计算其所导致目标函数最大值的一阶变化，不需要考虑最优选择\\(\\bar{x}\\)自身的变动\n我们可以考虑在原来的最优选择处计算参数\\(\\theta\\)变动的偏导数，以及\\(\\theta\\) 的变动情况",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#成本最小化问题",
+    "href": "lecture4_value_function.html#成本最小化问题",
+    "title": "经济学中的优化方法",
+    "section": "成本最小化问题",
+    "text": "成本最小化问题\n最大化\\(F(x, \\theta) = -\\theta x\\)，同时满足\\(G(x) = c\\) 。将由此产生的最大值记作\\(-v\\) ，那么\n\\[\nd(-v) = F_{\\theta}(\\bar{x}, \\theta) d\\theta = - d\\theta \\cdot \\bar{x}\\Longrightarrow dv = \\bar{x}d\\theta\n\\]\n\\(v\\) 意味着当投入要素价格为\\(\\theta\\) 时，生产出\\(c\\) 单位产品的最小成本\n当价格发生变化时，生产者会如何调整最优选择？\n生产者会减少使用变得更贵的投入要素，同时用更多的（相对更便宜的）其他要素来替代，并且相互替代会沿着一条等产量线进行\n\n我们对\\(v = \\theta \\bar{x}\\) 进行微分，可得\\(dv = \\theta d\\bar{x} + d\\theta\\bar{x}\\)\n\n第一项意味着，以原来的价格衡量的投入组合变动的价值\n第二项意味着，以原来的最优产量衡量的价格变动的价值\n在原来的价格下，原来的投入组合选择已经是最优的了，因此任何变动的价值的一阶效应必然为零",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#包络定理",
+    "href": "lecture4_value_function.html#包络定理",
+    "title": "经济学中的优化方法",
+    "section": "包络定理",
+    "text": "包络定理\n包络定理 (Envelope Theorem) 的标准定义：\n在优化问题中，若参数变化时最优值的响应可通过直接效应完全刻画，则间接效应（通过调整决策变量）为零。数学表述为：\n设优化问题：\n\\[\nV(a) = \\max_{x} \\ f(x, a)\n\\]\n其中\\(x\\)是决策变量，\\(a\\) 是参数。若 \\(x^*(a)\\) 是内点解且可微，则： \\[\n\\frac{dV(a)}{da} = \\frac{\\partial f(x^*, a)}{\\partial a} \\bigg|_{x=x^*(a)}\n\\] 即参数变化对最优值的影响仅需计算其对目标函数的直接偏导数，无需考虑\\(x(a)\\)的调整路径。",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#参数影响所有函数",
+    "href": "lecture4_value_function.html#参数影响所有函数",
+    "title": "经济学中的优化方法",
+    "section": "参数影响所有函数",
+    "text": "参数影响所有函数\n假定参数\\(\\theta\\) 同时影响目标函数F和约束条件G，且约束条件为\\(G(x, \\theta) = c\\)，其中\\(\\theta\\) 和\\(c\\) 是不同的，因此 \\[G_x(x, \\theta) dx + G_{\\theta} (x, \\theta) d\\theta = 0\\]\n对于最大值函数的变动而言\n\\[\n\\begin{aligned}\n    dv & = -\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta + F_{\\theta}(\\bar{x}, \\theta) d\\theta \\\\\n    & = L_{\\theta}(\\bar{x}, \\lambda, \\theta) d\\theta\n\\end{aligned}\n\\]\n比较条件5.1和5.4:\n\n当\\(\\theta\\) 影响约束时，变动\\(d\\theta\\) 会影响约束条件\\(G(x)\\)，使得G的值增加\\(G_{\\theta}(\\bar{x}, \\theta)d\\theta\\)\n这相当于\\(c\\) 减少同等量，等价于\\(v\\) 的值下降\\(\\lambda G_{\\theta}(\\bar{x}, \\theta) d\\theta\\) （注意:\\(\\lambda\\) 代表着\\(c\\) 变化一单位导致最大值函数\\(v\\) 的边际变化）",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#广义的参数向量",
+    "href": "lecture4_value_function.html#广义的参数向量",
+    "title": "经济学中的优化方法",
+    "section": "广义的参数向量",
+    "text": "广义的参数向量\n定义一个更大的参数向量\\(\\hat{\\theta}\\)，其包括子向量\\(\\theta\\) 和\\(c\\)，并将约束条件写作：\n\\[\n\\hat{G} (x, \\hat{\\theta}) \\equiv G(x, \\theta) - c = 0\n\\]\n拉格朗日函数可以写作：\n\\[\n\\hat{L}(x, \\lambda, \\hat{\\theta}) \\equiv F(x, \\theta) - \\lambda\\hat{G}(x, \\hat{\\theta})\n\\]\n因此，最大值函数的变动等价于：\n\\[\ndv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\n\\]\n而对于广义约束条件而言：\n\\[\n\\hat{G}{\\hat{\\theta}}(x, \\hat{\\theta}) d\\hat{\\theta} = G_{\\theta}(x, \\theta) d\\theta - dc\n\\]\n因而\\(dv\\) 的表达式可以变为：\n\\[\ndv = L_{\\theta} (\\bar{x}, \\lambda, \\theta) d\\theta + \\lambda dc.\n\\]",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#某些选择变量固定不变",
+    "href": "lecture4_value_function.html#某些选择变量固定不变",
+    "title": "经济学中的优化方法",
+    "section": "某些选择变量固定不变",
+    "text": "某些选择变量固定不变\n\n当外生参数\\(\\theta\\)发生变化时，会影响最优选择向量\\(x\\)的取值，进而影响最大值\\(v\\)。\n包络定理告诉我们，关于最大值\\(v\\)的变化\\(dv\\)，我们可以不需要了解最优选择\\(x\\)的变化。\n\n\\[\ndv = L_{\\theta} (\\bar{x}, \\lambda, \\theta) d\\theta + \\lambda dc.\n\\]\n\n上式中，\\(dv\\)的变化可以区分为两个部分：\n\n当\\(x\\)固定在原来的最优选择下，\\(\\theta\\)变化对最大值的偏导数效应；\n如果参数变动还影响约束条件，还要考虑等价的约束条件右边\\(c\\)的影响。",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#短期和长期的生产计划",
+    "href": "lecture4_value_function.html#短期和长期的生产计划",
+    "title": "经济学中的优化方法",
+    "section": "短期和长期的生产计划",
+    "text": "短期和长期的生产计划\n对于一个厂商而言，长期内资本和劳动都可以调整，但在短期内资本固定在某个水平无法变动。假设选择变量是\\(y, z\\) ，其中：\n\n在长期中，\\(y\\)和\\(z\\) 都可以任意变动\n在短期内，\\(z\\) 固定不变而仅有\\(y\\) 可以变化\n\n最优化问题可以写作：\n\\[\n\\begin{aligned}\n    max  &\\quad F(y, z, \\theta) \\\\\n    s.t. &\\quad G(y,z,\\theta) = 0\n\\end{aligned}\n\\]\n在长期中，最优选择和对应的值函数是外生参数\\(\\theta\\) 的函数，即\n\\[\ny_{l} = Y(\\theta), z_{l} = Z(\\theta), v_{l} = V(\\theta)\n\\]\n在短期中，因为\\(z\\)固定不变，所以本质上是类似\\(\\theta\\) 的参数：\n\\[y_{s} = Y(z, \\theta), v_{s} = V(z, \\theta)\\]\n思考：\\(v_{l}\\) 和\\(v_{s}\\) 之间有什么关系呢？",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#最大值函数的关系",
+    "href": "lecture4_value_function.html#最大值函数的关系",
+    "title": "经济学中的优化方法",
+    "section": "最大值函数的关系",
+    "text": "最大值函数的关系\n长期最大值和短期最大值之间满足 \\[\nV(\\theta)  \\geq V(z, \\theta), \\forall (z,\\theta)\n\\]\n\n对于任意给定的外生参数\\(\\theta\\)，长期最大值必然大于等于短期最大值；\n原因在于，短期最大值所能做出的最优选择\\(y_s = Y(z, \\theta)\\)，一定可以在长期内被选择；\n等号成立恰好在\\(y_s = y_l\\)，即短期内\\(z\\)的取值恰好等于长期内\\(z_l = Z(\\theta)\\)。\n\n如果上述函数都是可微的，那么我们可以得到\n\\[\nV^{'}(\\theta)= V_{\\theta}(Z(\\theta), \\theta)\n\\]\n\n等式右边是短期最优值函数\\(V(z, \\theta)\\)在变量\\(z\\)不变时，在点\\(z = Z(\\theta)\\)处取值的偏导数。",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#短期和长期成本",
+    "href": "lecture4_value_function.html#短期和长期成本",
+    "title": "经济学中的优化方法",
+    "section": "短期和长期成本",
+    "text": "短期和长期成本\n考虑如下生产函数的短期和长期成本曲线之间的关系： \\[\nQ = (KL)^{1/\\alpha}\n\\] 其中，Q代表产量，K是短期固定资本，L是劳动。如果\n\n\\(\\alpha = 2\\)，那么规模报酬不变\n\\(\\alpha &lt; 2\\)，那么规模报酬递增\n\\(\\alpha &gt; 2\\)，那么规模报酬递减\n\n令\\(w\\)表示工资率，\\(r\\)表示资本使用成本。则长期成本函数为：\n\\[\nC(w, r, Q) = \\min_{K,L}\\{\\underbrace{wL + rK}_{\\text{最小化成本}} |\\underbrace{KL = Q^{\\alpha}}_{\\text{生产目标}}\\}\n\\] 使用拉格朗日方法，很容易得到成本最小的投入选择：\n\\[\n\\begin{aligned}\n    K & = (wQ^{\\alpha}/r)^{1/2} \\\\\n    L & = (rQ^{\\alpha}/w)^{1/2}\n\\end{aligned}\n\\]\n那么，长期成本函数为：\n\\[\nC(w,r, Q) = 2(wr)^{1/2}Q^{\\alpha/2}\n\\]\n在短期内没有选择资本\\(K\\)的自由。如果使用资本K生产出产量Q，那么必须使用劳动\\(L = Q^{\\alpha}/K\\)，成本函数变为： \\[\nC(w, r, Q, K)  = wQ^{\\alpha}/K + rK\n\\]\n\n长期的边际成本为： \\(C_{Q}(w,r,Q)= \\alpha(wr)^{1/2}Q^{\\alpha/2 -1}\\)\n短期的边际成本为： \\(C_{Q}(w,r,Q,K) = \\alpha wQ^{\\alpha - 1}/K\\)\n如果\\(K\\)的值恰好是长期中最优值\\(\\bar{K} = (wQ^{\\alpha}/r)^{1/2}\\)，那么短期边际成本和长期边际成本是一样的么？\n\n\\[\n\\begin{aligned}\nC_{Q}(w,r,Q,\\bar{K})\n& = \\alpha wQ^{\\alpha - 1}/\\bar{K} \\\\\n& = \\alpha wQ^{\\alpha - 1}/(wQ^{\\alpha}/r)^{1/2}  \\\\\n& = \\alpha(wr)^{1/2}Q^{\\alpha/2 -1} \\\\\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#消费者需求",
+    "href": "lecture4_value_function.html#消费者需求",
+    "title": "经济学中的优化方法",
+    "section": "消费者需求",
+    "text": "消费者需求\n考虑一个消费者，在\\(\\textbf{p} \\cdot \\textbf{x} = I\\)的预算约束下最大化效用\\(U(x)\\)\n\n这个最大化问题的参数为价格向量\\(\\textbf{p}\\)和收入\\(I\\)，并由此得到最大效用为\\(V(\\textbf{p}, I)\\)\n称\\(V(\\textbf{p}, I)\\)为间接效用函数，以区别于以消费商品数量决定的(直接)效用函数\n\n对于上述效用最大化问题，其拉格朗日函数为： \\[\nL(x, \\lambda, p, I) = U(x) + \\lambda(I - px)\n\\]\n回忆一下，包络定理告诉我们，最大值的变动等价于\n\\[\ndv = \\hat{L}_{\\hat{\\theta}}(\\bar{x}, \\lambda, \\hat{\\theta})d\\hat{\\theta}\n\\]\n因此，在最优解处必然有\n\\[\n\\begin{aligned}\n    V_I(\\textbf{p}, I) & = L_{I}(x, \\lambda, p, I) = \\lambda \\\\\n    V_{p_i}(\\textbf{p}, I) & = L_{p_i}(x, \\lambda, p, I) = - \\lambda x_i\n\\end{aligned}\n\\]\n\n\n因此，如果我们知道消费者的间接效用函数，那么可以很轻易地找出消费者的需求函数： \\[\nD(\\textbf{p}, I) = - V_{p}(\\textbf{p}, I)/V_I(\\textbf{p}, I), \\forall i = 1, \\cdots, n\n\\]\n相反，如果我们知道消费者的(直接)效用函数，那么需要求解所有约束条件下的最大化问题，才能找到消费者的需求函数",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#支出最小化问题",
+    "href": "lecture4_value_function.html#支出最小化问题",
+    "title": "经济学中的优化方法",
+    "section": "支出最小化问题",
+    "text": "支出最小化问题\n\n考虑消费者如何以最少的支出达到一个目标效用水平的问题，最小支出是关于价格向量\\(\\textbf{p}\\)和目标效用水平\\(u\\)的函数\\(E(\\textbf{p}, u)\\)，称之为支出函数\n这个最小化问题的拉格朗日函数可以写作：\n\n\\[\n    L(x, \\mu, p, u) = px + \\mu[u - U(x)]\n\\]\n\n类似地，\\(E_{u}(p, u) = \\mu\\)，意味着为了实现目标效用水平的边际增加，所要求的最小支出的增加\n以及，\\(E_{p}(p,u) =x\\)，代表着对给定效用水平时，使得支出最小的商品组合，我们称之为希克斯需求函数\\(C(p, u)\\)",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture4_value_function.html#斯拉茨基分解",
+    "href": "lecture4_value_function.html#斯拉茨基分解",
+    "title": "经济学中的优化方法",
+    "section": "斯拉茨基分解",
+    "text": "斯拉茨基分解\n\n从某个效用水平\\(u\\)开始，在给定价格水平下达到效用水平所需要的最小支出为\\(I = E(p,u)\\)，对应的希克斯需求为\\(C(p,u)\\)\n以上面的最小支出\\(I\\)作为货币收入，并找到效用最大化的选择\\(D(p, I)\\)，则有\\(C(p, u) = D(p, I)\\)\n对于第\\(j\\)个商品的需求，两边同时对第\\(k\\)个商品价格求导，根据链式法则有\n\n\\[\n\\begin{aligned}\n    C^j_k(p, u) & = D^j_k(p, E(p,u)) \\\\\n    & = \\underbrace{D^j_k(p, I)}_{\\text{替代效应}} +\n    \\underbrace{D^j_I(p, I)E_k(p,u)}_{\\text{收入效应}}\\\\\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第四讲：值函数方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html",
+    "href": "lecture2_lagrange.html",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假定选择变量为\\(x_1\\)和\\(x_2\\)， 其向量形式为： \\[\nx =  \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n             x_1 \\\\\n            x_2\n        \\end{array}\n        \\right)\n\\]\n目标函数为\\(F(x)\\)，约束函数是一般的非线性函数\\(G(x) = c\\)。\n\n\n\n假设从某个特定的点\\(\\bar{x} = (\\bar{x}_1, \\bar{x}_2)\\)开始，考虑一个无穷小的变动：\n\\[\ndx = \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n          dx_1  \\\\\n          dx_2\n    \\end{array}\\right)\n\\]\n我们要求\\(\\bar{x} + dx\\)仍然满足约束条件，并看它是否能产生一个更高的目标函数值。\n将目标函数\\(F(x)\\)对于\\(x_1\\)和\\(x_2\\)的偏导数分别记作\\(F_1(x)\\)和\\(F_2(x)\\)。当我们在点\\(\\bar{x}\\)处计算这两个值时，它们的值分别写作\\(F_1(\\bar{x})\\)和\\(F_2(\\bar{x})\\)。\n\n\n\n从任意一点\\(x\\)到\\(x + dx\\)的微小变动所引起的\\(F(x)\\)的变动的一阶泰勒展开为： \\[\n    \\begin{aligned}\ndF(x) & = F(x + dx) - F(x) \\\\\n& = F_1(x)dx_1 + F_2(x) dx_2\n\\end{aligned}\n\\]\n对\\(G(x)\\)的变动也有一个类似的表达式：\n\\[\n    dG(x) = G_1(x) dx_1 + G_2(x) dx_2\n\\]\n如果\\(\\bar{x}\\)和\\(\\bar{x} + dx\\)同时满足约束条件，那么必然有\\(dG(\\bar{x}) = 0\\)，即：\n\\[\n    G_1(\\bar{x}) dx_1 = - G_2(\\bar{x}) dx_2 = dc\n\\]\n\n\n\n首先假定\\(G_1(\\bar{x})\\)和\\(G_2(\\bar{x})\\)都是非零的，那么：\n\\[\n    dx_1 = dc / G_1(\\bar{x}), \\quad dx_2 = - dc / G_2(\\bar{x})\n\\]\n因此目标函数值的变动为：\n\\[\ndF(\\bar{x}) = [F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x})]dc\n\\] 当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)都不碰到某个自然边界（如零）时，变动量\\(dc\\)就可以是任意符号的。如果\\(\\bar{x}\\)是最优的，那么对于任意变动\\(dc\\)而言，\\(F(\\bar{x})\\)都不会增加，即：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x}) \\Longrightarrow\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n\n\n\n当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)位于某个自然边界时:\n\n当\\(x_1 \\geq 0\\)且位于下界时，我们会得到什么条件？\n当\\(x_1 \\leq 100\\)且位于上界时，我们会得到什么条件？\n\n\n\n\n如果\\(G(x) = c\\)的约束下在\\(\\bar{x}\\)点可以使得\\(F(x)\\)取得最大值，那么必然有：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n换言之，上述条件是\\(\\bar{x}\\)为最优解的一阶必要条件。\n一阶必要条件的价值在于，在寻找最优解时有助于缩小搜寻的范围：\n\n如果仅有唯一的\\(\\bar{x}\\)同时满足约束条件和一阶必要条件，那么它一定是我们所要寻找的最优解\n如果存在多个满足一阶条件的解，那么还必须采用其他办法来进行判断\n对于最大化问题和最小化问题而言，一阶必要条件是相同的！\n\n\n\n\n对于目标函数为\\(F(x)\\)、约束条件为\\(G(x) = c\\)的最优化问题，定义拉格朗日函数： \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n其中\\(\\lambda\\)被称为待定的拉格朗日乘子。记\\(L\\)的偏导数分别为：\n\\[\n    L_j = \\partial L/\\partial x_j; \\quad L_\\lambda = \\partial L/\\partial \\lambda\n\\]\n\n\n\n拉格朗日定理: 假定\\(x\\)为一个二维向量，\\(c\\)为标量，函数\\(F\\)和\\(G\\)取标量值。定义拉格朗日函数\\(L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\\)。如果没有其他约束（如非负约束条件），\\(\\bar{x}\\)使\\(F(x)\\)取得最大值且满足\\(G(x) = c\\)，并且如果对于至少一个\\(j, G_j(\\bar{x}) \\neq 0\\)成立，那么存在一个\\(\\lambda\\)值，使得 \\[\n    L_j(\\bar{x}, \\lambda) = 0, \\quad j = 1, 2; \\quad L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]\n\n\n\n考虑一个消费者在价格分别为\\(p, q\\)的两种商品\\(x,y\\)之间进行选择，其预算约束为\\(px + qy = I\\)，效用函数为\n\\[\n    U(x, y) = \\alpha \\ln(x) + \\beta \\ln(y)\n\\] 求消费者在两种商品上的最优支出，及其在总收入中所占的份额。\n\n\n\n假设消费者面对两种商品\\(x, y\\)，每种商品分别存在一个维持生存的最低消费数量\\(x_0, y_0\\)。消费者的效用函数形式为：\n\\[\n    \\begin{aligned}\nU(x, y) & = \\alpha \\ln(x - x_0) + \\beta \\ln(y - y_0) \\\\\n& \\alpha + \\beta = 1\n\\end{aligned}\n\\]\n两种商品的价格分别为\\(p, q\\)，消费者的总收入为\\(I\\)，求消费者在两种商品上的最优支出。\n\n\n\n考虑一个生产者，他以每年\\(r\\)的价格租赁机器\\(K\\)，以每年\\(w\\)的工资雇佣劳动\\(L\\)，以生产产出\\(Q\\)，其中\n\\[\n    Q = \\sqrt{K} + \\sqrt{L}\n\\]\n假定他想以最小的成本来生产固定数量的\\(Q\\)。找出他的要素需求函数。证明拉格朗日乘子为下式：\n\\[\n    \\lambda = 2wrQ/(w + r)\n\\] 并为\\(\\lambda\\)给出一个经济学解释。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#问题的陈述",
+    "href": "lecture2_lagrange.html#问题的陈述",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假定选择变量为\\(x_1\\)和\\(x_2\\)， 其向量形式为： \\[\nx =  \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n             x_1 \\\\\n            x_2\n        \\end{array}\n        \\right)\n\\]\n目标函数为\\(F(x)\\)，约束函数是一般的非线性函数\\(G(x) = c\\)。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-i",
+    "href": "lecture2_lagrange.html#套利方法-i",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假设从某个特定的点\\(\\bar{x} = (\\bar{x}_1, \\bar{x}_2)\\)开始，考虑一个无穷小的变动：\n\\[\ndx = \\left(\\begin{array}{c}\\def\\arraystretch{0.5}\n          dx_1  \\\\\n          dx_2\n    \\end{array}\\right)\n\\]\n我们要求\\(\\bar{x} + dx\\)仍然满足约束条件，并看它是否能产生一个更高的目标函数值。\n将目标函数\\(F(x)\\)对于\\(x_1\\)和\\(x_2\\)的偏导数分别记作\\(F_1(x)\\)和\\(F_2(x)\\)。当我们在点\\(\\bar{x}\\)处计算这两个值时，它们的值分别写作\\(F_1(\\bar{x})\\)和\\(F_2(\\bar{x})\\)。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-ii",
+    "href": "lecture2_lagrange.html#套利方法-ii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "从任意一点\\(x\\)到\\(x + dx\\)的微小变动所引起的\\(F(x)\\)的变动的一阶泰勒展开为： \\[\n    \\begin{aligned}\ndF(x) & = F(x + dx) - F(x) \\\\\n& = F_1(x)dx_1 + F_2(x) dx_2\n\\end{aligned}\n\\]\n对\\(G(x)\\)的变动也有一个类似的表达式：\n\\[\n    dG(x) = G_1(x) dx_1 + G_2(x) dx_2\n\\]\n如果\\(\\bar{x}\\)和\\(\\bar{x} + dx\\)同时满足约束条件，那么必然有\\(dG(\\bar{x}) = 0\\)，即：\n\\[\n    G_1(\\bar{x}) dx_1 = - G_2(\\bar{x}) dx_2 = dc\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-iii",
+    "href": "lecture2_lagrange.html#套利方法-iii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "首先假定\\(G_1(\\bar{x})\\)和\\(G_2(\\bar{x})\\)都是非零的，那么：\n\\[\n    dx_1 = dc / G_1(\\bar{x}), \\quad dx_2 = - dc / G_2(\\bar{x})\n\\]\n因此目标函数值的变动为：\n\\[\ndF(\\bar{x}) = [F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x})]dc\n\\] 当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)都不碰到某个自然边界（如零）时，变动量\\(dc\\)就可以是任意符号的。如果\\(\\bar{x}\\)是最优的，那么对于任意变动\\(dc\\)而言，\\(F(\\bar{x})\\)都不会增加，即：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) - F_2(\\bar{x})/G_2(\\bar{x}) \\Longrightarrow\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#套利方法-iv",
+    "href": "lecture2_lagrange.html#套利方法-iv",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "当\\(\\bar{x}_1\\)和\\(\\bar{x}_2\\)位于某个自然边界时:\n\n当\\(x_1 \\geq 0\\)且位于下界时，我们会得到什么条件？\n当\\(x_1 \\leq 100\\)且位于上界时，我们会得到什么条件？",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#必要条件和充分条件",
+    "href": "lecture2_lagrange.html#必要条件和充分条件",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "如果\\(G(x) = c\\)的约束下在\\(\\bar{x}\\)点可以使得\\(F(x)\\)取得最大值，那么必然有：\n\\[\n    F_1(\\bar{x})/G_1(\\bar{x}) = F_2(\\bar{x})/G_2(\\bar{x})\n\\]\n换言之，上述条件是\\(\\bar{x}\\)为最优解的一阶必要条件。\n一阶必要条件的价值在于，在寻找最优解时有助于缩小搜寻的范围：\n\n如果仅有唯一的\\(\\bar{x}\\)同时满足约束条件和一阶必要条件，那么它一定是我们所要寻找的最优解\n如果存在多个满足一阶条件的解，那么还必须采用其他办法来进行判断\n对于最大化问题和最小化问题而言，一阶必要条件是相同的！",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日方法-i",
+    "href": "lecture2_lagrange.html#拉格朗日方法-i",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "对于目标函数为\\(F(x)\\)、约束条件为\\(G(x) = c\\)的最优化问题，定义拉格朗日函数： \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n其中\\(\\lambda\\)被称为待定的拉格朗日乘子。记\\(L\\)的偏导数分别为：\n\\[\n    L_j = \\partial L/\\partial x_j; \\quad L_\\lambda = \\partial L/\\partial \\lambda\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日方法-ii",
+    "href": "lecture2_lagrange.html#拉格朗日方法-ii",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "拉格朗日定理: 假定\\(x\\)为一个二维向量，\\(c\\)为标量，函数\\(F\\)和\\(G\\)取标量值。定义拉格朗日函数\\(L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\\)。如果没有其他约束（如非负约束条件），\\(\\bar{x}\\)使\\(F(x)\\)取得最大值且满足\\(G(x) = c\\)，并且如果对于至少一个\\(j, G_j(\\bar{x}) \\neq 0\\)成立，那么存在一个\\(\\lambda\\)值，使得 \\[\n    L_j(\\bar{x}, \\lambda) = 0, \\quad j = 1, 2; \\quad L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子隐含不变预算份额的偏好",
+    "href": "lecture2_lagrange.html#例子隐含不变预算份额的偏好",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "考虑一个消费者在价格分别为\\(p, q\\)的两种商品\\(x,y\\)之间进行选择，其预算约束为\\(px + qy = I\\)，效用函数为\n\\[\n    U(x, y) = \\alpha \\ln(x) + \\beta \\ln(y)\n\\] 求消费者在两种商品上的最优支出，及其在总收入中所占的份额。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子线性支出系统",
+    "href": "lecture2_lagrange.html#例子线性支出系统",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "假设消费者面对两种商品\\(x, y\\)，每种商品分别存在一个维持生存的最低消费数量\\(x_0, y_0\\)。消费者的效用函数形式为：\n\\[\n    \\begin{aligned}\nU(x, y) & = \\alpha \\ln(x - x_0) + \\beta \\ln(y - y_0) \\\\\n& \\alpha + \\beta = 1\n\\end{aligned}\n\\]\n两种商品的价格分别为\\(p, q\\)，消费者的总收入为\\(I\\)，求消费者在两种商品上的最优支出。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子生产和成本最小化",
+    "href": "lecture2_lagrange.html#例子生产和成本最小化",
+    "title": "拉格朗日方法",
+    "section": "",
+    "text": "考虑一个生产者，他以每年\\(r\\)的价格租赁机器\\(K\\)，以每年\\(w\\)的工资雇佣劳动\\(L\\)，以生产产出\\(Q\\)，其中\n\\[\n    Q = \\sqrt{K} + \\sqrt{L}\n\\]\n假定他想以最小的成本来生产固定数量的\\(Q\\)。找出他的要素需求函数。证明拉格朗日乘子为下式：\n\\[\n    \\lambda = 2wrQ/(w + r)\n\\] 并为\\(\\lambda\\)给出一个经济学解释。",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#多个变量和多个约束条件",
+    "href": "lecture2_lagrange.html#多个变量和多个约束条件",
+    "title": "拉格朗日方法",
+    "section": "多个变量和多个约束条件",
+    "text": "多个变量和多个约束条件\n假设有\\(n\\)个选择变量\\((x_1, x_2, \\cdots, x_n)\\)和\\(m\\)个约束：\n\\[\n    G^{i}(x) = c_i,\\ i = 1, 2, \\cdots, m, \\quad m &lt; n\n\\]\n对每个约束我们定义一个乘子\\(\\lambda_i\\)，并定义拉格朗日函数为：\n\\[\n    L(x_1, \\cdots, x_n, \\lambda_1, \\cdots, \\lambda_m) = F(x_1, \\cdots, x_n) + \\sum_{i=1}^m \\lambda_i[c_i - G^{i}(x_1, \\cdots, x_n)]\n\\] 则在最优解\\(\\bar{x}\\)处满足的一阶必要条件为： \\[\n    \\frac{\\partial L}{\\partial x_j} = 0,\\ j = 1, 2, \\cdots, n\n\\] 和 \\[\n    \\frac{\\partial L}{\\partial \\lambda_i} = 0,\\ i = 1, 2, \\cdots, m\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#矩阵形式-i",
+    "href": "lecture2_lagrange.html#矩阵形式-i",
+    "title": "拉格朗日方法",
+    "section": "矩阵形式 I",
+    "text": "矩阵形式 I\n定义一个矩阵形式的最优化问题： \\[\n\\begin{aligned}\n\\mathop{\\max/\\min}_{\\mathbf{x}} & \\quad F(\\mathbf{x}) \\\\\n\\text{s.t.} & \\quad G(\\mathbf{x}) = c\n\\end{aligned}\n\\]\n\n\\(\\mathbf{x} = (x_1, x_2, \\cdots, x_n)\\)是一个n维向量\n\\(G\\)为由分量函数\\(G^{i}\\)组成的列向量函数\n每个\\(G^{i}\\)的偏导数组成行向量\\(G^{i}_{\\mathbf{x}}(\\mathbf{x})\\)\n目标函数\\(F(\\mathbf{x})\\)的偏导数组成行向量\\(F_{x}(\\mathbf{x})\\)\n拉格朗日乘子构成行向量\\(\\lambda = (\\lambda_1, \\lambda_2, \\cdots, \\lambda_m)\\)",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#矩阵形式-ii",
+    "href": "lecture2_lagrange.html#矩阵形式-ii",
+    "title": "拉格朗日方法",
+    "section": "矩阵形式 II",
+    "text": "矩阵形式 II\n在矩阵形式下，拉格朗日函数可以写作： \\[\n    L(\\mathbf{x}, \\lambda) = F(\\mathbf{x}) + \\lambda[c - G(\\mathbf{x})]\n\\] 对应的一阶条件： \\[\n    \\begin{aligned}\nL_x(\\bar{\\mathbf{x}}, \\lambda) & = 0 \\\\\nL_{\\lambda}(\\bar{\\mathbf{x}}, \\lambda) & = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理矩阵形式",
+    "href": "lecture2_lagrange.html#拉格朗日定理矩阵形式",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理：矩阵形式",
+    "text": "拉格朗日定理：矩阵形式\n拉格朗日定理：假定\\(\\mathbf{x}\\)是\\(n\\)维向量，\\(c\\)是\\(m\\)维向量，\\(F\\)为标量值函数，\\(G\\)为\\(m\\)维向量值函数，且\\(m &lt; n\\)。定义\n\\[\n    L(\\mathbf{x}, \\lambda) = F(\\mathbf{x}) + \\lambda[c - G(\\mathbf{x})]\n\\]\n若\\(\\bar{x}\\)在\\(G(x) = c\\)约束下最大化\\(F(x)\\)，且\\(G_x(\\bar{x})\\)的秩\\(=m\\)，则存在\\(\\lambda\\)满足：\n\\[\n\\begin{aligned}\nL_x(\\bar{\\mathbf{x}}, \\lambda) & = 0 \\\\\nL_{\\lambda}(\\bar{\\mathbf{x}}, \\lambda) & = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#非负变量",
+    "href": "lecture2_lagrange.html#非负变量",
+    "title": "拉格朗日方法",
+    "section": "非负变量",
+    "text": "非负变量\n经济学中常假定变量\\(x_j\\)非负： \\[\n    L_j(\\bar{\\mathbf{x}}) = F_j(\\bar{\\mathbf{x}}) - \\sum_{i=1}^m \\lambda_i G^{i}_j(\\bar{\\mathbf{x}}) \\leq 0\n\\] 需满足： \\[\n    L_{j}(\\bar{\\mathbf{x}}) \\leq 0,\\ \\bar{\\mathbf{x}} \\geq 0\n\\] 且至少有一个等式成立",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#互补松弛条件",
+    "href": "lecture2_lagrange.html#互补松弛条件",
+    "title": "拉格朗日方法",
+    "section": "互补松弛条件",
+    "text": "互补松弛条件\n条件：\n\\[\n    \\bar{\\mathbf{x}} L_{j}(\\bar{\\mathbf{x}}) = 0\n\\]\n互补松弛条件\n\n等式成立时为紧约束\n不等式成立时为松约束\n子项说明：松约束允许调整空间\n互补性：一个松弛必伴随另一个紧致",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理非负变量",
+    "href": "lecture2_lagrange.html#拉格朗日定理非负变量",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理：非负变量",
+    "text": "拉格朗日定理：非负变量\n定理：定义 \\[\n    L(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n若\\(\\bar{x}\\)在\\(G(x)=c\\)和\\(x\\geq0\\)约束下最大化解，且\\(G_x(\\bar{x})\\)满秩，则存在\\(\\lambda\\)满足： \\[\n\\begin{cases}\nL_{x}(\\bar{x}, \\lambda) \\leq 0 \\\\\n\\bar{x} \\geq 0 \\\\\n\\text{互补松弛条件}\n\\end{cases}\n\\] 和\n\\[\n    L_{\\lambda}(\\bar{x}, \\lambda) = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-i",
+    "href": "lecture2_lagrange.html#不等式约束-i",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 I",
+    "text": "不等式约束 I\n考虑更一般的不等式约束，例如假定约束中的第一个分量只需要以不等式形式成立： \\[\nG^{1}(x) \\leq c_1\n\\]\n此时我们可以定义一个新的变量\\(x_{n+1} = c_1 - G^{1}(x)\\)，使得\n\n不等式约束变成了一个等式约束\n新变量\\(x_{n+1}\\)面临非负约束",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-ii",
+    "href": "lecture2_lagrange.html#不等式约束-ii",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 II",
+    "text": "不等式约束 II\n记新问题的拉格朗日函数为： \\[\n\\begin{aligned}\n\\hat{L}(x_1, \\cdots, x_n, x_{n+1}, \\lambda_1, \\cdots, \\lambda_m) &= F(x_1, \\cdots, x_n)\\\\\n&\\quad + \\lambda_1 [c_1 - G^{1}(x) - x_{n+1}] \\\\\n&\\quad + \\sum_{i=2}^m \\lambda_i[c_i - G^{i}(x)] \\\\\n&= L(x, \\lambda) - \\lambda_1 x_{n+1}output\n\\end{aligned}\n\\]\n一阶条件： - \\(\\frac{\\partial \\hat{L}}{\\partial x_{n+1}} = -\\lambda_1 \\leq 0\\) - \\(x_{n+1} \\geq 0\\)（互补松弛条件）",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#不等式约束-iii",
+    "href": "lecture2_lagrange.html#不等式约束-iii",
+    "title": "拉格朗日方法",
+    "section": "不等式约束 III",
+    "text": "不等式约束 III\n当\\(x_{n+1} = c_1 - G^{1}(x) = \\frac{\\partial L}{\\partial \\lambda_1}\\)时，条件可写为： \\[\n\\frac{\\partial L}{\\partial \\lambda_1} \\geq 0,\\quad \\lambda_1 \\geq 0\n\\]\n满足互补松弛条件：",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#拉格朗日定理-不等式约束",
+    "href": "lecture2_lagrange.html#拉格朗日定理-不等式约束",
+    "title": "拉格朗日方法",
+    "section": "拉格朗日定理: 不等式约束",
+    "text": "拉格朗日定理: 不等式约束\n定理 定义拉格朗日函数： \\[\nL(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n若\\(\\bar{x}\\)在\\(G(x) \\leq c\\)下最大化\\(F\\)，且约束规范成立，则存在\\(\\lambda\\)满足：\n\\[\n\\begin{cases}\nL_x(\\bar{x}, \\lambda) = 0 \\\\\nL_\\lambda(\\bar{x}, \\lambda) \\geq 0 \\\\\n\\lambda \\geq 0 \\quad \\text{(互补松弛)}\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#库恩-塔克定理",
+    "href": "lecture2_lagrange.html#库恩-塔克定理",
+    "title": "拉格朗日方法",
+    "section": "库恩-塔克定理",
+    "text": "库恩-塔克定理\n定理 考虑最一般情形： \\[\n\\begin{aligned}\n\\text{最大化} \\quad & F(x) \\\\\n\\text{约束} \\quad & G(x) \\leq c \\\\\n& x \\geq 0\n\\end{aligned}\n\\]\n拉格朗日函数： \\[\nL(x, \\lambda) = F(x) + \\lambda[c - G(x)]\n\\]\n最优解\\(\\bar{x}\\)满足：\n\\[\n\\begin{cases}\nL_x(\\bar{x}, \\lambda) \\leq 0, \\bar{x} \\geq 0 \\quad \\text{(互补松弛)} \\\\\nL_\\lambda(\\bar{x}, \\lambda) \\geq 0, \\lambda \\geq 0 \\quad \\text{(互补松弛)}\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子-拟线性偏好",
+    "href": "lecture2_lagrange.html#例子-拟线性偏好",
+    "title": "拉格朗日方法",
+    "section": "例子: 拟线性偏好",
+    "text": "例子: 拟线性偏好\n问题 消费者效用函数： \\[\nU(x,y) = y + a\\ln x \\quad (a &gt; 0)\n\\]\n求解 预算约束下最大化效用： \\[\n\\begin{aligned}\n\\max \\quad & y + a\\ln x \\\\\n\\text{s.t.} \\quad & px + qy \\leq I \\\\\n& x &gt; 0,\\ y &gt; 0\n\\end{aligned}\n\\]\n关键步骤：构造拉格朗日函数并求解一阶条件",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture2_lagrange.html#例子-技术性闲置",
+    "href": "lecture2_lagrange.html#例子-技术性闲置",
+    "title": "拉格朗日方法",
+    "section": "例子: 技术性闲置",
+    "text": "例子: 技术性闲置\n生产可行性约束： \\[\n\\begin{cases}\n2x + y \\leq 300 \\quad (\\text{劳动}) \\\\\nx + 2y \\leq 450 \\quad (\\text{土地})\n\\end{cases}\n\\]\n优化分析： 1. 绘制可行域 2. 识别极值点 3. 计算最优解\n数学模型： \\[\n\\begin{aligned}\n\\max \\quad & \\pi = p_x x + p_y y \\\\\n\\text{s.t.} \\quad & 2x + y \\leq 300 \\\\\n& x + 2y \\leq 450 \\\\\n& x \\geq 0,\\ y \\geq 0\n\\end{aligned}\n\\]\n求解策略： - 使用库恩-塔克条件 - 分析边角解可能性",
+    "crumbs": [
+      "Home",
+      "第二讲：拉格朗日方法"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html",
+    "href": "lecture5_convex_set.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "标准的最优化问题：在标量约束\\(G(x) \\leq c\\) 下选择向量\\(x\\) 以最大化\\(F(x)\\)。\n\n等值线：对于一个多变量函数\\(F(x)\\) 而言，使得函数值等于\\(c\\) 的所有可能的向量\\(x\\) 共同构成一条等值线，对应优化问题中的约束条件。e.g. 预算约束线，等利润线，无差异曲线\n上等值集：所有满足\\(F(x) \\geq v\\) 的向量\\(x\\) 共同构成的集合\n下等值集：所有满足\\(G(x) \\leq c\\) 的向量\\(x\\) 共同构成的集合",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#标准的最优化问题",
+    "href": "lecture5_convex_set.html#标准的最优化问题",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "标准的最优化问题：在标量约束\\(G(x) \\leq c\\) 下选择向量\\(x\\) 以最大化\\(F(x)\\)。\n\n等值线：对于一个多变量函数\\(F(x)\\) 而言，使得函数值等于\\(c\\) 的所有可能的向量\\(x\\) 共同构成一条等值线，对应优化问题中的约束条件。e.g. 预算约束线，等利润线，无差异曲线\n上等值集：所有满足\\(F(x) \\geq v\\) 的向量\\(x\\) 共同构成的集合\n下等值集：所有满足\\(G(x) \\leq c\\) 的向量\\(x\\) 共同构成的集合",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#凸集的分离性质",
+    "href": "lecture5_convex_set.html#凸集的分离性质",
+    "title": "经济学中的优化方法",
+    "section": "凸集的分离性质",
+    "text": "凸集的分离性质",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#凸集convex-set",
+    "href": "lecture5_convex_set.html#凸集convex-set",
+    "title": "经济学中的优化方法",
+    "section": "凸集(convex set)",
+    "text": "凸集(convex set)\n定义： 对于\\(n\\) 维空间中的点集\\(S\\) 而言，如果给定\\(S\\) 中的任意两点\\(x^a = (x_1^a, \\cdots, x_n^a)\\) 和\\(x^b = (x_1^b, \\cdots, x_n^b)\\) 以及闭区间\\([0,1]\\)中的任意实数\\(\\theta\\)，点\\(\\theta x^a + (1-\\theta)x^b\\) 也在点集\\(S\\) 中，那么称点集\\(S\\) 是凸的(convex)。\n\n生产函数的下等值集是凸集，意味着什么？\n效用函数的上等值集是凸集，意味着什么？",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#凸函数",
+    "href": "lecture5_convex_set.html#凸函数",
+    "title": "经济学中的优化方法",
+    "section": "凸函数",
+    "text": "凸函数\n定义1（从函数出发）： 如果一个函数\\(G(x)\\)满足，对于所有的\\(x^a, x^b\\)和任意\\(\\theta \\in [0,1]\\)，都有 \\[\nG(\\theta x^a + (1 - \\theta)x^b) \\leq \\theta G(x^a) + (1 - \\theta)G(x^b)\n\\] 则称其为凸函数(convex function)。\n反之，若一个函数\\(F(x)\\)满足 \\[\nF(\\theta x^a + (1 - \\theta)x^b) \\geq \\theta F(x^a) + (1 - \\theta)F(x^b)\n\\] 则称其为凹函数(concave function)。",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#凹函数",
+    "href": "lecture5_convex_set.html#凹函数",
+    "title": "经济学中的优化方法",
+    "section": "凹函数",
+    "text": "凹函数",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#拟凸函数",
+    "href": "lecture5_convex_set.html#拟凸函数",
+    "title": "经济学中的优化方法",
+    "section": "拟凸函数",
+    "text": "拟凸函数\n从代数上看，集合\\(G(x)\\leq c\\) 是凸集意味着： \\[\nG(x^a) \\leq c , G(x^b) \\leq c \\Rightarrow G(\\theta x^a + (1 - \\theta) x^b) \\leq c\n\\]\n如果其中一个端点的值恰好等于\\(c\\) 时，这个条件又可以表述为\\(\\forall x^a, x^b , \\theta \\in[0,1]\\)： \\[\nG(\\theta x^a + (1 - \\theta) x^b) \\leq max(G(x^a), G(x^b))\n\\]\n我们称满足上述条件的函数为拟凸函数(quasi convex function)。\n反之，如果函数\\(F(x)\\)满足 \\[\nF(\\theta x^a + (1 - \\theta) x^b) \\geq min(F(x^a), F(x^b))\n\\] 则称其为拟凹函数(quasi concave function)。",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#内点与边界点",
+    "href": "lecture5_convex_set.html#内点与边界点",
+    "title": "经济学中的优化方法",
+    "section": "内点与边界点",
+    "text": "内点与边界点\n\n内点：如果存在点\\(x^0\\) 的邻域\\(B(x^0, \\delta)\\) 包含于集合\\(S\\)，则称点\\(x^0\\) 是集合\\(S\\) 的一个内点(inner point)\n边界点：如果一个点\\(x^1\\) 既不是集合\\(S\\)的内点，也不是集合\\(S\\) 的补集的内点，则称点\\(x^1\\) 是集合\\(S\\)的一个边界点(boundary points)。换言之，如果一个点\\(x^1\\)是集合\\(S\\) 的边界点，那么其任意邻域内，都既存在属于\\(S\\)的点，也存在不属于\\(S\\)的点",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#分散化下的局部失灵",
+    "href": "lecture5_convex_set.html#分散化下的局部失灵",
+    "title": "经济学中的优化方法",
+    "section": "分散化下的局部失灵",
+    "text": "分散化下的局部失灵",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#分离定理",
+    "href": "lecture5_convex_set.html#分离定理",
+    "title": "经济学中的优化方法",
+    "section": "分离定理",
+    "text": "分离定理\n如果A和B为两个没有公共内点的凸集，且至少有一个集合有一个非空内点，那么我们总可以找到一个非零向量\\(p\\)和一个数\\(b\\)，使得超平面\\(px = b\\)分离这两个集合，或：\n\\[\npx \\begin{cases}\n\\leq b, & \\forall x \\in A \\\\\n\\geq b, & \\forall x \\in B\n\\end{cases}\n\\]",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#分离角度的最优化定理",
+    "href": "lecture5_convex_set.html#分离角度的最优化定理",
+    "title": "经济学中的优化方法",
+    "section": "分离角度的最优化定理",
+    "text": "分离角度的最优化定理\n给定拟凹函数\\(F\\)和拟凸函数\\(G\\)，点\\(\\bar{x}\\)在满足约束条件\\(G(x) \\leq c\\)下使得\\(F(x)\\)最大，当且仅当存在一个非零向量\\(p\\)，使得：\n\n\\(\\bar{x}\\)在满足\\(G(x) \\leq c\\)下最大化\\(px\\)\n\\(\\bar{x}\\)在满足\\(F(x) \\geq \\bar{v}\\)下最小化\\(px\\)",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#经济学解释",
+    "href": "lecture5_convex_set.html#经济学解释",
+    "title": "经济学中的优化方法",
+    "section": "经济学解释",
+    "text": "经济学解释\n假定\\(x\\)为生产-消费向量，约束反映了资源的有限性，目标函数为效用函数。\\(p\\)理解为产出的价格向量，那么上述定理意味着：\n\n寻求产出价格最大化的企业家会生产出最优产量\\(\\bar{x}\\)\n试图以最小支出达到既定效用的消费者也恰好需要\\(\\bar{x}\\)\n社会最优化问题就可以被分散化的机制实现",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#唯一性",
+    "href": "lecture5_convex_set.html#唯一性",
+    "title": "经济学中的优化方法",
+    "section": "唯一性",
+    "text": "唯一性",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#严格拟凸",
+    "href": "lecture5_convex_set.html#严格拟凸",
+    "title": "经济学中的优化方法",
+    "section": "严格拟凸",
+    "text": "严格拟凸\n严格拟凸函数： \\[\nG(\\theta x^a + (1 - \\theta) x^b) &lt; max(G(x^a), G(x^b))\n\\]\n严格拟凹函数： \\[\nF(\\theta x^a + (1 - \\theta) x^b) &gt; min(F(x^a), F(x^b))\n\\]",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture5_convex_set.html#唯一性条件",
+    "href": "lecture5_convex_set.html#唯一性条件",
+    "title": "经济学中的优化方法",
+    "section": "唯一性条件",
+    "text": "唯一性条件\n考虑在约束\\(G(x) \\leq c\\) 下最大化\\(F(x)\\)的问题，其中\\(F\\)为严格拟凹的，\\(G\\)为严格拟凸的。假定\\(x\\)满足分离角度的最优化定理，那么它将是该最优化问题的唯一解。【证明：反证法】",
+    "crumbs": [
+      "Home",
+      "第五讲：凸集和线性规划"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html",
+    "href": "lecture7_second_order.html",
+    "title": "无约束最大化问题",
+    "section": "",
+    "text": "一阶导数：函数值在某点附近的变化情况；\n二阶导数：函数一阶导数的变化情况，即函数值在某点附近的曲率。\n\n考察目标函数和约束函数在最优值点附近的曲率，如果曲率满足一定条件，则最大值会是充分的。",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#二阶性质",
+    "href": "lecture7_second_order.html#二阶性质",
+    "title": "无约束最大化问题",
+    "section": "",
+    "text": "一阶导数：函数值在某点附近的变化情况；\n二阶导数：函数一阶导数的变化情况，即函数值在某点附近的曲率。\n\n考察目标函数和约束函数在最优值点附近的曲率，如果曲率满足一定条件，则最大值会是充分的。",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#无约束最大化问题-1",
+    "href": "lecture7_second_order.html#无约束最大化问题-1",
+    "title": "无约束最大化问题",
+    "section": "无约束最大化问题",
+    "text": "无约束最大化问题\n在某一点\\(\\bar{x}\\)附近对函数\\(F(x)\\)进行泰勒展开：\n\\[\nF(x) = F(\\bar{x}) + F^{'}(\\bar{x})(x - \\bar{x}) + \\frac{1}{2} F^{''}(\\bar{x})(x - \\bar{x})^2 + \\cdots\n\\]\n最优化的一阶必要条件是\\(F^{'}(\\bar{x}) = 0\\)，因此\n\\[\nF(x) - F(\\bar{x}) = \\frac{1}{2}F^{''}(\\bar{x})(x - \\bar{x})^2 + \\cdots\n\\]\n对于足够接近于\\(\\bar{x}\\)的x而言，二阶项就支配了泰勒展开中的高阶项。因此，如果\\(F^{''}(\\bar{x})\\)为正，我们就可以找到一个足够接近于\\(\\bar{x})\\)的x，使得\\(F(x) &gt; F(\\bar{x})\\)。换句话说，\\(\\bar{x}\\)是\\(F(x)\\)的局部或全局最大值的二阶必要条件是\n\\[\nF^{''}(\\bar{x}) \\leq 0.\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#无约束最大化问题-2",
+    "href": "lecture7_second_order.html#无约束最大化问题-2",
+    "title": "无约束最大化问题",
+    "section": "无约束最大化问题",
+    "text": "无约束最大化问题\n如果\\(F^{''}(\\bar{x})\\)严格为负，那么在\\(\\bar{x}\\)附近足够小的区间内，不管高阶项的符号如何，我们都有\\(F(x) &lt; F(\\bar{x})\\)。因此\n\\[\nF^{''}(\\bar{x}) &lt; 0.\n\\]\n是\\(\\bar{x}\\)产生\\(F(x)\\)的一个局部最大值的二阶充分条件。\n二阶必要条件和二阶充分条件之间存在两个不同之处：\n\n前者是一个弱的不等式，而后者是相应的严格不等式；\n前者是局部或全局最大值的一个必要条件，而后者仅是局部最大值的一个充分条件。",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#含参数的无约束最大化问题",
+    "href": "lecture7_second_order.html#含参数的无约束最大化问题",
+    "title": "无约束最大化问题",
+    "section": "含参数的无约束最大化问题",
+    "text": "含参数的无约束最大化问题\n假定最大化问题包含一个参数\\(\\theta\\)。则一阶条件为：\n\\[\nF_x(\\bar{x}, \\theta) = 0.\n\\]\n我们希望知道最优选择如何随着\\(\\theta\\)的变动而变化，将上式全微分可得\n\\[\nF_{xx}(\\bar{x}, \\theta) d\\bar{x} + F_{x\\theta}(\\bar{x}, \\theta) d\\theta = 0.\n\\]\n或\n\\[\nd\\bar{x}/d\\theta = - F_{x\\theta}(\\bar{x}, \\theta)/F_{xx}(\\bar{x}, \\theta).\n\\]\n在最优解处，等式右边分母为负。因此\\(d\\bar{x}/d\\theta\\)的符号与\\(F_{x\\theta}\\)在最优解处的符号相同。",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#比较静态分析",
+    "href": "lecture7_second_order.html#比较静态分析",
+    "title": "无约束最大化问题",
+    "section": "比较静态分析",
+    "text": "比较静态分析\n考虑选择变量为向量的最优化情形，泰勒展开可以写作：\n\\[\nF(x) = F(\\bar{x}) + F_x(\\bar{x})(x - \\bar{x}) + \\frac{1}{2}(x - \\bar{x})^TF_{xx}(\\bar{x})(x - \\bar{x}) + \\cdots\n\\]\n此时\\(F_{xx}\\)是由二阶偏导数\\(F_{jk} \\equiv \\partial^2F/\\partial x_j \\partial x_k\\)组成的对称方阵。上标T代表矩阵的转置。二阶项此时是二次型：\n\\[\n(x - \\bar{x})^TF_{xx}(\\bar{x})(x - \\bar{x}) = \\sum_{j = 1}^n\\sum_{k = 1}^nF_{jk}(\\bar{x}) (x_j - \\bar{x}_j)(x_k - \\bar{x}_k).\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#二次型与凸性",
+    "href": "lecture7_second_order.html#二次型与凸性",
+    "title": "无约束最大化问题",
+    "section": "二次型与凸性",
+    "text": "二次型与凸性\n\\(R^n\\)上的一个二次型是一个定义在\\(R^n\\)上的函数，表达式为\\(y^TMy\\)，其中\\(M\\)是一个对称矩阵, 矩阵\\(M\\)称为关于二次型的矩阵（二次型矩阵）：\n\n如果对于所有的\\(y \\neq 0\\)，二次型\\(y^TMy\\)的值均为负的，那么该二次型被称为负定的；如果二次型\\(y^TMy\\)的值均为非正的，那么该二次型被称为半负定的。\n如果对称矩阵\\(M\\)的k阶主子式\\(M_k\\)，即由任意的k行和k列元素组成的子矩阵而言，都有\\((-1)^k|M_k| \\geq 0\\) 。\n如果\\(F_{xx}(\\bar{x})\\)是半负定的二次型矩阵，那么\\(F\\)在\\(\\bar{x}\\)处是凹的。\n最大化问题的二阶充分条件等价于 \\((x - \\bar{x})^TF_{xx}(\\bar{x})(x - \\bar{x})\\)是负定的；二阶必要条件等价于\\((x - \\bar{x})^TF_{xx}(\\bar{x})(x - \\bar{x})\\)是半负定的。",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#比较静态分析-1",
+    "href": "lecture7_second_order.html#比较静态分析-1",
+    "title": "无约束最大化问题",
+    "section": "比较静态分析",
+    "text": "比较静态分析\n对一阶条件\\(F_{x}(\\bar{x}, \\theta) = 0\\)全微分\n\\[\nF_{xx}(\\bar{x}, \\theta) d\\bar{x} + F_{x\\theta}(\\bar{x}, \\theta) d\\theta = 0.\n\\]\n此时，\\(d \\bar{x}\\)和\\(d \\theta\\)均是向量，\\(F_{xx}\\)和\\(F_{x \\theta}\\)均是矩阵。\\(d \\bar{x}\\)的解是\n\\[\nd\\bar{x} = - F_{xx}(\\bar{x}, \\theta)^{-1}F_{x\\theta}(\\bar{x}, \\theta)d\\theta\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#二阶条件的使用",
+    "href": "lecture7_second_order.html#二阶条件的使用",
+    "title": "无约束最大化问题",
+    "section": "二阶条件的使用",
+    "text": "二阶条件的使用\n考虑一个企业在\\(w\\)的价格下购买了投入向量\\(x\\)，生产了产出\\(y = f(x)\\)，最后将其出售获得收入\\(R(y)\\)。\n它的利润可以表示为选择变量\\(x\\)和投入价格（参数）\\(w\\)的函数\n\\[\nF(x, w) = R(f(x)) - wx\n\\] 试找出\\(w\\)的变动对最优选择\\(x\\)的影响？",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#二阶条件的使用-1",
+    "href": "lecture7_second_order.html#二阶条件的使用-1",
+    "title": "无约束最大化问题",
+    "section": "二阶条件的使用",
+    "text": "二阶条件的使用\n假设最优选择\\(x\\)是参数\\(w\\)的函数\n\\[\nx = x(w)\n\\] 目标函数可以改写为\\(F(x(w), w)\\)，",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#约束最优化",
+    "href": "lecture7_second_order.html#约束最优化",
+    "title": "无约束最大化问题",
+    "section": "约束最优化",
+    "text": "约束最优化\n考虑两个选择变量和一个等式约束的最优化问题，即在约束\\(G(x_1, x_2) = c\\)下最大化\\(F(x_1, x_2)\\)，其中F和G都是自变量的增函数。把\\(x_2\\)视作沿着每一条F的等值线上关于\\(x_1\\)的函数：\n\\[\ndx_2/dx_1 = - F_1(x_1, x_2)/F_2(x_1, x_2).\n\\]\n\\(x_2\\)作为\\(x_1\\)的函数，将上式再次微分有\n\\[\n\\begin{aligned}\n    \\frac{d^2 x_2}{dx_1^2}\n    & = \\frac{d[-F_1/F_2]}{dx_1} \\\\\n    & = - \\frac{F_2(F_{11} + F_{12}dx_2/dx_1) - F_1(F_{21} + F_{22}dx_2/dx_1)}{F_2^2} \\\\\n    & = - \\frac{F_2^2 F_{11} - 2F_1 F_2 F_{12} + F_1^2 F_{22}}{F_2^3}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#约束最优化-1",
+    "href": "lecture7_second_order.html#约束最优化-1",
+    "title": "无约束最大化问题",
+    "section": "约束最优化",
+    "text": "约束最优化\n类似的表达式也可以沿着约束曲线求二阶导数得到，\\(\\bar{x}\\)为局部最优解的二阶充分条件为\\(d^x_2/dx_1^2\\)沿着F的等值线的值应该比它沿着G的等值线的值更大。利用一阶必要条件\n\\[\nF_j(\\bar{x}) = \\lambda G_j(\\bar{x}), j = 1, 2\n\\]\n化简可得\n\\[\nG_2^2(F_{11} - \\lambda G_{11}) - 2G_1 G_2 (F_{12} - \\lambda G_{12}) + G_1^2(F_{22} - \\lambda G_{22}) &lt; 0.\n\\]\n其矩阵形式为:\n\\[\ndet\\begin{bmatrix}\n    F_{11} - \\lambda G_{11} & F_{12} - \\lambda G_{12} & - G_1 \\\\\n    F_{21} - \\lambda G_{21} & F_{22} - \\lambda G_{22} & - G_2 \\\\\n    - G_1 & - G_2 & 0\n\\end{bmatrix} &gt; 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#约束最优化-2",
+    "href": "lecture7_second_order.html#约束最优化-2",
+    "title": "无约束最大化问题",
+    "section": "约束最优化",
+    "text": "约束最优化\n在上述问题中的函数F和G中加入一个s维的参数向量\\(\\theta\\)，那么一阶条件为\n\\[\nF_{x}(\\bar{x},\\theta) - \\lambda G_{x}(\\bar{x}, \\theta) = 0,  G(\\bar{x}, \\theta) = 0\n\\]\n对一阶条件全微分有\n\\[\n\\begin{aligned}\n    & \\sum_{k = 1}^n(\\partial^2 F/ \\partial x_j \\partial x_k) d\\bar{x}_k +\n     \\sum_{r = 1}^s(\\partial^2 F/\\partial x_j \\partial \\theta_r) d\\theta_r \\\\\n     & - \\sum_{i=1}^m \\lambda_i\n     \\{\n     \\sum_{k = 1}^n(\\partial^2 G/\\partial x_j \\partial x_k) d\\bar{x}_k +\n     \\sum_{r = 1}^s(\\partial^2 G/\\partial x_j \\partial \\theta_r) d\\theta_r\n     \\}\\\\\n     & - \\sum_{i = 1}^m d \\lambda_i \\partial G^i \\partial x_j = 0\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture7_second_order.html#约束最优化-3",
+    "href": "lecture7_second_order.html#约束最优化-3",
+    "title": "无约束最大化问题",
+    "section": "约束最优化",
+    "text": "约束最优化\n上式可以用矩阵表示为：\n\\[\n\\begin{bmatrix}\n    F_{xx} - \\lambda G_{xx} & - G_x^T \\\\\n    - G_x & 0 \\\\\n\\end{bmatrix}\n\\begin{bmatrix}\n    d\\bar{x} \\\\\n    d \\lambda^T\n\\end{bmatrix} =\n- \\begin{bmatrix}\n    F_{x\\theta} - \\lambda G_{x\\theta} \\\\\n    - G_{\\theta}\n\\end{bmatrix}\n\\]",
+    "crumbs": [
+      "Home",
+      "第七讲：二阶条件"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html",
+    "href": "lecture9_time_related.html",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "思考：如果国家要规划未来20年的减排路径，应该怎样平衡短期经济成本和长期环境收益？这与个人的储蓄决策有何异同？\n\n\n政府和居民在当前面临着给定的环境质量（如碳排放水平）；\n政府需要决定每一期的减排力度，当期环境质量和减排力度决定了下一期的环境质量；\n社会福利函数会受到每个时期的环境质量影响；\n减排力度会受到技术水平和当前环境质量的影响；\n居民会权衡当期和未来的福利，并按照一定方式将未来福利贴现。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#课程导入",
+    "href": "lecture9_time_related.html#课程导入",
+    "title": "经济学中的优化方法",
+    "section": "",
+    "text": "思考：如果国家要规划未来20年的减排路径，应该怎样平衡短期经济成本和长期环境收益？这与个人的储蓄决策有何异同？\n\n\n政府和居民在当前面临着给定的环境质量（如碳排放水平）；\n政府需要决定每一期的减排力度，当期环境质量和减排力度决定了下一期的环境质量；\n社会福利函数会受到每个时期的环境质量影响；\n减排力度会受到技术水平和当前环境质量的影响；\n居民会权衡当期和未来的福利，并按照一定方式将未来福利贴现。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#基础概念",
+    "href": "lecture9_time_related.html#基础概念",
+    "title": "经济学中的优化方法",
+    "section": "基础概念",
+    "text": "基础概念\n\n变量区分\n\n\n\n\n变量类型\n符号表示\n经济学案例\n\n\n\n\n状态变量\n\\(y_t\\)\n资本存量、环境质量\n\n\n控制变量\n\\(z_t\\)\n投资额、减排力度\n\n\n\n\n动态系统核心方程\n\n\\[\ny_{t+1} = y_t + Q(y_t,z_t,t)\n\\]\n\n变量约束方程\n\n\\[\nG(y_t, z_t, t) \\leq 0 \\tag{10.2}\n\\]\n\n在碳减排案例中，\\(Q(\\cdot)\\)函数应该包含哪些关键参数？约束条件\\(G(\\cdot)\\)可能是什么？",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#基本概念-ii",
+    "href": "lecture9_time_related.html#基本概念-ii",
+    "title": "经济学中的优化方法",
+    "section": "基本概念 II",
+    "text": "基本概念 II\n\n目标函数是加性可分的，即可以表达成一系列函数的和，且每个函数仅依赖于当期的状态变量和控制变量： \\[\n  \\sum_{t = 0}^{T} F(y_{t}, z_{t}, t) \\tag{10.3}\n\\]\n可能存在初值条件和终值条件：\n\n初值条件：\\(y_0 = \\bar{y}_0\\)\n终值条件：\\(y_{T+1} = \\bar{y}_{T+1}\\)\n\n写出上述跨期最大化问题的标准形式。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#基本概念-iii",
+    "href": "lecture9_time_related.html#基本概念-iii",
+    "title": "经济学中的优化方法",
+    "section": "基本概念 III",
+    "text": "基本概念 III\n一个包含时间维度的最大值问题可以表述为：\n\\[\n\\begin{aligned}\n    \\max_{y_{t}, z_{t}} \\quad  &\n    \\sum_{t = 0}^{T} F(y_{t}, z_{t}, t) \\\\\n    s.t.\\quad\n         & y_{t+1} - y_{t} = Q(y_{t}, z_{t}, t)     \\\\\n         & G(y_t, z_t, t) \\leq 0                    \\\\\n         & y_0 = \\bar{y}_0,\\quad y_{T+1} = \\bar{y}_{T+1} \\\\\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#典型例子生命周期储蓄-i",
+    "href": "lecture9_time_related.html#典型例子生命周期储蓄-i",
+    "title": "经济学中的优化方法",
+    "section": "典型例子：生命周期储蓄 I",
+    "text": "典型例子：生命周期储蓄 I\n考虑一个有已知寿命\\(T\\)的工人：\n\n其每一期的效用函数为\\(\\ln c_{t}\\)，\\(c_{t}\\)为第\\(t\\)期的消费，且效用折现率为\\(\\rho\\)\n他可以选择储蓄或借贷，存款利率和贷款利率均为\\(r\\)\n在其生命周期内他将赚取\\(w\\)的收入，并用\\(k_t\\)表示其在第\\(t\\)期积累的资产存量（如果为负则代表债务）\n资产存量\\(k_t\\)会为其带来流量收入\\(w + rk_t\\)，因此其资产积累由下式决定 \\[\nk_{t+1} - k_{t} = w + r k_{t} - c_{t}\n\\]\n写出这个最优化问题的标准形式，区分状态变量和控制变量。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#时间最大值问题-i",
+    "href": "lecture9_time_related.html#时间最大值问题-i",
+    "title": "经济学中的优化方法",
+    "section": "时间最大值问题 I",
+    "text": "时间最大值问题 I\n对于时间最大值问题：\n\\[\\begin{align}\n    \\max_{y_{t}, z_{t}} \\quad  &\n    \\sum_{t = 0}^{T} F(y_{t}, z_{t}, t) \\\\\n    s.t.\\quad\n         & y_{t+1} - y_{t} = Q(y_{t}, z_{t}, t)\\tag{10.1} \\\\\n         & G(y_t, z_t, t) \\leq 0\\tag{10.2}\n\\end{align}\\]\n构造拉格朗日函数，用\\(\\pi_{t+1}\\)代表约束(10.1)的拉格朗日乘子，\\(\\lambda_{t}\\)代表约束(10.2)的拉格朗日乘子。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#时间最大值问题-ii",
+    "href": "lecture9_time_related.html#时间最大值问题-ii",
+    "title": "经济学中的优化方法",
+    "section": "时间最大值问题 II",
+    "text": "时间最大值问题 II\n对于拉格朗日函数 \\[\n\\begin{aligned}\n    \\mathcal{L}(y_{t}, z_{t}, \\pi_{t+1}, \\lambda_{t})\n    =\n    \\sum_{t = 0}^{T} \\{\n    & F(y_{t}, z_{t}, t) + \\pi_{t+1}[y_{t} + Q(y_{t}, z_{t}, t) - \\\\\n    &   y_{t+1}] - \\lambda_{t}G(y_{t}, z_{t}, t)\n\\}\n\\end{aligned}\n\\]\n\n\\(\\lambda_{t}\\)的经济学含义是什么？\n\n关于\\(t\\) 时刻约束的影子价格\n\n\\(\\pi_{t+1}\\)的经济学含义是什么？\n\n关于\\(t+1\\) 时刻存量的影子价格\n\n关于\\(y_{t}\\)和\\(z_{t}\\)的一阶条件分别是什么？",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#一阶条件-i",
+    "href": "lecture9_time_related.html#一阶条件-i",
+    "title": "经济学中的优化方法",
+    "section": "一阶条件 I",
+    "text": "一阶条件 I\n关于\\(z_{t}(t = 0, 1, \\ldots, T)\\)的一阶条件：\n\\[\\begin{align}\n\\frac{\\partial \\mathcal{L}}{\\partial z_{t}}  \\equiv\n& F_{z}(y_{t}, z_{t}, t) + \\pi_{t+1}Q_z(y_{t}, z_{t}, t) - \\\\\n& \\lambda_{t}G_Z(y_{t}, z_{t}, t)  = 0 \\tag{10.5}\n\\end{align}\\]\n关于\\(y_{t}(t = 0, 1, \\ldots, T)\\)的一阶条件，需要将\\(\\mathcal{L}\\)重新整理为包含所有\\(y_{t}\\)的形式： \\[\n\\begin{aligned}\n\\mathcal{L}  = & \\sum_{t = 0}^{T}\n\\{\nF(y_{t}, z_{t}, t) + \\pi_{t+1}Q(y_t, z_t, t) + y_{t}(\\pi_{t+1} - \\pi_{t}) - \\\\\n& \\lambda_{t} G(y_{t}, z_{t}, t)\\} +  F(y_0, z_0, 0) + \\pi_1 Q(y_0, z_0, 0) + \\\\\n& y_0 \\pi_1 - y_{T+1}\\pi_{T+1}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#一阶条件-ii",
+    "href": "lecture9_time_related.html#一阶条件-ii",
+    "title": "经济学中的优化方法",
+    "section": "一阶条件 II",
+    "text": "一阶条件 II\n因此，关于\\(y_{t}(t = 0, 1, \\ldots, T)\\)的一阶条件为 \\[\n\\begin{aligned}\n\\frac{\\partial \\mathcal{L}}{\\partial y_{t}} \\equiv &\nF_{y}(y_{t}, z_{t}, t) + \\pi_{t+1}Q_y(y_{t}, z_{t}, t) + \\\\\n& \\pi_{t+1} - \\pi_{t} - \\lambda_t G_{y}(y_{t}, z_{t}, t) \\\\\n=  & 0\n\\end{aligned}\n\\]\n或者\n\\[\\begin{align}\n\\pi_{t+1}- \\pi_{t} & =  -[F_{y}(y_{t}, z_{t}, t) + \\pi_{t+1} Q_{y}(y_{t}, z_{t}, t) - \\\\\n& \\lambda_{t}G_{y}(y_{t}, z_{t}, t)] \\tag{10.8}\n\\end{align}\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#哈密尔顿函数-i",
+    "href": "lecture9_time_related.html#哈密尔顿函数-i",
+    "title": "经济学中的优化方法",
+    "section": "哈密尔顿函数 I",
+    "text": "哈密尔顿函数 I\n定义一个新的函数\\(H\\)，称为汉密尔顿函数： \\[\nH(y, z, \\pi, t) = F(y, z, t) + \\pi Q(y, z, t).\n\\] 考虑一个目标函数是汉密尔顿函数，约束条件服从(10.2)式，选择变量为\\(z_{t}\\)的单期最优化问题： \\[\n\\begin{aligned}\n\\max_{z_{t}}\\quad & F(y_{t}, z_{t}, t) + \\pi_{t+1}Q(y_{t}, z_{t}, t) \\\\\ns.t.\\quad & G(y_{t}, z_{t}, t) \\leq 0\n\\end{aligned}\n\\] 写出上述单期最大化问题的拉格朗日函数。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#哈密尔顿函数-ii",
+    "href": "lecture9_time_related.html#哈密尔顿函数-ii",
+    "title": "经济学中的优化方法",
+    "section": "哈密尔顿函数 II",
+    "text": "哈密尔顿函数 II\n拉格朗日函数为： \\[\nL = H(y_{t}, z_{t},\\pi_{t+1}, t)  - \\lambda_t G(y_{t}, z_{t}, t)\n\\] 那么，该拉格朗日函数关于\\(z_{t}\\)的一阶条件为： \\[\n\\frac{\\partial L}{\\partial z_{t}} = F_z + \\pi_{t+1}Q_z - \\lambda_t G_z = 0\n\\] 等价于跨期问题的一阶条件(10.5)。当\\(z_{t}\\)达到最优时，上述问题的最大值记为\\(H^{*}(y_{t}, \\pi_{t+1}, t)\\)。",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#哈密尔顿函数-iii",
+    "href": "lecture9_time_related.html#哈密尔顿函数-iii",
+    "title": "经济学中的优化方法",
+    "section": "哈密尔顿函数 III",
+    "text": "哈密尔顿函数 III\n在这个框架下，(10.8)可以简写作： \\[\n\\pi_{t+1} - \\pi_{t} = - L_{y}(y_{t}, z_{t}, \\pi_{t+1}, t)\n\\] 在静态最大化问题中，只有\\(z_{t}\\)是选择变量，\\(y_{t}\\)和\\(\\pi_{t+1}\\)都是参数。因此使用包络定理可得： \\[\n\\pi_{t+1} - \\pi_{t} = - H_{y}^{*}(y_{t}, z_{t}, t) \\tag{10.11}\n\\] 此外，由包络定理还有 \\(H_{\\pi}^{*} = L_{\\pi} = Q\\)，并在最优解处取值。因此(10.1)式可以写成与(10.11)式对称的形式： \\[\ny_{t+1} - y_{t} = H_{\\pi}^{*}(y_{t}, \\pi_{t+1}, t)\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#最大值原理",
+    "href": "lecture9_time_related.html#最大值原理",
+    "title": "经济学中的优化方法",
+    "section": "最大值原理",
+    "text": "最大值原理\n最大值原理 在满足约束(10.1)式和(10.2)式下最大化(10.3)式的一阶必要条件是：\n\n对每一期的\\(t\\)而言, \\(z_{t}\\) 在单期约束\\(G(y_{t}, z_{t}, t) \\leq 0\\)下最大化汉密尔顿函数\\(H(y_{t}, z_{t}, \\pi_{t+1}, t)\\)\n差分方程(10.11)式和(10.12)式共同决定了\\(y_{t}\\)和\\(\\pi_{t+1}\\) 在时间维度上的变动",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#经济学解释-i",
+    "href": "lecture9_time_related.html#经济学解释-i",
+    "title": "经济学中的优化方法",
+    "section": "经济学解释 I",
+    "text": "经济学解释 I\n最大化条件(i)意味着\\(z_{t}\\)的选择会通过(10.1)式影响到\\(y_{t+1}\\)，从而影响到\\(y_{t+1}\\)和\\(t+1\\)时期目标函数中的各项。例如，今天大肆挥霍的消费虽然会增加今天的效用，但意味着未来只有较少的资本积累，从而降低了未来的消费和效用。 如何刻画\\(z_t\\)变化对未来的影响？通过利用受影响的存量的影子价格：\n\n\\(z_t\\)对\\(y_{t+1}\\)的影响等于其对\\(Q(y_t. z_t, t)\\)的影响\n由此产生的目标函数值变动等于这一影响乘以\\(y_{t+1}\\)的影子价格\\(\\pi_{t+1}\\)\n汉密尔顿函数中加入\\(\\pi_{t+1}\\)修正了目标函数\\(F(y_{t}, z_{t}, t)\\)，使之考虑了在\\(t\\)时期控制变量\\(z_{t}\\)的选择对未来的影响",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#经济学解释-ii",
+    "href": "lecture9_time_related.html#经济学解释-ii",
+    "title": "经济学中的优化方法",
+    "section": "经济学解释 II",
+    "text": "经济学解释 II\n\\[\\begin{align}\n\\pi_{t+1} - \\pi_{t}\n& = -[F_{y}(y_{t}, z_{t}, t) + \\pi_{t+1} Q_{y}(y_{t}, z_{t}, t) - \\\\ & \\lambda_{t}G_{y}(y_{t}, z_{t}, t)] \\tag{10.8} \\\\\n&  =- H_{y}^{*}(y_{t}, z_{t}, t) \\tag{10.11}\n\\end{align}\\]\n(10.8)式或等价的(10.11)式意味着：\n\n单期约束的影子成本\\(\\pi_{t+1}\\)意味着\\(y_{t}\\)的一单位边际变化在时期\\(t\\)中产生的边际回报为\\(F_y(t) - \\lambda_t G_y(t)\\)，并在下一期产生额外的\\(G_y(t)\\)，即一期中使用\\(y_{t}\\)的利息或机会成本\n当\\(y_t\\)为最优解时，全部的边际回报应该为零，即 \\[\n[F_y(t) - \\lambda_t G_y(t)] + \\pi_t Q_y(t) + [\\pi_{t+1} - \\pi_t] = 0\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#经济学解释-iii",
+    "href": "lecture9_time_related.html#经济学解释-iii",
+    "title": "经济学中的优化方法",
+    "section": "经济学解释 III",
+    "text": "经济学解释 III\n\n对于\\(y_{T+1}\\)的终值条件，由于这些存量对于目标函数没有任何贡献，最优策略应该是让\\(y_{T+1}\\)尽可能低\n但在某些情况下，也可以先积累一定存量以提供产出或效用，然后保证其在终值时刻恰好折旧完\n换言之，我们应该有 \\[\ny_{T+1} \\geq 0, \\quad \\pi_{T+1} \\geq 0, \\text{满足互补松弛条件}\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#典型例子生命周期储蓄-ii",
+    "href": "lecture9_time_related.html#典型例子生命周期储蓄-ii",
+    "title": "经济学中的优化方法",
+    "section": "典型例子：生命周期储蓄 II",
+    "text": "典型例子：生命周期储蓄 II\n最大化问题可以写作 \\[\n\\begin{aligned}\n\\max_{c_t} \\quad & \\sum_{t = 0}^{T} (1 + \\rho)^{-t}\\ln(c_t) \\\\\ns.t. \\quad & k_{t+1} - k_{t} = w + rk_{t} - c_t\n\\end{aligned}\n\\]\n定义汉密尔顿函数为 \\[\nH(k_t, c_t, \\pi_{t+1}, t) = (1 + \\rho)^{-t} \\ln(c_t) + \\pi_{t+1}(w + r k_t - c_t)\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#典型例子生命周期储蓄-iii",
+    "href": "lecture9_time_related.html#典型例子生命周期储蓄-iii",
+    "title": "经济学中的优化方法",
+    "section": "典型例子：生命周期储蓄 III",
+    "text": "典型例子：生命周期储蓄 III\n使\\(H\\)取得最大值的关于\\(c_t\\)的条件为： \\[\nc_t^{-1} (1 + \\rho)^{-t} - \\pi_{t+1} = 0\n\\]\n汉密尔顿函数的最大值： \\[\nH^{*} = - [\\ln(\\pi_{t+1}) + \\rho t](1 + \\rho)^{-t} + \\pi_{t+1}(w + rk_{t}) - (1 + \\rho)^{-t}\n\\]\n状态变量差分方程： \\[\n\\begin{aligned}\nk_{t+1} - k_{t} & = \\frac{\\partial H^{*}}{\\partial \\pi_{t+1}} = w + rk_{t} - \\pi_{t+1}^{-1}(1 + \\rho)^{-t} \\\\\n\\pi_{t+1} - \\pi_{t} & = -\\frac{\\partial H^{*}}{\\partial k_{t}} = - r\\pi_{t+1}\n\\end{aligned}\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#典型例子生命周期储蓄-iv",
+    "href": "lecture9_time_related.html#典型例子生命周期储蓄-iv",
+    "title": "经济学中的优化方法",
+    "section": "典型例子：生命周期储蓄 IV",
+    "text": "典型例子：生命周期储蓄 IV\n解得： \\[\n\\pi_{t} = \\pi_0 (1 + r)^{-t},\\quad c_{t} = \\pi_{0}^{-1}\\left(\\frac{1 + r}{1 + \\rho}\\right)^t\n\\]\n消费路径特征：\n\n当\\(r &gt; \\rho\\)时，消费持续增长\n\n生命周期早期\\(c &lt; w\\)\n后期阶段\\(c &gt; w\\)\n\n当\\(r &lt; \\rho\\)时，消费呈现递减趋势",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
+  },
+  {
+    "objectID": "lecture9_time_related.html#连续时间模型",
+    "href": "lecture9_time_related.html#连续时间模型",
+    "title": "经济学中的优化方法",
+    "section": "连续时间模型",
+    "text": "连续时间模型\n将离散时间模型连续化（令\\(\\Delta t \\to 0\\)）： \\[\n\\begin{aligned}\ny(t + \\delta) - y(t) & = Q(y(t), z(t), t)\\delta + o(\\delta) \\\\\n\\dot{y}(t) & = \\lim_{\\delta \\to 0} \\frac{y(t+\\delta)-y(t)}{\\delta} = Q(y(t), z(t), t)\n\\end{aligned}\n\\]\n目标函数连续形式： \\[\n\\int_0^T F(y(t), z(t), t) dt\n\\]",
+    "crumbs": [
+      "Home",
+      "第九讲：时间相关优化"
+    ]
   }
 ]

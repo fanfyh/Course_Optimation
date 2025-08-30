@@ -1,6 +1,7 @@
 project:
   type: website
-  
+  output-dir: docs
+
 author: "范翻"
 institute: "中央财经大学(CCFD)"
 
@@ -19,22 +20,30 @@ website:
     style: "docked"
     search: true
     contents:
-      - course/lecture1_intro.qmd
-      # - course/lecture2_lagrange.qmd
-      # - course/lecture3_shadow_price.qmd
-      # - course/lecture4_value_function.qmd
-      # - course/lecture5_convex_set.qmd
-      # - course/lecture6_cancave_optimization.qmd
-      # - course/lecture7_second_order.qmd
-      # - course/lecture8_uncertainty.qmd
-      # - course/lecture9_time_related.qmd
+      - text: "第一讲：最优化问题概述"
+        href: lecture1_intro.qmd
+      - text: "第二讲：拉格朗日方法"
+        href: lecture2_lagrange.qmd
+      - text: "第三讲：影子价格"
+        href: lecture3_shadow_price.qmd
+      - text: "第四讲：值函数方法"
+        href: lecture4_value_function.qmd
+      - text: "第五讲：凸集和线性规划"
+        href: lecture5_convex_set.qmd
+      - text: "第六讲：凹优化"
+        href: lecture6_cancave_optimization.qmd
+      - text: "第七讲：二阶条件"
+        href: lecture7_second_order.qmd
+      - text: "第八讲：不确定性条件下的优化"
+        href: lecture8_uncertainty.qmd
+      - text: "第九讲：时间相关优化"
+        href: lecture9_time_related.qmd
   page-navigation: true
 
 
 format:
   # 网页格式
   html:
-    output-dir: docs
     theme: yeti
     css: styles.css
     toc: true
@@ -42,7 +51,6 @@ format:
     embed-resources: true
   # Beamer幻灯片
   beamer:
-    output-dir: slides
     latex-engine: xelatex
     pdf-engine: latexmk  # 启用latexmk引擎
     pdf-engine-opts: 
@@ -56,6 +64,7 @@ format:
     slide-level: 2
     toc: true
     toc-title: "目录"
+    callout-color: none
 execute:
   keep-md: false
   keep-tex: false

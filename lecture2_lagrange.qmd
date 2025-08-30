@@ -1,0 +1,387 @@
+---
+subtitle: "拉格朗日方法及其拓展"
+editor: visual
+---
+
+# 拉格朗日方法
+
+## 问题的陈述
+
+假定选择变量为$x_1$和$x_2$， 其向量形式为： $$
+x =  \left(\begin{array}{c}\def\arraystretch{0.5}
+             x_1 \\
+            x_2
+        \end{array} 
+        \right) 
+$$
+
+目标函数为$F(x)$，约束函数是一般的非线性函数$G(x) = c$。
+
+## 套利方法 I
+
+假设从某个特定的点$\bar{x} = (\bar{x}_1, \bar{x}_2)$开始，考虑一个无穷小的变动：
+
+$$
+dx = \left(\begin{array}{c}\def\arraystretch{0.5}
+          dx_1  \\
+          dx_2
+    \end{array}\right)
+$$
+
+我们要求$\bar{x} + dx$仍然满足约束条件，并看它是否能产生一个更高的目标函数值。
+
+将目标函数$F(x)$对于$x_1$和$x_2$的偏导数分别记作$F_1(x)$和$F_2(x)$。当我们在点$\bar{x}$处计算这两个值时，它们的值分别写作$F_1(\bar{x})$和$F_2(\bar{x})$。
+
+## 套利方法 II
+
+从任意一点$x$到$x + dx$的微小变动所引起的$F(x)$的变动的一阶泰勒展开为： $$
+    \begin{aligned}
+dF(x) & = F(x + dx) - F(x) \\
+& = F_1(x)dx_1 + F_2(x) dx_2
+\end{aligned}
+$$
+
+对$G(x)$的变动也有一个类似的表达式：
+
+$$
+    dG(x) = G_1(x) dx_1 + G_2(x) dx_2
+$$
+
+如果$\bar{x}$和$\bar{x} + dx$同时满足约束条件，那么必然有$dG(\bar{x}) = 0$，即：
+
+$$
+    G_1(\bar{x}) dx_1 = - G_2(\bar{x}) dx_2 = dc
+$$
+
+## 套利方法 III
+
+首先假定$G_1(\bar{x})$和$G_2(\bar{x})$都是非零的，那么：
+
+$$
+    dx_1 = dc / G_1(\bar{x}), \quad dx_2 = - dc / G_2(\bar{x})
+$$
+
+因此目标函数值的变动为：
+
+$$
+dF(\bar{x}) = [F_1(\bar{x})/G_1(\bar{x}) - F_2(\bar{x})/G_2(\bar{x})]dc
+$$ 当$\bar{x}_1$和$\bar{x}_2$都[不碰到某个自然边界]{style="color:red"}（如零）时，变动量$dc$就可以是任意符号的。如果$\bar{x}$是最优的，那么对于任意变动$dc$而言，$F(\bar{x})$都不会增加，即：
+
+$$
+    F_1(\bar{x})/G_1(\bar{x}) - F_2(\bar{x})/G_2(\bar{x}) \Longrightarrow 
+    F_1(\bar{x})/G_1(\bar{x}) = F_2(\bar{x})/G_2(\bar{x})
+$$
+
+## 套利方法 IV
+
+当$\bar{x}_1$和$\bar{x}_2$位于某个自然边界时:
+
+-   当$x_1 \geq 0$且位于下界时，我们会得到什么条件？
+
+-   当$x_1 \leq 100$且位于上界时，我们会得到什么条件？
+
+## 必要条件和充分条件
+
+如果$G(x) = c$的约束下在$\bar{x}$点可以使得$F(x)$取得最大值，那么必然有：
+
+$$
+    F_1(\bar{x})/G_1(\bar{x}) = F_2(\bar{x})/G_2(\bar{x})
+$$
+
+换言之，上述条件是$\bar{x}$为最优解的[一阶必要条件]{style="color:red"}。
+
+一阶必要条件的价值在于，在寻找最优解时有助于缩小搜寻的范围：
+
+-   如果仅有唯一的$\bar{x}$同时满足约束条件和一阶必要条件，那么它一定是我们所要寻找的最优解
+
+-   如果存在多个满足一阶条件的解，那么还必须采用其他办法来进行判断
+
+-   对于最大化问题和最小化问题而言，一阶必要条件是相同的！
+
+## 拉格朗日方法 I
+
+对于目标函数为$F(x)$、约束条件为$G(x) = c$的最优化问题，定义拉格朗日函数： $$
+    L(x, \lambda) = F(x) + \lambda[c - G(x)]
+$$
+
+其中$\lambda$被称为待定的**拉格朗日乘子**。记$L$的偏导数分别为：
+
+$$
+    L_j = \partial L/\partial x_j; \quad L_\lambda = \partial L/\partial \lambda
+$$
+
+## 拉格朗日方法 II
+
+**拉格朗日定理:** 假定$x$为一个二维向量，$c$为标量，函数$F$和$G$取标量值。定义拉格朗日函数$L(x, \lambda) = F(x) + \lambda[c - G(x)]$。如果没有其他约束（如非负约束条件），$\bar{x}$使$F(x)$取得最大值且满足$G(x) = c$，并且如果对于至少一个$j, G_j(\bar{x}) \neq 0$成立，那么存在一个$\lambda$值，使得 $$
+    L_j(\bar{x}, \lambda) = 0, \quad j = 1, 2; \quad L_{\lambda}(\bar{x}, \lambda) = 0
+$$
+
+## 例子：隐含不变预算份额的偏好
+
+考虑一个消费者在价格分别为$p, q$的两种商品$x,y$之间进行选择，其预算约束为$px + qy = I$，效用函数为
+
+$$
+    U(x, y) = \alpha \ln(x) + \beta \ln(y)
+$$ 求消费者在两种商品上的最优支出，及其在总收入中所占的份额。
+
+## 例子：线性支出系统
+
+假设消费者面对两种商品$x, y$，每种商品分别存在一个*维持生存的最低消费数量*$x_0, y_0$。消费者的效用函数形式为：
+
+$$
+    \begin{aligned}
+U(x, y) & = \alpha \ln(x - x_0) + \beta \ln(y - y_0) \\
+& \alpha + \beta = 1
+\end{aligned}
+$$
+
+两种商品的价格分别为$p, q$，消费者的总收入为$I$，求消费者在两种商品上的最优支出。
+
+## 例子：生产和成本最小化
+
+考虑一个生产者，他以每年$r$的价格租赁机器$K$，以每年$w$的工资雇佣劳动$L$，以生产产出$Q$，其中
+
+$$
+    Q = \sqrt{K} + \sqrt{L}
+$$
+
+假定他想以最小的成本来生产固定数量的$Q$。找出他的要素需求函数。证明拉格朗日乘子为下式：
+
+$$
+    \lambda = 2wrQ/(w + r)
+$$ 并为$\lambda$给出一个经济学解释。
+
+# 扩展与一般化
+
+## 多个变量和多个约束条件
+
+假设有$n$个选择变量$(x_1, x_2, \cdots, x_n)$和$m$个约束：
+
+$$
+    G^{i}(x) = c_i,\ i = 1, 2, \cdots, m, \quad m < n
+$$
+
+对每个约束我们定义一个乘子$\lambda_i$，并定义拉格朗日函数为：
+
+$$
+    L(x_1, \cdots, x_n, \lambda_1, \cdots, \lambda_m) = F(x_1, \cdots, x_n) + \sum_{i=1}^m \lambda_i[c_i - G^{i}(x_1, \cdots, x_n)]
+$$ 则在最优解$\bar{x}$处满足的一阶必要条件为： $$
+    \frac{\partial L}{\partial x_j} = 0,\ j = 1, 2, \cdots, n
+$$ 和 $$
+    \frac{\partial L}{\partial \lambda_i} = 0,\ i = 1, 2, \cdots, m
+$$
+
+## 矩阵形式 I
+
+定义一个矩阵形式的最优化问题： $$
+\begin{aligned}
+\mathop{\max/\min}_{\mathbf{x}} & \quad F(\mathbf{x}) \\
+\text{s.t.} & \quad G(\mathbf{x}) = c
+\end{aligned}
+$$
+
+-   $\mathbf{x} = (x_1, x_2, \cdots, x_n)$是一个n维向量
+
+-   $G$为由分量函数$G^{i}$组成的列向量函数
+
+-   每个$G^{i}$的偏导数组成行向量$G^{i}_{\mathbf{x}}(\mathbf{x})$
+
+-   目标函数$F(\mathbf{x})$的偏导数组成行向量$F_{x}(\mathbf{x})$
+
+-   拉格朗日乘子构成行向量$\lambda = (\lambda_1, \lambda_2, \cdots, \lambda_m)$
+
+## 矩阵形式 II
+
+在矩阵形式下，拉格朗日函数可以写作： $$
+    L(\mathbf{x}, \lambda) = F(\mathbf{x}) + \lambda[c - G(\mathbf{x})]
+$$ 对应的一阶条件： $$
+    \begin{aligned}
+L_x(\bar{\mathbf{x}}, \lambda) & = 0 \\
+L_{\lambda}(\bar{\mathbf{x}}, \lambda) & = 0 
+\end{aligned}
+$$
+
+## 拉格朗日定理：矩阵形式
+
+**拉格朗日定理**：假定$\mathbf{x}$是$n$维向量，$c$是$m$维向量，$F$为标量值函数，$G$为$m$维向量值函数，且$m < n$。定义
+
+$$
+    L(\mathbf{x}, \lambda) = F(\mathbf{x}) + \lambda[c - G(\mathbf{x})]
+$$
+
+若$\bar{x}$在$G(x) = c$约束下最大化$F(x)$，且$G_x(\bar{x})$的秩$=m$，则存在$\lambda$满足：
+
+$$
+\begin{aligned}
+L_x(\bar{\mathbf{x}}, \lambda) & = 0 \\
+L_{\lambda}(\bar{\mathbf{x}}, \lambda) & = 0 
+\end{aligned}
+$$
+
+## 非负变量
+
+经济学中常假定变量$x_j$非负： $$
+    L_j(\bar{\mathbf{x}}) = F_j(\bar{\mathbf{x}}) - \sum_{i=1}^m \lambda_i G^{i}_j(\bar{\mathbf{x}}) \leq 0
+$$ 需满足： $$
+    L_{j}(\bar{\mathbf{x}}) \leq 0,\ \bar{\mathbf{x}} \geq 0
+$$ [且至少有一个等式成立]{style="color:red"}
+
+## 互补松弛条件
+
+条件：
+
+$$
+    \bar{\mathbf{x}} L_{j}(\bar{\mathbf{x}}) = 0
+$$
+
+**互补松弛条件**
+
+-   等式成立时为**紧约束**
+
+-   不等式成立时为**松约束**
+
+-   子项说明：松约束允许调整空间
+
+-   互补性：一个松弛必伴随另一个紧致
+
+## 拉格朗日定理：非负变量
+
+**定理**：定义 $$
+    L(x, \lambda) = F(x) + \lambda[c - G(x)]
+$$
+
+若$\bar{x}$在$G(x)=c$和$x\geq0$约束下最大化解，且$G_x(\bar{x})$满秩，则存在$\lambda$满足： $$
+\begin{cases}
+L_{x}(\bar{x}, \lambda) \leq 0 \\
+\bar{x} \geq 0 \\
+\text{互补松弛条件}
+\end{cases}
+$$ 和
+
+$$
+    L_{\lambda}(\bar{x}, \lambda) = 0
+$$
+
+::: frame
+## 不等式约束 I
+
+考虑更一般的不等式约束，例如假定约束中的第一个分量只需要以不等式形式成立： $$
+G^{1}(x) \leq c_1
+$$
+
+此时我们可以定义一个新的变量$x_{n+1} = c_1 - G^{1}(x)$，使得
+
+-   不等式约束变成了一个等式约束
+
+-   新变量$x_{n+1}$面临非负约束
+:::
+
+::: {.frame fragile="true"}
+## 不等式约束 II
+
+记新问题的拉格朗日函数为： $$
+\begin{aligned}
+\hat{L}(x_1, \cdots, x_n, x_{n+1}, \lambda_1, \cdots, \lambda_m) &= F(x_1, \cdots, x_n)\\ 
+&\quad + \lambda_1 [c_1 - G^{1}(x) - x_{n+1}] \\
+&\quad + \sum_{i=2}^m \lambda_i[c_i - G^{i}(x)] \\
+&= L(x, \lambda) - \lambda_1 x_{n+1}output
+\end{aligned}
+$$
+
+一阶条件： - $\frac{\partial \hat{L}}{\partial x_{n+1}} = -\lambda_1 \leq 0$ - $x_{n+1} \geq 0$（互补松弛条件）
+:::
+
+::: frame
+## 不等式约束 III
+
+当$x_{n+1} = c_1 - G^{1}(x) = \frac{\partial L}{\partial \lambda_1}$时，条件可写为： $$
+\frac{\partial L}{\partial \lambda_1} \geq 0,\quad \lambda_1 \geq 0
+$$
+
+满足互补松弛条件：
+
+<!-- - 与非负变量的一阶条件形式对称 -->
+:::
+
+::: frame
+## 拉格朗日定理: 不等式约束
+
+**定理** 定义拉格朗日函数： $$
+L(x, \lambda) = F(x) + \lambda[c - G(x)]
+$$
+
+若$\bar{x}$在$G(x) \leq c$下最大化$F$，且约束规范成立，则存在$\lambda$满足：
+
+$$
+\begin{cases}
+L_x(\bar{x}, \lambda) = 0 \\
+L_\lambda(\bar{x}, \lambda) \geq 0 \\
+\lambda \geq 0 \quad \text{(互补松弛)}
+\end{cases}
+$$
+:::
+
+::: {.frame fragile="true"}
+## 库恩-塔克定理
+
+**定理** 考虑最一般情形： $$
+\begin{aligned}
+\text{最大化} \quad & F(x) \\
+\text{约束} \quad & G(x) \leq c \\
+& x \geq 0
+\end{aligned}
+$$
+
+拉格朗日函数： $$
+L(x, \lambda) = F(x) + \lambda[c - G(x)]
+$$
+
+最优解$\bar{x}$满足：
+
+$$
+\begin{cases}
+L_x(\bar{x}, \lambda) \leq 0, \bar{x} \geq 0 \quad \text{(互补松弛)} \\
+L_\lambda(\bar{x}, \lambda) \geq 0, \lambda \geq 0 \quad \text{(互补松弛)}
+\end{cases}
+$$
+:::
+
+::: frame
+## 例子: 拟线性偏好
+
+**问题** 消费者效用函数： $$
+U(x,y) = y + a\ln x \quad (a > 0)
+$$
+
+**求解** 预算约束下最大化效用： $$
+\begin{aligned}
+\max \quad & y + a\ln x \\
+\text{s.t.} \quad & px + qy \leq I \\
+& x > 0,\ y > 0
+\end{aligned}
+$$
+
+*关键步骤：构造拉格朗日函数并求解一阶条件*
+:::
+
+## 例子: 技术性闲置
+
+**生产可行性约束**： $$
+\begin{cases}
+2x + y \leq 300 \quad (\text{劳动}) \\
+x + 2y \leq 450 \quad (\text{土地})
+\end{cases}
+$$
+
+**优化分析**： 1. 绘制可行域 2. 识别极值点 3. 计算最优解
+
+**数学模型**： $$
+\begin{aligned}
+\max \quad & \pi = p_x x + p_y y \\
+\text{s.t.} \quad & 2x + y \leq 300 \\
+& x + 2y \leq 450 \\
+& x \geq 0,\ y \geq 0
+\end{aligned}
+$$
+
+**求解策略**： - 使用库恩-塔克条件 - 分析边角解可能性
