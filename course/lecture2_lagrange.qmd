@@ -34,8 +34,7 @@ $$
 
 ## 套利方法 II
 
-从任意一点$x$到$x + dx$的微小变动所引起的$F(x)$的变动的一阶泰勒展开为：
-$$
+从任意一点$x$到$x + dx$的微小变动所引起的$F(x)$的变动的一阶泰勒展开为： $$
     \begin{aligned}
 dF(x) & = F(x + dx) - F(x) \\
 & = F_1(x)dx_1 + F_2(x) dx_2
@@ -66,8 +65,7 @@ $$
 
 $$
 dF(\bar{x}) = [F_1(\bar{x})/G_1(\bar{x}) - F_2(\bar{x})/G_2(\bar{x})]dc
-$$
-当$\bar{x}_1$和$\bar{x}_2$都[不碰到某个自然边界]{style="color:red"}（如零）时，变动量$dc$就可以是任意符号的。如果$\bar{x}$是最优的，那么对于任意变动$dc$而言，$F(\bar{x})$都不会增加，即：
+$$ 当$\bar{x}_1$和$\bar{x}_2$都[不碰到某个自然边界]{style="color:red"}（如零）时，变动量$dc$就可以是任意符号的。如果$\bar{x}$是最优的，那么对于任意变动$dc$而言，$F(\bar{x})$都不会增加，即：
 
 $$
     F_1(\bar{x})/G_1(\bar{x}) - F_2(\bar{x})/G_2(\bar{x}) \Longrightarrow 
@@ -102,8 +100,7 @@ $$
 
 ## 拉格朗日方法 I
 
-对于目标函数为$F(x)$、约束条件为$G(x) = c$的最优化问题，定义拉格朗日函数：
-$$
+对于目标函数为$F(x)$、约束条件为$G(x) = c$的最优化问题，定义拉格朗日函数： $$
     L(x, \lambda) = F(x) + \lambda[c - G(x)]
 $$
 
@@ -115,9 +112,7 @@ $$
 
 ## 拉格朗日方法 II
 
-**拉格朗日定理:**
-假定$x$为一个二维向量，$c$为标量，函数$F$和$G$取标量值。定义拉格朗日函数$L(x, \lambda) = F(x) + \lambda[c - G(x)]$。如果没有其他约束（如非负约束条件），$\bar{x}$使$F(x)$取得最大值且满足$G(x) = c$，并且如果对于至少一个$j, G_j(\bar{x}) \neq 0$成立，那么存在一个$\lambda$值，使得
-$$
+**拉格朗日定理:** 假定$x$为一个二维向量，$c$为标量，函数$F$和$G$取标量值。定义拉格朗日函数$L(x, \lambda) = F(x) + \lambda[c - G(x)]$。如果没有其他约束（如非负约束条件），$\bar{x}$使$F(x)$取得最大值且满足$G(x) = c$，并且如果对于至少一个$j, G_j(\bar{x}) \neq 0$成立，那么存在一个$\lambda$值，使得 $$
     L_j(\bar{x}, \lambda) = 0, \quad j = 1, 2; \quad L_{\lambda}(\bar{x}, \lambda) = 0
 $$
 
@@ -255,8 +250,7 @@ $$
     L(x, \lambda) = F(x) + \lambda[c - G(x)]
 $$
 
-若$\bar{x}$在$G(x)=c$和$x\geq0$约束下最大化解，且$G_x(\bar{x})$满秩，则存在$\lambda$满足：
-$$
+若$\bar{x}$在$G(x)=c$和$x\geq0$约束下最大化解，且$G_x(\bar{x})$满秩，则存在$\lambda$满足： $$
 \begin{cases}
 L_{x}(\bar{x}, \lambda) \leq 0 \\
 \bar{x} \geq 0 \\
@@ -271,8 +265,7 @@ $$
 ::: frame
 ## 不等式约束 I
 
-考虑更一般的不等式约束，例如假定约束中的第一个分量只需要以不等式形式成立：
-$$
+考虑更一般的不等式约束，例如假定约束中的第一个分量只需要以不等式形式成立： $$
 G^{1}(x) \leq c_1
 $$
 
@@ -295,16 +288,13 @@ $$
 \end{aligned}
 $$
 
-一阶条件： -
-$\frac{\partial \hat{L}}{\partial x_{n+1}} = -\lambda_1 \leq 0$ -
-$x_{n+1} \geq 0$（互补松弛条件）
+一阶条件： - $\frac{\partial \hat{L}}{\partial x_{n+1}} = -\lambda_1 \leq 0$ - $x_{n+1} \geq 0$（互补松弛条件）
 :::
 
 ::: frame
 ## 不等式约束 III
 
-当$x_{n+1} = c_1 - G^{1}(x) = \frac{\partial L}{\partial \lambda_1}$时，条件可写为：
-$$
+当$x_{n+1} = c_1 - G^{1}(x) = \frac{\partial L}{\partial \lambda_1}$时，条件可写为： $$
 \frac{\partial L}{\partial \lambda_1} \geq 0,\quad \lambda_1 \geq 0
 $$
 

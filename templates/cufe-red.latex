@@ -1,6 +1,6 @@
 % templates/cufe-template.latex
 \documentclass{beamer}
-\usepackage{ctex}
+\usepackage[fontset=mac]{ctex}  % macOS 用户
 \usepackage{cufe}
 \usepackage[T1]{fontenc}
 \usepackage{xcolor}

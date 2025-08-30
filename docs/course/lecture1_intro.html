@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="范翻">
+
+<title>lecture1_intro – 经济学中的优化方法</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">经济学中的优化方法</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../course/lecture1_intro.pdf">课程信息</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course/lecture1_intro.pdf" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">课程信息</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture1_intro.pdf"><i class="bi bi-file-pdf"></i>Beamer</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<p class="subtitle lead">第一讲：最优化问题概述</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">范翻 </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            中央财经大学(CCFD)
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="课程信息" class="level2">
+<h2 class="anchored" data-anchor-id="课程信息">课程信息</h2>
+<p>成绩构成：</p>
+<ol type="1">
+<li>考勤（15分）：总计3次，每次5分；</li>
+<li>期中考试（15分）</li>
+<li>期末考试（70分）</li>
+</ol>
+<p>教材：</p>
+<ul>
+<li>《经济理论中的最优化方法》 迈克西特</li>
+<li>《动态最优化基础》 蒋中一</li>
+</ul>
+</section>
+<section id="最优化问题概述" class="level1">
+<h1>最优化问题概述</h1>
+<section id="一般表述" class="level2">
+<h2 class="anchored" data-anchor-id="一般表述">一般表述</h2>
+<p>一个典型的最优化问题可以表述为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\max/\min}_{x} &amp; \quad F(x) \\
+&amp; \quad G(x) \leq 0 \\
+&amp; \quad H(x) = 0
+\end{aligned}
+\tag{P}
+\]</span></p>
+<ul>
+<li>选择变量 <span class="math inline">\(x \in X\)</span></li>
+<li>目标函数 <span class="math inline">\(F(x): X\rightarrow R\)</span>,</li>
+<li>约束条件:
+<ul>
+<li>不等式约束 <span class="math inline">\(G(x): X \rightarrow Y\)</span></li>
+<li>等式约束 <span class="math inline">\(H(x): X \rightarrow Z\)</span></li>
+</ul></li>
+<li><span class="math inline">\(X\)</span>为选择变量<span class="math inline">\(x\)</span>的取值空间（范围），<span class="math inline">\(R\)</span>为实数空间, <span class="math inline">\(X, Y, Z\)</span>可为多维（有限维）实数空间或无限维函数空间。</li>
+</ul>
+</section>
+<section id="非线性规划问题nonlinear-programming-nlp" class="level2">
+<h2 class="anchored" data-anchor-id="非线性规划问题nonlinear-programming-nlp">非线性规划问题(nonlinear programming, NLP)</h2>
+<p>当变量空间<span class="math inline">\(X\)</span>和约束条件中函数的取值空间 <span class="math inline">\(Y, Z\)</span> 均为有限维实数空间时，上述最优化问题(P)被称为非线性规划问题:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\min_{x_1, \cdots, x_n}} &amp; f(x_1, x_2, \cdots, x_n) \\
+s.t.\quad &amp; g(x) \leq \boldsymbol{0} \\
+&amp; h(x) = \boldsymbol{0}
+\end{aligned}
+\tag{NLP}
+\]</span></p>
+<p>其中</p>
+<p><span class="math display">\[
+g(x) = \begin{pmatrix}
+g_1(x_1, x_2, \cdots, x_n) \\
+g_2(x_1, x_2, \cdots, x_n) \\
+\vdots \\
+g_m(x_1, x_2, \cdots, x_n)
+\end{pmatrix}
+\quad \text{和} \quad
+h(x) = \begin{pmatrix}
+h_1(x_1, x_2, \cdots, x_n) \\
+h_2(x_1, x_2, \cdots, x_n) \\
+\vdots \\
+h_l(x_1, x_2, \cdots, x_n)
+\end{pmatrix}
+\]</span></p>
+</section>
+<section id="消费者选择问题-i" class="level2">
+<h2 class="anchored" data-anchor-id="消费者选择问题-i">消费者选择问题 I</h2>
+<p>给定消费者的效用函数形式，在完全竞争市场下，消费者面对给定的市场价格，在给定收入约束下，如何选择不同消费品的最优组合以最大化效用？对于这个问题：</p>
+<ol type="1">
+<li>消费者的选择变量是什么？</li>
+<li>目标函数是什么？</li>
+<li>约束条件是什么？</li>
+</ol>
+<p>从另一个角度来看，如果消费者要达到一定的效用水平，如何最小化消费总支出？对应的选择变量、目标函数和约束条件是什么？如何用非线性规划的形式来表述上述问题？</p>
+</section>
+<section id="消费者选择问题-ii" class="level2">
+<h2 class="anchored" data-anchor-id="消费者选择问题-ii">消费者选择问题 II</h2>
+<p>效用最大化问题:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\max_{x_1, \cdots, x_n}} &amp; U(x_1, x_2, \cdots, x_n) \\
+s.t.\quad &amp; p_1x_1 + p_2x_2 + \cdots p_nx_n \leq y
+\end{aligned}
+\]</span></p>
+<p>支出最小化问题：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\min_{x_1, \cdots, x_n}} &amp; p_1x_1 + p_2x_2 + \cdots p_nx_n \\
+s.t. \quad &amp;  U(x_1, x_2, \cdots, x_n)  \geq v
+\end{aligned}
+\]</span></p>
+</section>
+<section id="古典变分法问题calculus-of-variation" class="level2">
+<h2 class="anchored" data-anchor-id="古典变分法问题calculus-of-variation">古典变分法问题(calculus of variation)</h2>
+<p>当变量空间<span class="math inline">\(X\)</span>为函数空间时，最优化问题(P)可称为函数空间的非线性规划问题。函数空间的最优化问题，包括古典变分法问题与在其基础上发展而来的最优控制问题。</p>
+<p>一个最简变分法问题寻求符合端点条件的、使目标积分值最小的函数：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\min_{x(\cdot)}}
+&amp; \int_{t_0}^{t_1} f(t, x(t), \dot{x}(t)) dt \\
+s.t.\quad &amp; x(t_0) = x_0, \quad x(t_1) = x_1.
+\end{aligned}
+\tag{CVP}
+\]</span></p>
+<p>其中，<span class="math inline">\(\dot{x}(t) = dx(t)/dt\)</span>表示<span class="math inline">\(x(t)\)</span>的导函数。</p>
+</section>
+<section id="最优控制问题optimal-control-problem-ocp" class="level2">
+<h2 class="anchored" data-anchor-id="最优控制问题optimal-control-problem-ocp">最优控制问题(optimal control problem, OCP)</h2>
+<p>20世纪50年代，古典变分法进一步发展出最优控制理论(optimal control theory)，一个基础的最优控制问题如下：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\min}_{x(\cdot), u(\cdot)} \quad &amp; \int_{t_0}^{t_1} f(t, x(t), u(t)) dt \tag{a} \\
+s.t. \quad &amp; \dot{x}(t) = \Phi(t, x(t), u(t)) \tag{b} \\
+&amp; x(t_0) = x_0  \tag{c}
+\end{aligned}
+\]</span></p>
+<p>状态变量 <span class="math inline">\(x(t)\)</span> 的变化由微分方程(b)决定，且通过(a)直接影响目标函数<span class="math inline">\(f(t, x, u)\)</span>;<br>
+控制变量 <span class="math inline">\(u(t)\)</span> 会通过两种渠道影响最优值:</p>
+<ul>
+<li>直接渠道是影响(a)中的目标函数;</li>
+<li>间接渠道是影响(b)中的控制变量<span class="math inline">\(x(t)\)</span>的值，进而影响目标函数.</li>
+</ul>
+</section>
+<section id="最优经济增长问题连续型i" class="level2">
+<h2 class="anchored" data-anchor-id="最优经济增长问题连续型i">最优经济增长问题（连续型）I</h2>
+<p>假设经济体中存在无限期生存的消费者：</p>
+<ul>
+<li>经济体的人均产出完全转化为消费者的收入，且取决于人均资本存量和技术水平，即<span class="math inline">\(f(k(t))\)</span>;</li>
+<li>消费者在每一时点上选择当期的消费<span class="math inline">\(c(t)\)</span>和储蓄，且储蓄完全转化为下一期的投资，初始人均资本存量为<span class="math inline">\(k(0)\)</span>;</li>
+<li>消费者的效用函数形式为<span class="math inline">\(U(c(t))\)</span>;</li>
+<li><span class="math inline">\(\theta\)</span>代表时间偏好率或主观贴现率，衡量了不同时点效用的替代程度。</li>
+</ul>
+<p>在这个连续型最优经济增长问题中，消费者的状态变量、控制变量分别是什么？</p>
+</section>
+<section id="最优经济增长问题连续型ii" class="level2">
+<h2 class="anchored" data-anchor-id="最优经济增长问题连续型ii">最优经济增长问题（连续型）II</h2>
+<p>最优增长问题的核心是消费者在预期每期收入的情况下，选择最优的<em>消费路径</em>，并由此决定了相对应的资本路径，从而最大化其从现在到将来的效用贴现值总和。以最优控制问题的形式可以表述为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\max}_{c(\cdot), k(\cdot)} \quad &amp; \int_{0}^{\infty} U(c(t))e^{-\theta t} dt \tag{效用贴现值总和} \\
+s.t. \quad &amp; \dot{k}(t) = f(k(t)) - c(t) \tag{资本变动路径} \\
+&amp; k(0) = k_0  \tag{初始资本存量状态}
+\end{aligned}
+\]</span></p>
+<p>在这个最优控制问题中，消费路径<span class="math inline">\(c(t)\)</span><em>控制变量</em>，资本存量<span class="math inline">\(k(t)\)</span>是<em>状态变量</em>，该问题的最优解<span class="math inline">\(c(t), k(t)\)</span>即表示最优的消费和资本的增长路径。</p>
+</section>
+<section id="动态规划dynamic-programming" class="level2">
+<h2 class="anchored" data-anchor-id="动态规划dynamic-programming">动态规划(dynamic programming)</h2>
+<p>当选择变量<span class="math inline">\(X\)</span>是有限维向量时，要考虑的最优化问题也就是有限维空间的非线性规划问题(NLP)。如果选择函数<span class="math inline">\(X\)</span>是无限维的离散变量<span class="math inline">\((x_1, x_2, \cdots)\)</span>时，通常采取动态规划方法(dynamic programming, DP)：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\min_{x_t, u_t}} \quad
+&amp;  \sum_{t = 0}^{\infty} f(t, x_t, u_t) \\
+s.t.\quad &amp; x_{t+1} - x_{t} = g(t, x_t, u_t) \\
+&amp; x_0 = \bar{x}_0 \\
+&amp; u_t \in U \\
+\end{aligned}
+\tag{DP}
+\]</span></p>
+<p>其中<span class="math inline">\(t\)</span>代表离散的时间，<span class="math inline">\(t = 0, 1, 2, \cdots\)</span>，约束条件的动态方程一般称为<em>差分方程</em>。</p>
+</section>
+<section id="无限期离散型ramsey最优经济增长问题" class="level2">
+<h2 class="anchored" data-anchor-id="无限期离散型ramsey最优经济增长问题">无限期离散型Ramsey最优经济增长问题</h2>
+<p>用离散型变量描述上述最优经济增长问题时，可以重新表述为：</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathop{\max_{c_t, k_t}} &amp; \sum_{t=0}^{\infty} \beta^t U(c_t) \\
+s.t. \quad &amp; k_{t+1} - k_{t} = f(k_t) - c_t, \quad t = 0, 1, \cdots \\
+&amp; k_0 = \bar{k}_0
+\end{aligned}
+\]</span></p>
+<p>离散形式的目标函数更直观地表述了每期消费效用贴现值的总和，差分方程也更直观地描述了前后期资本存量的变化。但不论是表述为连续形式还是离散形式，主要数学结论与经济学含义应该是一致的。</p>
+</section>
+</section>
+<section id="重温效用最大化问题" class="level1">
+<h1>重温效用最大化问题</h1>
+<section id="消费者的最优选择" class="level2">
+<h2 class="anchored" data-anchor-id="消费者的最优选择">消费者的最优选择</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="pic/figure_1_1.png" class="img-fluid"></p>
+</div><div class="column" style="width:50%;">
+<p>考虑一个两商品的效用最大化问题，对于消费者而言：</p>
+<ul>
+<li>选择变量是什么？</li>
+<li>目标函数是什么？</li>
+<li>约束条件是什么？</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="套利方法-i" class="level2">
+<h2 class="anchored" data-anchor-id="套利方法-i">套利方法 I</h2>
+<p>在任意试验性的消费束下，考虑消费者选择的商品组合出现一个微小的变动：</p>
+<ul>
+<li>如果这种微小变动带来效用的改进，那么后者将作为一个新的试验性消费束而被消费者采取；</li>
+<li>一旦发现某个消费束已经无法用这种方式来改进，那么它就成为消费者的<em>最优配置</em>。</li>
+</ul>
+</section>
+<section id="套利方法-ii" class="level2">
+<h2 class="anchored" data-anchor-id="套利方法-ii">套利方法 II</h2>
+<p>当两种商品分别变动<span class="math inline">\(dx_1, dx_2\)</span>时，消费者效用变化为： <span class="math display">\[MU_1 dx_1 + MU_2 dx_2\]</span></p>
+<ul>
+<li><span class="math inline">\(dx_1, dx_2\)</span>代表对应商品的”一个微小（边际、无穷小量）变动”，意味着<span class="math inline">\(\Delta x \rightarrow 0\)</span>，但不能理解为<em>等于0</em>;</li>
+<li><span class="math inline">\(MU_1, MU_2\)</span>代表对应商品的<em>边际效用</em>，意味着每单位商品增加所能额外给消费者带来的效用;</li>
+<li><span class="math inline">\(dx_1\)</span>和<span class="math inline">\(dx_2\)</span>之间存在什么关系？{.text-danger}</li>
+</ul>
+</section>
+<section id="套利方法-iii" class="level2">
+<h2 class="anchored" data-anchor-id="套利方法-iii">套利方法 III</h2>
+<p>由于预算约束<span class="math inline">\(p_1 x_1 + p_2 x_2 = I\)</span>的存在，<span class="math inline">\(dx_1\)</span>和<span class="math inline">\(dx_2\)</span>之间必然满足： <span class="math display">\[p_1 dx_1 + p_2 dx_2 = dI\]</span></p>
+<p>假设消费者的收入没有发生变化(<span class="math inline">\(dI = 0\)</span>)，则商品1消费数量的微小增加<span class="math inline">\(dx_1 &gt; 0\)</span>必然导致商品2消费数量的微小减少： <span class="math display">\[dx_2 = - \frac{p_1}{p_2} dx_1 &lt; 0\]</span></p>
+<p>此时，消费者效用的边际变化为： <span class="math display">\[
+\begin{aligned}
+MU_1 &amp; dx_1 + MU_2 dx_2 = \\
+&amp; p_1dx_1\big[\frac{MU_1}{p_1} - \frac{MU_2}{p_2}\big]
+\end{aligned}
+\]</span></p>
+</section>
+<section id="套利方法-iv" class="level2">
+<h2 class="anchored" data-anchor-id="套利方法-iv">套利方法 IV</h2>
+<p>如果在某个消费束<span class="math inline">\((x_1, x_2)\)</span>处，消费者达到效用最大化，意味着<span class="math inline">\(x_1\)</span>任意方向的变化（增加或减少），都至少不会增加消费者效用： <span class="math display">\[p_1dx_1\big[\frac{MU_1}{p_1} - \frac{MU_2}{p_2}\big] \leq 0\]</span></p>
+<p>具体而言</p>
+<ul>
+<li><p>当<span class="math inline">\(x_1\)</span>略微<em>增加</em>时，<span class="math inline">\(dx_1 &gt; 0\)</span>，必然有<span class="math inline">\(\frac{MU_1}{p_1} - \frac{MU_2}{p_2} \leq 0\)</span>;</p></li>
+<li><p>当<span class="math inline">\(x_1\)</span>略微<em>减少</em>时，<span class="math inline">\(dx_1 &lt; 0\)</span>，必然有<span class="math inline">\(\frac{MU_1}{p_1} - \frac{MU_2}{p_2} \geq 0\)</span>。</p></li>
+</ul>
+<p>综合上述可得，最优配置下的消费束必然满足<em>无套利条件</em>： <span class="math display">\[
+\frac{MU_1}{p_1} = \frac{MU_2}{p_2}
+\tag{no-arbitrage}
+\]</span></p>
+</section>
+<section id="相切条件方法" class="level2">
+<h2 class="anchored" data-anchor-id="相切条件方法">相切条件方法</h2>
+<p>从图形可以看出，最优化的消费束必然满足预算约束线和无差异曲线相切，即两者的斜率相等。将预算约束方程改写为： <span class="math display">\[x_2 = (I/p_2) - x_1 (p_1/p_2)\]</span></p>
+<p>可以看出预算约束线的斜率为<span class="math inline">\((p_1/p_2)\)</span>。无差异曲线的斜率是消费者的<em>边际替代率(MRS)</em>，它等于商品边际效用的比率<span class="math inline">\((MU_1/MU_2)\)</span>。</p>
+<p>在最优选择处，无差异曲线的斜率（<em>边际替代率</em>）等于预算约束线的斜率（<em>价格比</em>），因而 <span class="math display">\[MU_1/MU_2 = p_1/p_2\]</span></p>
+</section>
+<section id="角点解" class="level2">
+<h2 class="anchored" data-anchor-id="角点解">角点解</h2>
+<p>套利方法相比相切条件方法的优势在哪儿？考虑其中一种商品存在不被购买可能的情况：</p>
+<p><img src="pic/corner_solution.jpeg" class="img-fluid"></p>
+</section>
+<section id="收入的边际效用" class="level2">
+<h2 class="anchored" data-anchor-id="收入的边际效用">收入的边际效用</h2>
+<p>假定消费者获得额外收入<span class="math inline">\(dI\)</span>且全部用于消费，此时他可以</p>
+<ul>
+<li><p>全部用于商品1，即购买额外的<span class="math inline">\((dI/p_1)\)</span>单位的商品1，并取得额外的<span class="math inline">\((MU_1dI/p_1)\)</span>单位的效用；</p></li>
+<li><p>全部用于商品2，即购买额外的<span class="math inline">\((dI/p_2)\)</span>单位的商品2，并取得额外的<span class="math inline">\((MU_2dI/p_2)\)</span>单位的效用；</p></li>
+</ul>
+<p>根据无套利条件(no-arbitrage condition)，这两个效用的增量必须相等，才能达到新的最优值点。此时消费者获得的边际效用为 <span class="math display">\[\lambda dI \coloneqq MU_1dI/p_1 = MU_2dI/p_2\]</span></p>
+<p><span class="math inline">\(\lambda\)</span>可以理解为<em>收入的边际效用</em>: <span class="math display">\[\lambda \coloneqq MU_1/p_1 = MU_2/p_2\]</span></p>
+</section>
+<section id="多商品情形" class="level2">
+<h2 class="anchored" data-anchor-id="多商品情形">多商品情形</h2>
+<p>假定有<span class="math inline">\(n\)</span>种商品，价格和数量分别为 <span class="math inline">\((p_1, p_2, \cdots, p_n)\)</span>和<span class="math inline">\((x_1, x_2, \cdots , x_n)\)</span>，在最优消费束下：</p>
+<ul>
+<li>对于所有购买了正数量的商品，必然存在一个相同的边际效用，而这个值可以被解释为收入的边际效用<span class="math inline">\(\lambda\)</span>；</li>
+<li>对于没有被购买的商品而言，其边际效用对价格的比例必然小于或至多等于收入的边际效用 <span class="math inline">\(\lambda\)</span>。</li>
+</ul>
+<p>因此，对任意商品<span class="math inline">\(i\)</span>而言： <span class="math display">\[
+MU_i/p_i \left\{
+         \begin{array}{ll}
+          = \lambda,    &amp; \text{当 } x_i &gt; 0\text{时} \\
+          \leq \lambda, &amp; \text{当 } x_i = 0\text{时}
+         \end{array}
+\right.
+\]</span></p>
+<p>对于多个约束条件，我们可以对每个约束条件设置一个单独的<span class="math inline">\(\lambda\)</span>，它可以理解为<em>放松该约束条件的边际效用</em>。</p>
+</section>
+<section id="非紧的约束条件" class="level2">
+<h2 class="anchored" data-anchor-id="非紧的约束条件">非紧的约束条件</h2>
+<p>假设一个有钱的消费者已经满足到无法花光所有收入，那么预算约束应该是一个不等式 <span class="math inline">\(p_1x_1 + p_2x_2 \leq I\)</span>。</p>
+<p>通过定义一种新商品<span class="math inline">\(x_3\)</span>（“没有被花掉且不带来任何效用的收入”），其价格为1，那么预算方程将变为： <span class="math display">\[p_1x_1 + p_2x_2 + x_3 = I\]</span></p>
+<p>假设消费者选择了一个正的<span class="math inline">\(x_3\)</span>：</p>
+<ul>
+<li>那么对于 <span class="math inline">\(i = 3\)</span>而言，<span class="math inline">\(\lambda = MU_3 = 0\)</span>，意味着如果消费者没有花完所有收入，那么收入增量所带来的边际效用应该为零；</li>
+<li>对于 <span class="math inline">\(x_1, x_2\)</span>而言，由<span class="math inline">\(\lambda = 0\)</span>可知，最优消费下<span class="math inline">\(MU_{i} = 0\)</span>，意味着这些商品被消费到了一个产生零边际效用的水平。</li>
+</ul>
+</section>
+</section>
+<section id="数理基础-part-i" class="level1">
+<h1>数理基础 part I</h1>
+<section id="不带约束的最优化问题" class="level2">
+<h2 class="anchored" data-anchor-id="不带约束的最优化问题">不带约束的最优化问题</h2>
+<div class="definition" name="极大/极小值点">
+<p>考虑多变量函数 <span class="math inline">\(f(\textbf{x}): D \subset R^{n} \rightarrow R, \textbf{x} = (x_1, \cdots, x_n)\)</span>:</p>
+<ul>
+<li>如果存在<span class="math inline">\(\delta &gt; 0\)</span>，使得所有满足 <span class="math inline">\(x \in D, |\textbf{x} - \textbf{x}^{*}| &lt; \delta\)</span>的<span class="math inline">\(x\)</span>都有<span class="math inline">\(f(\textbf{x}) \geq(\leq) f(\textbf{x}^{*})\)</span>，则称 <span class="math inline">\(\textbf{x}^{*}\)</span> 为<em>局部极小(极大)值点</em>；</li>
+<li>如果对任意满足 <span class="math inline">\(\textbf{x} \in D, |\textbf{x} - \textbf{x}^{*}| &lt; \delta, \textbf{x} \neq \textbf{x}^{*}\)</span>的 <span class="math inline">\(\textbf{x}\)</span>都有<span class="math inline">\(f(\textbf{x}) &gt;(&lt;) f(\textbf{x}^{*})\)</span>，则称 <span class="math inline">\(\textbf{x}^{*}\)</span>为<em>局部严格极小(极大)值点</em>；</li>
+<li>若 <span class="math inline">\(\forall \textbf{x} \in D\)</span> 都有 <span class="math inline">\(f(\textbf{x}) \geq(\leq) f(\textbf{x}^{*})\)</span>，则称 <span class="math inline">\(\textbf{x}^{*}\)</span> 为<em>全局极小(极大)值点</em>。</li>
+</ul>
+</div>
+</section>
+<section id="梯度向量和海塞矩阵" class="level2">
+<h2 class="anchored" data-anchor-id="梯度向量和海塞矩阵">梯度向量和海塞矩阵</h2>
+<p>对于多变量函数<span class="math inline">\(f(\textbf{x}): D \subset R^{n} \rightarrow R\)</span>，其<em>梯度向量</em>为： <span class="math display">\[\nabla f(\textbf{x}) = (\frac{\partial f}{\partial x_1}, \cdots, \frac{\partial f}{\partial x_n})\]</span></p>
+<p>记其二阶偏导数为<span class="math inline">\(f_{ij} = \frac{\partial^2 f}{\partial x_i \partial x_j}\)</span>，其<em>海塞矩阵</em>为： <span class="math display">\[
+H(\textbf{x}) = \left[
+\begin{array}{cccc}
+f_{11}&amp; f_{12} &amp;\cdots &amp; f_{1n}\\
+f_{21}&amp; f_{22} &amp;\cdots&amp; f_{2n}\\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+f_{n1}&amp; f_{n2} &amp;\cdots &amp; f_{nn}
+\end{array}
+\right]
+\]</span></p>
+</section>
+<section id="必要条件" class="level2">
+<h2 class="anchored" data-anchor-id="必要条件">必要条件</h2>
+<div class="theorem" name="一阶">
+<p>设定义开集<span class="math inline">\(D\)</span>上的函数<span class="math inline">\(f: D \subset R^{n} \rightarrow R\)</span>在<span class="math inline">\(D\)</span>上可微，若<span class="math inline">\(\textbf{x}^{*}\)</span>是局部极小/极大值点，则有<span class="math inline">\(\nabla f(\textbf{x}) = \textbf{0}\)</span>。</p>
+</div>
+<div class="theorem" name="二阶">
+<p>设定义开集<span class="math inline">\(D\)</span>上的函数<span class="math inline">\(f: D \subset R^{n} \rightarrow R\)</span>在<span class="math inline">\(D\)</span>上二阶可微，若<span class="math inline">\(\textbf{x}^{*}\)</span>是局部极小/极大值点，则有： <span class="math display">\[\nabla f(\textbf{x}) = \textbf{0}, \quad d^{T}H(\textbf{x}^{*})d \geq 0, \quad \forall d \in R^{n}\]</span></p>
+</div>
+</section>
+<section id="二阶充分条件" class="level2">
+<h2 class="anchored" data-anchor-id="二阶充分条件">二阶充分条件</h2>
+<p>设定义开集<span class="math inline">\(D\)</span>上的函数<span class="math inline">\(f: D \subset R^{n} \rightarrow R\)</span>在<span class="math inline">\(D\)</span>上二阶可微，如果对于<span class="math inline">\(\textbf{x}^{*}\)</span>有： <span class="math display">\[\nabla f(\textbf{x}) = \textbf{0}, \quad d^{T}Hd &gt; 0, \quad \forall d \in R^{n}, \quad d \neq 0.\]</span></p>
+<p>则<span class="math inline">\(\textbf{x}^{*}\)</span>是一个严格局部极小值点。</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>考虑二阶泰勒展开： <span class="math display">\[f(\textbf{x}^{*} + \epsilon d) = f(\textbf{x}^{*}) + \nabla f(\textbf{x})^{T} \epsilon d + \frac{1}{2}\epsilon^{2} d^{T}H(\textbf{x}^{*})d\]</span></p>
+<p>这里，<span class="math inline">\(\forall d \in R^{n}, \theta \in [0,1], \epsilon \rightarrow 0\)</span>。</p>
+<section id="带等式约束的最优化问题-i" class="level2">
+<h2 class="anchored" data-anchor-id="带等式约束的最优化问题-i">带等式约束的最优化问题 I</h2>
+<p>考虑以下含等式约束的最优化问题： <span class="math display">\[
+\begin{aligned}
+\mathop{\max_{x_1, x_2}}\quad &amp; f(x_1, x_2) \\
+s.t.\quad &amp; g(x_1, x_2) = 0
+\end{aligned}
+\tag{NLP-1}
+\]</span></p>
+<p>假定<span class="math inline">\(g\)</span>满足隐函数定理的相关条件，则等式约束隐含了<span class="math inline">\(x_2 = x_2(x_1)\)</span>，代入目标函数则有 <span class="math display">\[f(x_1, x_2(x_2)) \coloneqq \phi(x_1)\]</span></p>
+<p>且<span class="math inline">\(\frac{dx_2}{dx_1} = -\frac{g_{x_1}}{g_{x_2}}\)</span>。其对<span class="math inline">\(x_1\)</span>的一阶导数为 <span class="math display">\[\frac{d\phi}{dx_1} = f_{x_1} - f_{x_2}\frac{g_{x_1}}{g_{x_2}}\]</span></p>
+</section>
+<section id="带等式约束的最优化问题-ii" class="level2">
+<h2 class="anchored" data-anchor-id="带等式约束的最优化问题-ii">带等式约束的最优化问题 II</h2>
+<p>根据无约束条件下最优化问题的一阶条件，对于<span class="math inline">\(\phi(x_1)\)</span>有<span class="math inline">\(\frac{d\phi}{dx_1}(x_1^{*}) = 0\)</span>。此时，不妨设<span class="math inline">\(\lambda = \frac{f_{x_2}(x^{*})}{g_{x_2}(x^{*})}\)</span>，则有： <span class="math display">\[f_{x_1}(x^{*}) + \lambda g_{x_1}(x^{*}) = 0\]</span></p>
+<p>类似地，等式约束隐含了<span class="math inline">\(x_1 = x_1(x_2)\)</span>，可以得出 <span class="math display">\[f_{x_2}(x^{*}) + \lambda g_{x_2}(x^{*}) = 0\]</span></p>
+<p>因此，带等式约束的最优化问题(NLP-1)在<span class="math inline">\(x^{*}\)</span>处取得最优化的一阶必要条件等价于函数 <span class="math display">\[\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) + \lambda g(x_1, x_2)\]</span></p>
+<p>在<span class="math inline">\(x^{*}\)</span>处取得最优化的一阶必要条件。</p>
+</section>
+<section id="拉格朗日函数" class="level2">
+<h2 class="anchored" data-anchor-id="拉格朗日函数">拉格朗日函数</h2>
+<p>称 <span class="math inline">\(\mathcal{L}(x_1, x_2, \lambda)\)</span> 为<em>拉格朗日(Lagrange)</em>函数，则其在 <span class="math inline">\((x_1^{*}, x_2^{*}, \lambda^{*})\)</span> 处取得最大值/最小值的一阶条件为：</p>
+<p><span class="math display">\[
+\left\{
+         \begin{array}{ccc}
+         f_{x_1}(x_1^{*}, x_2^{*}) + \lambda^{*} g_{x_1}(x_1^{*}, x_2^{*}) = 0 \\
+         f_{x_2}(x_1^{*}, x_2^{*}) + \lambda^{*} g_{x_2}(x_1^{*}, x_2^{*}) = 0 \\
+         g(x_1^{*}, x_2^{*}) = 0
+         \end{array}
+\right.
+\]</span></p>
+
+
+</section>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

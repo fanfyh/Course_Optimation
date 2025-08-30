@@ -1,7 +1,6 @@
 project:
   type: website
-  output-dir: docs
-
+  
 author: "范翻"
 institute: "中央财经大学(CCFD)"
 
@@ -21,20 +20,21 @@ website:
     search: true
     contents:
       - course/lecture1_intro.qmd
-      - course/lecture2_lagrange.qmd
-      - course/lecture3_shadow_price.qmd
-      - course/lecture4_value_function.qmd
-      - course/lecture5_convex_set.qmd
-      - course/lecture6_cancave_optimization.qmd
-      - course/lecture7_second_order.qmd
-      - course/lecture8_uncertainty.qmd
-      - course/lecture9_time_related.qmd
+      # - course/lecture2_lagrange.qmd
+      # - course/lecture3_shadow_price.qmd
+      # - course/lecture4_value_function.qmd
+      # - course/lecture5_convex_set.qmd
+      # - course/lecture6_cancave_optimization.qmd
+      # - course/lecture7_second_order.qmd
+      # - course/lecture8_uncertainty.qmd
+      # - course/lecture9_time_related.qmd
   page-navigation: true
 
 
 format:
   # 网页格式
   html:
+    output-dir: docs
     theme: yeti
     css: styles.css
     toc: true
@@ -42,6 +42,7 @@ format:
     embed-resources: true
   # Beamer幻灯片
   beamer:
+    output-dir: slides
     latex-engine: xelatex
     pdf-engine: latexmk  # 启用latexmk引擎
     pdf-engine-opts: 
@@ -57,6 +58,6 @@ format:
     toc-title: "目录"
 execute:
   keep-md: false
-  keep-tex: true
+  keep-tex: false
 
 editor: visual
